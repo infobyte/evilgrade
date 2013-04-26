@@ -1,0 +1,19 @@
+.fb-cp_title { vertical-align: middle; padding: 4px 5px; font-size: medium; font-weight: bold; background-color: #efefef; }
+
+.fb-txt_normal_spacing { padding-left: 5px; }
+.fb-txt_big_spacing { padding-left: 5px; padding-top:10px; padding-bottom:10px; }
+.fb-txt_normal_spacing_grey { padding-left: 5px; background-color: #efefef; }
+.fb-txt_big_spacing_grey { padding-left: 5px; padding-top:10px; padding-bottom:10px; background-color: #efefef; }
+
+.fb-lb_hr { border-bottom: 1px solid #cccccc; width: 100%; height: 1px; }
+
+body, div, form, table, td, a { padding: 0px; margin: 0px; font-family: Tahoma, Arial, Verdana; font-size: medium; }
+input, select, button { border: 1px solid #939393;  font-family: Tahoma, Arial, Verdana; font-size: medium; background-color: #e4e4e4; }
+a:link { color: #259fe6; text-decoration: underline; }
+a:hover { color: #259fe6; text-decoration: none; }
+a:visited { color: #0000cc; text-decoration: none; }
+
+.fb-product_left{ float:left; }
+.fb-product_right{ float:right; }
+.fb-product{ padding:5px; }
+

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>info</key>
+	<dict>
+		<key>name</key>
+		<string>ScummVM repository</string>
+		<key>maintainer</key>
+		<string>Oystein Eftevaag</string>
+		<key>contact</key>
+		<string>oystein@geheb.com</string>
+		<key>url</key>
+		<string>http://www.scummvm.org/</string>
+		<key>category</key>
+		<string>Other Sources</string>
+		<key>description</key>
+		<string>ScummVM subversion snapshots.</string>
+	</dict>
+	<key>packages</key>
+	<array>
+	<dict>
+		<key>version</key>
+		<string>20080203_1436</string>
+		<key>bundleIdentifier</key>
+		<string>org.scummvm.ScummVM.svn</string>
+		<key>contact</key>
+		<string>oystein@geheb.com</string>
+		<key>description</key>
+		<string>ScummVM development snapshot.</string>
+		<key>hash</key>
+		<string>2003489ff806fccc6b91dda939c42bd3</string>
+		<key>location</key>
+		<string>http://www.apptapp.com/icheckmail_1.0.zip</string>
+		<key>maintainer</key>
+		<string>Oystein Eftevaag</string>
+		<key>name</key>
+		<string>ScummVM DEV</string>
+		<key>scripts</key>
+		<dict>
+			<key>install</key>
+			<array>
+				<array>
+					<string>CopyPath</string>
+					<string>ScummVM.app</string>
+					<string>/Applications/ScummVM_SVN.app</string>
+				</array>
+			</array>
+			<key>postflight</key>
+			<array>
+				<array>
+					<string>Notice</string>
+					<string>Games can be uploaded anywhere, but somewhere under /var/mobile/Media is recommended for disk space purposes.</string>
+				</array>
+			</array>
+			<key>uninstall</key>
+			<array>
+				<array>
+					<string>RemovePath</string>
+					<string>/Applications/ScummVM_SVN.app</string>
+				</array>
+			</array>
+			<key>update</key>
+			<array>
+				<array>
+					<string>RemovePath</string>
+					<string>/Applications/ScummVM_SVN.app</string>
+				</array>
+				<array>
+					<string>CopyPath</string>
+					<string>ScummVM.app</string>
+					<string>/Applications/ScummVM_SVN.app</string>
+				</array>
+			</array>
+		</dict>
+		<key>size</key>
+		<string>4277424</string>
+		<key>url</key>
+		<string>http://wiki.scummvm.org/index.php/IPhone</string>
+		<key>category</key>
+		<string>Games</string>
+		<key>date</key>
+		<string>1202045793</string>
+	</dict>
+	
+	</array>
+</dict>
+</plist>

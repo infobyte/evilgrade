@@ -1,0 +1,7 @@
+POST /do_reg.php HTTP/1.1
+Host: reg3.ubertwitter.com
+Connection: close
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 226
+
+twitter_user=infobytesec&product=UberTwitter_4_5&version=0.970&bb_pin=2100000a&model=9000&platformversion=&swversion=4.6.0.92&phone=15198887465&email=unknown&tweets_sent=0&gps_on=NO&carrier=Default+3G+Network&country=&in_app=0

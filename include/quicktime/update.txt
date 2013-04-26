@@ -1,0 +1,12 @@
+<qtannouncement check_id="80000049">
+       <announcement>
+               <message
+                       use_wasu="false"
+                       ok="Update Now"
+                       cancel="Cancel"
+                       text="<%DESCRIPTION%>. Click Update Now to update your software."
+                       url_link="http://www.apple.com/quicktime/qt_update.exe"
+               />
+       </announcement>
+
+</qtannouncement>

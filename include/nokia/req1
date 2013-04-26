@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preminet-response version="1.4" xmlns="http://nokia.com/preminet/protocol/beans/response">
+  <information>
+    <client-update uri="http://config.preminetsolution.com/install.sis" version="6.0.0"/>
+    <master-server>
+      <valid-until delta="10085"/>
+    </master-server>
+    <server-message type="info">A fede le cabe el update!! La tienda Ovi de Nokia ya está disponible. Actualice su servicio a la tienda Ovi para disfrutar de fantásticos juegos, vídeos, aplicaciones y mucho más. La instalación de la tienda Ovi sustituirá a los servicios de Descargar y WidSets.</server-message>
+    <client-info-token name="operatorVariant" value="true"/>
+    <client-info-token name="client-operator" value="unknown"/>
+  </information>
+  <catalog id="tree-16069" uri="http://config.preminetsolution.com/ntp-cgw/catalogs/" transparent="true"/>
+</preminet-response>

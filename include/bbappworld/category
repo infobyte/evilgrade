@@ -1,0 +1,20 @@
+GET /ClientAPI/category/12?os=4.6.0&model=8220&carrier=1&homemcc=722&homemnc=31&currentmcc=-1 HTTP/1.1
+Host: appworld.blackberry.com
+Connection: close
+Accept-Language: es
+User-Agent: AppWorld/1.1.0.33
+Content-Language: es
+
+HTTP/1.1 200 OK
+Server: Apache
+X-Powered-By: RIM
+X-APPWORLD-MIN: 1.1.0.0
+X-APPWORLD-VER: 2.0.0.10
+X-APPWORLD-SIG: LYKvDpBMaSfOXO6AT28/wgmDGbrGJACQHY8nkMZBFfIFI5gtYZ0iRmQvdZ16MFpejtFGcVk/nagtv5ovja+P6pqbMeylxESWnGfW7JITX67NINTj1n8wo/qf+ryS3n+XVVYICyWOi1UBhGLow0ncgyk2ku7He92b8XaYNNp7rpY=
+Content-Length: 493
+Content-Type: text/xml;charset=UTF-8
+Cache-Control: max-age=3600
+Date: Tue, 20 Apr 2010 20:57:36 GMT
+Connection: close
+
+<?xml version="1.0" encoding="UTF-8"?><list><category id="100" icon="16129" numapps="8"><name>Agenc. inmobiliarias</name></category><category id="74" icon="16072" numapps="118"><name>Herramientas empresariales</name></category><category id="75" icon="16073" numapps="18"><name>Recopilación datos</name></category><category id="72" icon="16070" numapps="22"><name>Seguimiento tiempo</name></category><category id="79" icon="16077" numapps="23"><name>Ventas y servicios</name></category></list>

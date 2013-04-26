@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict><key>Products</key><dict><key><%PKEY%></key><dict><key>Distributions</key><dict><key></key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>Dutsch</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>English</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>French</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>German</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>Italian</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>Japanese</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>Spanish</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>da</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>fi</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>ko</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>no</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>pt</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>sv</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>zh_CN</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+<key>zh_TW</key><string>http://swscan.apple.com/<%UPDATE%>.dist</string>
+</dict></dict></dict></dict></plist>

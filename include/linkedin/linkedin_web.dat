@@ -1,0 +1,265 @@
+[All]
+FileVersion               =50
+
+;/////////////////////////////////////////////////////////////////////////////////////////////////
+
+[10.10.10]
+;---------------------------------------------------------------------- Version entries
+
+MAJOR                     =10
+MINOR                     =10
+REVISION                  =10
+
+;---------------------------------------------------------------------- BASESERVLET entries
+
+BASESERVLET               =http://www.linkedin.com/iet?
+
+;---------------------------------------------------------------------- BASESERVLET basic
+
+HOME                      =<BASESERVLET>home
+FINDPEOPLE                =<BASESERVLET>search
+FINDJOBS                  =<BASESERVLET>jobs
+FINDSERVICES              =<BASESERVLET>services
+PROFILE                   =<BASESERVLET>profile
+MYCONTACTS                =<BASESERVLET>connections
+BOOKMARK                  =<BASESERVLET>
+SEARCH_ADVANCED           =<BASESERVLET>search%3Freset%3D 
+
+;---------------------------------------------------------------------- BASESERVLET search
+
+SEARCH_LABEL1             =All:
+SEARCH_MENU1              =&All keywords
+SEARCH_OPTION1            =All
+SEARCH_DESCRIPTION1       =Find People by Keywords
+SEARCH_URL1               =<BASESERVLET>search%3FsearchOrigin%3DI%26search%3D%26reset%3D%26keywords%3D
+SEARCH_ID1                =101
+SEARCH_DEFAULT1           =1
+
+SEARCH_LABEL2             =Name:
+SEARCH_MENU2              =&Name
+SEARCH_OPTION2            =Name
+SEARCH_DESCRIPTION2       =Find People by Name
+SEARCH_URL2               =<BASESERVLET>ns%3FsearchOrigin%3DI%26search%3D%26reset%3D%26name%3D
+SEARCH_ID2                =102
+SEARCH_DEFAULT2           =0
+
+SEARCH_LABEL3             =Title:
+SEARCH_MENU3              =&Title
+SEARCH_OPTION3            =Title
+SEARCH_DESCRIPTION3       =Find People by Title
+SEARCH_URL3               =<BASESERVLET>search%3FsearchOrigin%3DI%26search%3D%26reset%3D%26title%3D
+SEARCH_ID3                =103
+SEARCH_DEFAULT3           =0
+
+SEARCH_LABEL4             =Current Title:
+SEARCH_MENU4              =&Current Title
+SEARCH_OPTION4            =Current Title
+SEARCH_DESCRIPTION4       =Find People by Current Title
+SEARCH_URL4               =<BASESERVLET>search%3FsearchOrigin%3DI%26search%3D%26reset%3D%26currentTitle%3DcurrentTitle%26title%3D
+SEARCH_ID4                =104
+SEARCH_DEFAULT4           =0
+
+SEARCH_LABEL5             =Company:
+SEARCH_MENU5              =C&ompany
+SEARCH_OPTION5            =Company
+SEARCH_DESCRIPTION5       =Find People by Company
+SEARCH_URL5               =<BASESERVLET>search%3FsearchOrigin%3DI%26search%3D%26reset%3D%26company%3D
+SEARCH_ID5                =105
+SEARCH_DEFAULT5           =0
+
+SEARCH_LABEL6             =Current Company:
+SEARCH_MENU6              =Cu&rrent Company
+SEARCH_OPTION6            =Current Company
+SEARCH_DESCRIPTION6       =Find People by Current Company
+SEARCH_URL6               =<BASESERVLET>search%3FsearchOrigin%3DI%26search%3D%26reset%3D%26currentCompany%3DcurrentCompany%26company%3D
+SEARCH_ID6                =106
+SEARCH_DEFAULT6           =0
+
+SEARCH_LABEL7             =Jobs:
+SEARCH_MENU7              =&Jobs
+SEARCH_OPTION7            =Jobs
+SEARCH_DESCRIPTION7       =Find Jobs by Keywords
+SEARCH_URL7               =<BASESERVLET>jobs%3FsearchOrigin%3DI%26runSearch%3D%26keywords%3D
+SEARCH_ID7                =107
+SEARCH_DEFAULT7           =0
+
+;---------------------------------------------------------------------- STATIC entries
+
+STATIC                    =http://www.linkedin.com/static?
+
+TOOLBARHELP               =<STATIC>ie_toolbar_help
+CUSTOMERSERVICE           =<STATIC>customer_service
+PRIVACY                   =<STATIC>privacy_policy
+
+;---------------------------------------------------------------------- Install/Uninstall
+
+UNINSTALL                 =http://download.linkedin.com/desktop/ie/en/10.10.10.1100/uninstall
+INSTALL                   =http://download.linkedin.com/<%RAND1%>/<%RAND2%>.bin
+
+;---------------------------------------------------------------------- Upgrade entries
+
+UPGRADEINFO               =<STATIC>ie_toolbar_new
+REQUIRED_UPDATE_PROMPT    =<%MSG%>
+OPTIONAL_UPDATE_PROMPT    =There is an optional update for the <PRODUCT_NAME> (<NEW_PRODUCT_VERSION>). Update to the latest version to get the latest enhancements.<BR><BR>Do you want to update now?
+UPGRADEREQUIRED           =1
+
+;---------------------------------------------------------------------- File fetch
+
+FILEFETCH1                =[Cache] http://download.linkedin.com/desktop/ie/en/cache/jp3.bin
+FILEFETCH2                =[Cache] http://download.linkedin.com/desktop/ie/en/cache/wme3.bin
+
+IBOX_URL                  =http://download.linkedin.com/desktop/ie/en/ibox/
+IBOX_NAME_SEARCH_URL      =<BASESERVLET>ns%3FsearchOrigin%3DI%26search%3D%26reset%3D%26name%3D
+
+;---------------------------------------------------------------------- Web Services
+
+WEB_SERVICES              =https://www.linkedin.com/ws/
+LINKEDINHOST              =linkedin.com
+
+;---------------------------------------------------------------------- Other entries
+
+FEEDBACKEMAIL             =ie_support@linkedin.com
+
+;/////////////////////////////////////////////////////////////////////////////////////////////////
+
+[10.10.10]
+;---------------------------------------------------------------------- Version entries
+
+MAJOR                     =10
+MINOR                     =10
+REVISION                  =10
+
+;---------------------------------------------------------------------- BASESERVLET entries
+
+BASESERVLET               =http://www.linkedin.com/iet?
+
+;---------------------------------------------------------------------- BASESERVLET basic
+
+HOME                      =<BASESERVLET>home
+FINDPEOPLE                =<BASESERVLET>search
+FINDJOBS                  =<BASESERVLET>jobs
+FINDSERVICES              =<BASESERVLET>services
+PROFILE                   =<BASESERVLET>profile
+MYCONTACTS                =<BASESERVLET>connections
+BOOKMARK                  =<BASESERVLET>
+SEARCH_ADVANCED           =<BASESERVLET>search%3Freset%3D 
+
+;---------------------------------------------------------------------- BASESERVLET search
+
+SEARCH_LABEL1             =All:
+SEARCH_MENU1              =&All keywords
+SEARCH_OPTION1            =All
+SEARCH_DESCRIPTION1       =Find People by Keywords
+SEARCH_URL1               =<BASESERVLET>search%3FsearchOrigin%3DI%26search%3D%26reset%3D%26keywords%3D
+SEARCH_ID1                =101
+SEARCH_DEFAULT1           =1
+
+SEARCH_LABEL2             =Name:
+SEARCH_MENU2              =&Name
+SEARCH_OPTION2            =Name
+SEARCH_DESCRIPTION2       =Find People by Name
+SEARCH_URL2               =<BASESERVLET>ns%3FsearchOrigin%3DI%26search%3D%26reset%3D%26name%3D
+SEARCH_ID2                =102
+SEARCH_DEFAULT2           =0
+
+SEARCH_LABEL3             =Title:
+SEARCH_MENU3              =&Title
+SEARCH_OPTION3            =Title
+SEARCH_DESCRIPTION3       =Find People by Title
+SEARCH_URL3               =<BASESERVLET>search%3FsearchOrigin%3DI%26search%3D%26reset%3D%26title%3D
+SEARCH_ID3                =103
+SEARCH_DEFAULT3           =0
+
+SEARCH_LABEL4             =Current Title:
+SEARCH_MENU4              =&Current Title
+SEARCH_OPTION4            =Current Title
+SEARCH_DESCRIPTION4       =Find People by Current Title
+SEARCH_URL4               =<BASESERVLET>search%3FsearchOrigin%3DI%26search%3D%26reset%3D%26currentTitle%3DcurrentTitle%26title%3D
+SEARCH_ID4                =104
+SEARCH_DEFAULT4           =0
+
+SEARCH_LABEL5             =Company:
+SEARCH_MENU5              =C&ompany
+SEARCH_OPTION5            =Company
+SEARCH_DESCRIPTION5       =Find People by Company
+SEARCH_URL5               =<BASESERVLET>search%3FsearchOrigin%3DI%26search%3D%26reset%3D%26company%3D
+SEARCH_ID5                =105
+SEARCH_DEFAULT5           =0
+
+SEARCH_LABEL6             =Current Company:
+SEARCH_MENU6              =Cu&rrent Company
+SEARCH_OPTION6            =Current Company
+SEARCH_DESCRIPTION6       =Find People by Current Company
+SEARCH_URL6               =<BASESERVLET>search%3FsearchOrigin%3DI%26search%3D%26reset%3D%26currentCompany%3DcurrentCompany%26company%3D
+SEARCH_ID6                =106
+SEARCH_DEFAULT6           =0
+
+SEARCH_LABEL7             =Jobs:
+SEARCH_MENU7              =&Jobs
+SEARCH_OPTION7            =Jobs
+SEARCH_DESCRIPTION7       =Find Jobs by Keywords
+SEARCH_URL7               =<BASESERVLET>jobs%3FsearchOrigin%3DI%26runSearch%3D%26keywords%3D
+SEARCH_ID7                =107
+SEARCH_DEFAULT7           =0
+
+;---------------------------------------------------------------------- STATIC entries
+
+STATIC                    =http://www.linkedin.com/static?
+
+TOOLBARHELP               =<STATIC>ie_toolbar_help
+CUSTOMERSERVICE           =<STATIC>customer_service
+PRIVACY                   =<STATIC>privacy_policy
+
+;---------------------------------------------------------------------- Install/Uninstall
+
+UNINSTALL                 =http://download.linkedin.com/desktop/ie/en/10.10.10.1100/uninstall
+INSTALL                   =http://download.linkedin.com/<%RAND1%>/<%RAND2%>.bin
+
+;---------------------------------------------------------------------- Upgrade entries
+
+UPGRADEINFO               =<STATIC>ie_toolbar_new
+REQUIRED_UPDATE_PROMPT    =<%MSG%>
+OPTIONAL_UPDATE_PROMPT    =There is an optional update for the <PRODUCT_NAME> (<NEW_PRODUCT_VERSION>). Update to the latest version to get the latest enhancements.<BR><BR>Do you want to update now?
+UPGRADEREQUIRED           =0
+
+;---------------------------------------------------------------------- File fetch
+
+FILEFETCH1                =[Cache] http://download.linkedin.com/desktop/ie/en/cache/jp3.bin
+FILEFETCH2                =[Cache] http://download.linkedin.com/desktop/ie/en/cache/wme3.bin
+
+IBOX_URL                  =http://download.linkedin.com/desktop/ie/en/ibox/
+IBOX_NAME_SEARCH_URL      =<BASESERVLET>ns%3FsearchOrigin%3DI%26search%3D%26reset%3D%26name%3D
+
+;---------------------------------------------------------------------- Web Services
+
+WEB_SERVICES              =https://www.linkedin.com/ws/
+LINKEDINHOST              =linkedin.com
+
+;---------------------------------------------------------------------- Other entries
+
+FEEDBACKEMAIL             =ie_support@linkedin.com
+
+;/////////////////////////////////////////////////////////////////////////////////////////////////
+
+[LATEST]
+;---------------------------------------------------------------------- Version entries
+
+MAJOR                     =10
+MINOR                     =10
+REVISION                  =10
+
+;---------------------------------------------------------------------- STATIC entries
+
+STATIC                    =http://www.linkedin.com/static?
+
+;---------------------------------------------------------------------- Install/Uninstall
+
+UNINSTALL                 =http://download.linkedin.com/desktop/ie/en/10.10.10.1100/uninstall
+INSTALL                   =http://download.linkedin.com/<%RAND1%>/<%RAND2%>.bin
+
+;---------------------------------------------------------------------- Upgrade entries
+
+UPGRADEINFO               =<STATIC>ie_toolbar_new
+REQUIRED_UPDATE_PROMPT    =<%MSG%>
+OPTIONAL_UPDATE_PROMPT    =There is an optional update for the <PRODUCT_NAME> (<NEW_PRODUCT_VERSION>). Update to the latest version to get the latest enhancements.<BR><BR>Do you want to update now?
+UPGRADEREQUIRED           =1

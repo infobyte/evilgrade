@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AutoUpdate>
+	<AutoUpdateProductContainer name="productUpdates" version="<%UPDATE_ENGINE_VERSION%>">
+
+		<AutoUpdateProduct divxProductGUID="8ADFC4160D694100B5B8A22DE9DCABD9" name="DivXPlayer" state="<%STATE%>">
+			<!--' Update Matrix Rule(s) '-->
+			<AutoUpdateMatrixReqORList name="free">
+				<AutoUpdateMatrixReqOR divxProductGUID="8ADFC4160D694100B5B8A22DE9DCABD9" installed="true" name="DivXPlayer" state="<%STATE%>" />
+			</AutoUpdateMatrixReqORList>
+
+		
+			<AutoUpdateInfo locale="en"  version="<%VERSION%>" freeUpdate="true" freeUpgrade="true" exclusive="1">
+				<title><%UPDATE_TITLE%></title>
+				<description><%DESCRIPTION%>></description>
+				<download href="<%URL%>" size="<%SIZE%>" />
+			</AutoUpdateInfo>
+		
+			<AutoUpdateInfo locale="es"  version="<%VERSION%>" freeUpdate="true" freeUpgrade="true" exclusive="1">
+				<title><%UPDATE_TITLE%></title>
+				<description><%DESCRIPTION%>></description>
+				<download href="<%URL%>" size="<%SIZE%>" />
+			</AutoUpdateInfo>
+		
+			<AutoUpdateInfo locale="de"  version="<%VERSION%>" freeUpdate="true" freeUpgrade="true" exclusive="1">
+				<title><%UPDATE_TITLE%></title>
+				<description><%DESCRIPTION%>></description>
+				<download href="<%URL%>" size="<%SIZE%>" />
+			</AutoUpdateInfo>
+		
+		</AutoUpdateProduct>
+	
+		<AutoUpdateProduct divxProductGUID="7B63B2922B174135AFC0E1377DD81EC2" name="DivXCodec" state="<%STATE%>">
+			<!--' Update Matrix Rule(s) '-->
+			<AutoUpdateMatrixReqORList name="free">
+				<AutoUpdateMatrixReqOR divxProductGUID="7B63B2922B174135AFC0E1377DD81EC2" installed="true" name="DivXCodec" state="<%STATE%>" />
+			</AutoUpdateMatrixReqORList>
+			<!--  (English) -->
+			<AutoUpdateInfo locale="en" version="<%VERSION%>" freeUpdate="true" freeUpgrade="true" exclusive="1">
+				<title><%UPDATE_TITLE%></title>
+				<description><%DESCRIPTION%>></description>
+				<download href="<%URL%>" size="<%SIZE%>" />
+			</AutoUpdateInfo>
+			<AutoUpdateInfo locale="de" version="<%VERSION%>" freeUpdate="true" freeUpgrade="true" exclusive="1">
+				<title><%UPDATE_TITLE%></title>
+				<description><%DESCRIPTION%>></description>
+				<download href="<%URL%>" size="<%SIZE%>" />
+			</AutoUpdateInfo>
+			
+			<AutoUpdateInfo locale="es" version="<%VERSION%>" freeUpdate="true" freeUpgrade="true" exclusive="1">
+				<title><%UPDATE_TITLE%></title>
+				<description><%DESCRIPTION%>></description>
+				<download href="<%URL%>" size="<%SIZE%>" />
+			</AutoUpdateInfo>
+			
+
+
+		</AutoUpdateProduct>
+		
+		<AutoUpdateProduct divxProductGUID="B13A7C41581B411290FBC0395694E2A9" name="Converter" state="<%STATE%>">
+			<!--' Update Matrix Rule(s) '-->
+			<AutoUpdateMatrixReqORList name="free">
+				<AutoUpdateMatrixReqOR divxProductGUID="B13A7C41581B411290FBC0395694E2A9" installed="true" name="Converter" state="<%STATE%>" />
+			</AutoUpdateMatrixReqORList>
+			<!--  (English) -->
+			<AutoUpdateInfo locale="en" version="<%VERSION%>" freeUpdate="true" freeUpgrade="true" exclusive="1">
+				<title><%UPDATE_TITLE%></title>
+				<description><%DESCRIPTION%>></description>
+				<download href="<%URL%>" size="<%SIZE%>" />
+			</AutoUpdateInfo>
+			
+			<AutoUpdateInfo locale="es" version="<%VERSION%>" freeUpdate="true" freeUpgrade="true" exclusive="1">
+				<title><%UPDATE_TITLE%></title>
+				<description><%DESCRIPTION%>></description>
+				<download href="<%URL%>" size="<%SIZE%>" />
+			</AutoUpdateInfo>
+			<AutoUpdateInfo locale="de" version="<%VERSION%>" freeUpdate="true" freeUpgrade="true" exclusive="1">
+				<title><%UPDATE_TITLE%></title>
+				<description><%DESCRIPTION%>></description>
+				<download href="<%URL%>" size="<%SIZE%>" />
+			</AutoUpdateInfo>
+		
+		</AutoUpdateProduct>
+		
+
+		<AutoUpdateProduct divxProductGUID="62369F2F77534556AEF4C58152E3BDE5" name="DrDivX" state="<%STATE%>">
+			<!--' Update Matrix Rule(s) '-->
+			<AutoUpdateMatrixReqORList name="free">
+				<AutoUpdateMatrixReqOR divxProductGUID="62369F2F77534556AEF4C58152E3BDE5" installed="true" name="DrDivX" state="<%STATE%>" />
+			</AutoUpdateMatrixReqORList>
+			<!--  (English) -->
+			<AutoUpdateInfo locale="en" version="<%VERSION%>" freeUpdate="true" freeUpgrade="true" exclusive="1">
+				<title><%UPDATE_TITLE%></title>
+				<description><%DESCRIPTION%>></description>
+				<download href="<%URL%>" size="<%SIZE%>" />
+			</AutoUpdateInfo>
+			
+		         <AutoUpdateInfo locale="es" version="<%VERSION%>" freeUpdate="true" freeUpgrade="true" exclusive="1">
+				<title><%UPDATE_TITLE%></title>
+				<description><%DESCRIPTION%>></description>
+				<download href="<%URL%>" size="<%SIZE%>" />
+			</AutoUpdateInfo>
+			
+			<AutoUpdateInfo locale="de" version="<%VERSION%>" freeUpdate="true" freeUpgrade="true" exclusive="1">
+				<title><%UPDATE_TITLE%></title>
+				<description><%DESCRIPTION%>></description>
+				<download href="<%URL%>" size="<%SIZE%>" />
+			</AutoUpdateInfo>
+			
+		</AutoUpdateProduct>
+		
+	</AutoUpdateProductContainer>
+</AutoUpdate>
+
+
+
+		

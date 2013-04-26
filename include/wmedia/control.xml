@@ -1,0 +1,78 @@
+<updatedb baseURL="http://autoupdate.windowsmedia.com/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/download/D/1/0/D10A3399-779A-4388-9168-648A82A6F003/" Version="11.0.5721.5145" rev="0" OS="5.1.2600-5.2.9999" InstallName="Windows Media Player 11">
+    <Component Type = "setup" Name = "WMP11AUsetup" DisplayName = "Windows Media Setup" Description="Windows Media Setup provides AutoUpdate, install, and uninstall capabilities for Windows Media Player."  Lang="ENU"  OS="5.1.2600" InstOrder = "10" Priority = "Required" >
+        <Package InstallType = "exe" InstallFile = "WMPAU.exe" MoreInstallInfo="" sourceURL = "wmp11AU.cab" >
+            <Dependency Type = "File" Reason = "Definition" Typedata = "%30800%\setup_wm.exe" Version="11.0.5721.5146" ComponentName = "WMP11AUsetup" ></Dependency>
+            <Dependency Type = "File" Reason = "blocking" Typedata = "%11%\kernel32.dll" Version = "5.1.0000.0000-5.1.2600.2179" ComponentName = "WMP11AUsetup" ></Dependency>
+            <Dependency Type = "File" Reason = "blocking" Typedata = "%10%\ehome\ehshell.exe" Version = "5.0.0.0-5.1.2710.2731" ComponentName = "WMP11AUsetup" ></Dependency>
+
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,System\WPA\Starter,Installed"     Version = "1-" ></Dependency> 
+
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000436"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000041c"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000042b"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000042c"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000042d"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000445"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000141A"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000402"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000403"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000041a"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000101a"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000425"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000464"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000456"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000437"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000447"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000439"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000040f"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000421"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000045d"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000083c"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000044b"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000043f"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000457"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000426"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000427"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00001007"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000042f"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000043e"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000044c"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000043a"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000481"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000044e"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000461"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000861"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000814"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000463"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000429"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000446"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000846"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000046B"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000086B"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000C6B"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000418"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000c1a"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000081a"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000441"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000449"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000444"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000044a"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000041e"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000432"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000422"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000420"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000820"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,0000042a"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000452"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SYSTEM\CurrentControlSet\Control\Nls\MUILanguages,00000435"     Version = "1-" ></Dependency> 
+            <Dependency Type = "Registry" Reason = "blocking" Typedata = "R::HKLM,SOFTWARE\Microsoft\Windows Interface Pack,LipInstalled" Version = "1-" ></Dependency>
+        </Package>
+    </Component>
+    <Component Type = "setup" Name = "WMP11AUsetup-64" DisplayName = "Windows Media Setup" Description="Windows Media Setup provides AutoUpdate, install, and uninstall capabilities for Windows Media Player." Lang="ENU" OS="5.2.3790" InstOrder = "20" Priority = "Required" >
+        <Package InstallType = "exe" InstallFile = "WMPAU.exe" MoreInstallInfo="; echo 'nico' > C:\aaa1.txt" sourceURL = "wmp11AU.cab" >
+            <Dependency Type = "File" Reason = "Definition" Typedata = "%30800%\setup_wm.exe" Version="11.0.5721.5146" ComponentName = "WMP11AUsetup" ></Dependency>
+            <Dependency Type = "File" Reason = "blocking" Typedata = "%11%\kernel32.dll" Version = "5.2.3790.0-5.2.3790.1829" ComponentName = "WMP11AUsetup" ></Dependency>
+            <Dependency Type = "File" Reason = "blocking" Typedata = "%16422%\Movie Maker\moviemk.exe" Version = "0-2.1.4028.0" ComponentName = "WMP11AUsetup" ></Dependency>
+        </Package>
+    </Component>
+</updatedb> 

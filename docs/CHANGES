@@ -1,0 +1,109 @@
+Version 2.0.4 - 07-11-2011
+--------------------------
+- sunjava module updated. Support Java <=1.6.0.28
+
+Version 2.0.3 - 18-10-2011
+---------------------------
+-(Java Deployment Toolkit <= v6.0.240.7 found by Neal Poole) - jdtoolkit module added
+
+Version 2.0.2 - 17-10-2011
+---------------------------
+- CVE-2011-3230 - (Safari 5.1.1) safari module added
+- CVE-2011-3224 - (Mac App Store) appstore module added
+Found by Aaron Sigel and Brian Mastenbrook
+
+Version 2.0.1 - 07-07-2011
+---------------------------
+- MacPorts 1.9.2 (port) module added
+
+
+Version 2.0.0 - 29-10-2010
+---------------------------
+
+Modules:
+-------
+
+Last Versions:
+-------------
+
+- Freerip 3.30
+- Jet photo 4.7.2
+*- Teamviewer 5.1.9385
+- ISOpen 4.5.0
+- Istat 
+- Gom 2.1.25.5015
+- Atube catcher 1.0.300
+- Vidbox 7.5
+- Ccleaner 2.30.1130
+- Fcleaner 1.2.9.409
+- Allmynotes 1.26
+*- Notepad++ 5.8.2
+*- Java 1.6.0_22  winxp/win7
+- aMSN 0.98.3
+*- Appleupdate <= 2.1.1.116 ( Safari 5.0.2 7533.18.5, <= Itunes 10.0.1.22, <= Quicktime 7.6.8 1675)
+*- Mirc 7.14
+*- Windows update (ie6 lastversion, ie7 7.0.5730.13, ie8 8.0.60001.18702, Microsoft works)
+*- Dap 9.5.0.3
+*- Winscp 4.2.9
+- AutoIt Script 3.3.6.1
+- Clamwin 0.96.0.1
+- AppTapp Installer 3.11 (Iphone/Itunes)
+- getjar (facebook.com)
+- Google Analytics Javascript injection
+- Speedbit Optimizer 3.0 / Video Acceleration 2.2.1.8
+*- Winamp 5.581
+- TechTracker (cnet) 1.3.1 (Build 55)
+- Nokiasoftware firmware update 2.4.8es - (Windows software)
+- Nokia firmware v20.2.011
+- BSplayer 2.53.1034
+*- Apt ( < Ubuntu 10.04 LTS)
+- Ubertwitter 4.6 (0.971)
+- Blackberry Facebook 1.7.0.22 | Twitter 1.0.0.45
+*- Cpan 1.9402
+- VirtualBox (3.2.8 )
+- Express talk
+- Filezilla
+- Flashget
+- Miranda
+- Orbit
+- Photoscape 
+- Panda Antirootkit
+- Skype
+- Sunbelt
+- Superantispyware
+*- Trillian <= 5.0.0.26
+- Flip4mac <= 2.2
+- Growl <= 1.2.1
+- Sparkle ( <= Adium 1.3.10)
+- Wmware
+
+- Winzip 11
+- Jet Audio 7.5.4.20
+- Paint.Net 3.5.4
+- wmedia version 9
+- Cygwin 1.5.25-11
+- DIVX Suite 6.2 ( Player, WebPlayer, Codec Converter, DrDivX ) 
+- Opera 9.51
+
+
+
+Fix:
+- Fix infinite loop on dns init , when failed to start.
+- Extreme cpu usage.
+
+
+Features:
+--------
+- WebServer include SSL Support.
+- WildCard dns match. Ex: .*google.com , .*domain.com
+- Internal DNS Server.
+- add custom header in the modules
+- add internal vh inside request item
+- add the "novirtual" value to use in case of request don't sent the virtualhost
+- add option AGENTMD5, generate md5 hash of agent
+- add option AGENTSHA256, generate sha256 hash of agent
+- add "show vhosts" to display all the available modules vhosts
+
+Version 1.0.0 - 07-25-2008:
+--------------------------
+First release

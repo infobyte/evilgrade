@@ -1,0 +1,16 @@
+POST /storeinfo.php HTTP/1.1
+Host: storeinfo.myloc.me
+Connection: close
+content-type: application/json
+Content-Length: 369
+
+[{"BBPIN":"2100000a","gpsaccuracy":0,"mcc":18,"mobile_country_code":18,"capture_time":1278912045041,"mnc":0,"latitude":39.029105,"accuracy":2801,"longitude":-77.502686,"mobile_network_code":18,"altitude":0,"location_area_code":8,"cell_id":631,"nettype":"SIM","carrier":"Verizon Wireless","gpslat":0,"altitudeaccuracy":0,"signal_strength":-80,"usegps":false,"gpslon":0}]HTTP/1.1 200 OK
+Date: Sun, 11 Jul 2010 05:21:47 GMT
+Server: Apache
+X-Powered-By: PHP/5.2.11
+Vary: Accept-Encoding
+Content-Type: text/html
+Content-Length: 28
+Connection: close
+
+{"success":true,"records":1}

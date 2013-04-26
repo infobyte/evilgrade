@@ -1,0 +1,12 @@
+; 4.xx manifest
+
+DownloadPageUrl=http://www.getpaint.net/download.html
+
+StableVersions=4.36.3158.39068
+BetaVersions=
+
+4.36.3158.39068_Name=Paint.NET v4.36
+4.36.3158.39068_NetFxVersion=2.0.50727
+4.36.3158.39068_InfoUrl=http://www.getpaint.net/roadmap.html#v3_0
+4.36.3158.39068_ZipUrlList=http://www.getpaint.net/updates/zip/Paint.NET.4.3.6.Install.zip
+4.36.3158.39068_FullZipUrlList=http://www.getpaint.net/updates/zip/Paint.NET.4.3.6.Install.zip

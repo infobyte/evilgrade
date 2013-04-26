@@ -1,0 +1,10 @@
+POST /ClientAPI/download/43269?email=c4366f7dd67b4bc90d23968625e764ebe8b24c3&pin=258a7e9d&os=4.6.0&model=8220&carrier=1&homemcc=722&homemnc=31&currentmcc=-1 HTTP/1.1
+Host: appworld.blackberry.com
+Connection: close
+Accept-Language: es
+User-Agent: AppWorld/1.1.0.33
+Content-Language: es
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 77
+
+email=c4366f7dd67b4bc90d23968625e764ebe8b24c3&pin=258a7e9d&devicevendorid=214

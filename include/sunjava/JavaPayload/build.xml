@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<project name="JavaPayload" default="jar">
+
+	<property name="LIB" value="lib" />
+
+	<target name="clean">
+		<delete dir="build" />
+	</target>
+
+	<target name="compile">
+		<mkdir dir="build" />
+		<javac srcdir="src" destdir="build" source="1.1" target="1.1" debug="yes">
+			<classpath>
+				<pathelement path="${LIB}/asm-3.2.jar" />
+			</classpath>
+		</javac>
+		<copy todir="build">
+			<fileset dir="src" includes="**/keystore.jks"/>
+		</copy>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar destfile="JavaPayload.jar" basedir="build" />
+	</target>
+</project>

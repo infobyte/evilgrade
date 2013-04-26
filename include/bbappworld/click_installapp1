@@ -1,0 +1,21 @@
+POST /ClientAPI/download/10548?email=c4366f7dd67b4bc90d23968625e764ebe8b24c3&pin=258a7e9d&os=4.6.0&model=8220&carrier=1&homemcc=722&homemnc=31&currentmcc=-1 HTTP/1.1
+Host: appworld.blackberry.com
+Connection: close
+Accept-Language: es
+User-Agent: AppWorld/1.1.0.33
+Content-Language: es
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 77
+
+email=c4366f7dd67b4bc90d23968625e764ebe8b24c3&pin=258a7e9d&devicevendorid=214HTTP/1.1 200 OK
+Server: Apache
+X-Powered-By: RIM
+X-APPWORLD-MIN: 1.1.0.0
+X-APPWORLD-SIG: S0myb8izk6TGOrRHbXId/L3ANOs2WuSiLXsrctQLMNJMvqXD33RziVGi56g185TaIjQHnP7ohQG9hKbIxgcgWynjgBIUIsA9tE7mkxF5MN1J/M6CNUQucgtUwos0ILfewzv7iBkpcvM+/L2Mf1k7CNJD0tcQQk70ThBxWGbVjqw=
+Content-Length: 955
+Cache-Control: max-age=3600
+Content-Type: text/xml;charset=UTF-8
+Date: Tue, 20 Apr 2010 21:00:25 GMT
+Connection: close
+
+<?xml version="1.0" encoding="UTF-8"?><filebundle><file id="677010" size="16956" name="net_rim_ecoe_app.cod"/><file id="677011" size="85040" name="net_rim_ecoe_lib.cod"/><file id="677022" size="40304" name="net_rim_ecoe_lib-1.cod"/><file id="677012" size="2976" name="net_rim_ecoe_lib_help_wml_de.cod"/><file id="677013" size="2820" name="net_rim_ecoe_lib_help_wml_en.cod"/><file id="677014" size="2908" name="net_rim_ecoe_lib_help_wml_es.cod"/><file id="677015" size="2904" name="net_rim_ecoe_lib_help_wml_fr.cod"/><file id="677016" size="2912" name="net_rim_ecoe_lib_help_wml_it.cod"/><file id="677017" size="3500" name="net_rim_ecoe_lib_resource_de.cod"/><file id="677018" size="6316" name="net_rim_ecoe_lib_resource_en.cod"/><file id="677019" size="3496" name="net_rim_ecoe_lib_resource_es.cod"/><file id="677020" size="3528" name="net_rim_ecoe_lib_resource_fr.cod"/><file id="677021" size="3416" name="net_rim_ecoe_lib_resource_it.cod"/></filebundle>

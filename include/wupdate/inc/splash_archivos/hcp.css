@@ -1,0 +1,78 @@
+.sys-font-body-bold {
+	FONT-WEIGHT: bold
+}
+.sys-link-normal {
+	
+}
+.sys-link-normal:hover {
+	
+}
+.sys-lhp-color {
+	COLOR: #ffffff
+}
+.sys-lhp-bgcolor {
+	BACKGROUND-COLOR: #8caae6
+}
+.sys-toppane-bgcolor {
+	BACKGROUND-COLOR: #f1f1f1
+}
+.sys-toppane-color-border {
+	BORDER-LEFT-COLOR: #5582d2; BORDER-BOTTOM-COLOR: #5582d2; BORDER-TOP-COLOR: #5582d2; BORDER-RIGHT-COLOR: #5582d2
+}
+.sys-toppane-header-color {
+	COLOR: #ffffff
+}
+.sys-toppane-header-bgcolor {
+	BACKGROUND-COLOR: #003399
+}
+.sys-toppane-selection {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; BORDER-LEFT: #999999 1px solid; COLOR: #000000; BORDER-BOTTOM: #999999 1px solid; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+.sys-bottompane-header-color {
+	
+}
+.sys-link-header {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.sys-link-header:hover {
+	TEXT-DECORATION: underline
+}
+.sys-color-body {
+	COLOR: #000000
+}
+.sys-color-body-alert {
+	COLOR: #ff0000
+}
+.sys-color-body-ok {
+	COLOR: #009900
+}
+.sys-header-color {
+	COLOR: #d6dff5
+}
+.sys-header-bgcolor {
+	BACKGROUND-COLOR: #003399
+}
+.sys-rhp-bgcolor {
+	BACKGROUND-COLOR: #ffffff
+}
+.sys-rhp-color-title {
+	COLOR: #6b6b6b
+}
+.sys-table-header-bgcolor1 {
+	BACKGROUND-COLOR: #4165af
+}
+.sys-table-color-border {
+	BORDER-LEFT-COLOR: #6681d9; BORDER-BOTTOM-COLOR: #6681d9; BORDER-TOP-COLOR: #6681d9; BORDER-RIGHT-COLOR: #6681d9
+}
+.sys-table-cell-bgcolor1 {
+	BACKGROUND-COLOR: #e9e9e7
+}
+.sys-table-cell-bgcolor2 {
+	BACKGROUND-COLOR: #f6f6f4
+}
+.sys-header-selected {
+	BACKGROUND-COLOR: #c7d8fa
+}
+.sys-header {
+	COLOR: #0148b2
+}

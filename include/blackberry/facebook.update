@@ -1,0 +1,6 @@
+MIDlet-Name: Facebook
+MIDlet-Version: 9.7.0.22
+MIDlet-Vendor: Research In Motion Limited
+MIDlet-Description: 
+MIDlet-Jar-Size: 0
+RIM-COD-Module-Dependencies: net_rim_bb_addressbook,net_rim_bb_apps_framework,net_rim_bb_browser,net_rim_bb_email,net_rim_bb_framework_api,net_rim_bb_messaging,net_rim_cldc,net_rim_os,net_rim_xml,net_rim_xml_org

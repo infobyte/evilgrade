@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin-left: 20px;
+				margin-top: 20px;
+				margin-right: 20px;
+				margin-bottom: 20px;
+				background: #FFFFFF;
+			}
+			.text1 {
+				color: #000000;
+				font-size: 12px;
+				font-family: Verdana, Arial, Helvetica, sans-serif;
+				line-height: 175%;
+			}
+			.text2 {
+				color: #555555;
+				font-size: 10px;
+				font-family: Verdana, Arial, Helvetica, sans-serif;
+				line-height: 175%;
+			}
+			.text3 {
+				color: #000000;
+				font-size: 10px;
+				font-family: Verdana, Arial, Helvetica, sans-serif;
+				line-height: 175%;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div align="left">
+			<table border="0" width="100%"><tr>
+				<td width="100" align="left" valign="top">
+					<!--img src="images/updater.gif"width="80" height="80" border="0" align="left"-->
+					
+				</td>
+				<td>
+					<p class="text1">The JetPhoto Studio you are using has already been the latest version(V4.6.0). It's unnecessary to update this software currently. <br>This program checks the software updates weekly. All available downloads and related services are listed below.</p>
+				</td>
+			</tr></table>
+			
+			
+			
+			
+            
+			<p class="text1">
+			<b>JetPhoto Software Downloads</b></p>
+			<hr size=1>
+
+			<table border="0" width="100%"><tr>
+				<td width="450"> <br/>
+					<div class="text1">JetPhoto Studio for Mac OS X</div>
+					<div class="text2">
+					Latest Version: 4.6.2 / 
+					Issue Date: 09/20/2009</div>
+					<br/>
+					<!--<div class="text3">Updated Features:<br></div>-->
+				</td>
+				<td valign="top"> <br/>
+					<div class="text1"><a href="http://www.jetphotosoft.com/web/?s=downloads#jpstudio_mac" target="_blank">
+					Get Info &amp; Download &gt;</a></div>
+				</td>
+			</tr></table>
+
+			<hr size=1>
+
+			<table border="0" width="100%"><tr>
+				<td width="450"> <br/>
+					<div class="text1">JetPhoto Studio for Windows</div>
+					<div class="text2">
+					Latest Version: 4.6.5 / 
+					Issue Date: 15/20/2009</div>
+					<br/>
+					<!--<div class="text3">Updated Features:<br></div>-->
+				</td>
+				<td valign="top"> <br/>
+					<div class="text1"><a href="http://www.jetphotosoft.com/web/?s=downloads#jpstudio_win" target="_blank">
+					Get Info &amp; Download &gt;</a></div>
+				</td>
+			</tr></table>
+
+			<hr size=1>
+
+			<table border="0" width="100%"><tr>
+				<td width="450"> <br/>
+					<div class="text1">JetPhoto Server Pro</div>
+					<div class="text2">
+					Latest Version: 2.0.4 / 
+					Issue Date: 09/20/2009</div>
+					<br/>
+					<!--<div class="text3"></div>-->
+				</td>
+				<td valign="top"> <br/>
+					<div class="text1"><a href="http://www.jetphotosoft.com/web/?s=downloads#jpserver_pro" target="_blank">
+					Get Info &amp; Download &gt;</a></div>
+				</td>
+			</tr></table>
+
+		</div>
+	</body>
+</html>

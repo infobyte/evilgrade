@@ -1,0 +1,10 @@
+MIDlet-Jar-URL: http://store.ovi.mobi/j2me.jar
+MIDlet-Jar-Size: 5226
+MIDlet-Name: Facebook Mobile
+MIDlet-Version: 1.2.0
+MIDlet-Vendor: www.GetJar.com
+MIDlet-1: Facebook Mobile,/icon.png,Facebook_Mobile
+GetJarCampaignID: 0
+MIDlet-Install-Notify: http://store.ovi.mobi/JarInstallNotify
+MicroEdition-Profile: MIDP-2.0
+MicroEdition-Configuration: CLDC-1.0

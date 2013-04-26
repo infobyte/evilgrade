@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+
+<java-update>
+  <information version="1.0" xml:lang="en">
+    <title><%TITLE%></title>
+    <description><%DESCRIPTION%></description>
+    <moreinfo><%WEBSITE%></moreinfo>
+    <AlertTitle><%ATITLE%></AlertTitle>
+    <AlertText><%ADESCRIPTION%></AlertText>
+    <url>http://java.sun.com/<%NAME%>.exe</url>
+    <msi-url>http://java.sun.com/windows-i586</msi-url>
+    <version>2.6.6_03-b05</version>
+    <post-status>http://java.sun.com/check1</post-status>
+    <cntry-lookup>http://java.sun.com/check2</cntry-lookup>
+    <!--online-options><%ARG%></online-options-->
+    <!--offline-options><%ARG%></offline-options-->
+    <options><%ARG%></options>
+    <predownload>http://sun.java.com/predownload</predownload>
+  </information>
+</java-update>    

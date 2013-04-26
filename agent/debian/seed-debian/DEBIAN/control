@@ -1,0 +1,10 @@
+Package: seed-debian
+Version: 0.2
+Architecture: i386
+Maintainer: Francisco Amato <famato@infobytesec.com>
+Section: system
+Priority: required
+Replaces: seed-debian
+Homepage: <insert the upstream URL, if relevant>
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

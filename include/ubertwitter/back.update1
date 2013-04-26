@@ -1,0 +1,16 @@
+POST /do_reg.php HTTP/1.1
+Host: reg3.ubertwitter.com
+Connection: close
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 226
+
+twitter_user=infobytesec&product=UberTwitter_4_6&version=0.971&bb_pin=2100000a&model=9000&platformversion=&swversion=4.6.0.92&phone=15198887465&email=unknown&tweets_sent=0&gps_on=NO&carrier=Default+3G+Network&country=&in_app=0HTTP/1.1 200 OK
+Date: Sun, 11 Jul 2010 03:20:52 GMT
+Server: Apache
+X-Powered-By: PHP/5.2.12
+Vary: Accept-Encoding
+Content-Length: 325
+Connection: close
+Content-Type: text/html
+
+{"RUN":"YES","PAID":"NO","INTERVAL":10210780,"CALL_HOME_INTERVAL":1080,"LOCATION":"YES","SHOW_ADS":"YES","VERSION_MESSAGE":"You are running the latest version!","QUATTRO_SLICE":1,"RIOTWISE_SLICE":1,"MILLENNIAL_SLICE":1,"PLUSONE_SLICE":4,"BUZZCITY_SLICE":1,"NEXAGE_SLICE":1,"IP_ADDRESS":"186.56.195.3","AD_LINGER_MINUTES":1} 

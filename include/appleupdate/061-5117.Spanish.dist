@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<installer-gui-script minSpecVersion='1'>
+    <platforms>
+        <Windows arch="intel"/>
+    </platforms>
+    <choices-outline>
+        <line choice='manual'/>
+    </choices-outline>
+    <title>SU_TITLE</title>
+    <choice id='manual' title="SU_TITLE">
+        <pkg-ref id='manual' auth='Root'>.</pkg-ref>
+    </choice>
+    <choice id='manual' title='SU_TITLE'/>
+    <choice id='manual' versStr='SU_VERS'/>
+    <license mime-type="text/rtf" language="Spanish"><![CDATA[{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf270
+{\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;}
+\deftab720
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+
+\f0\b\fs20 \cf0 \
+ESPA\'d1OL\
+\
+APPLE INC. \
+\pard\pardeftab720\ri0\ql\qnatural
+\cf0 LICENCIA DE SOFTWARE ITUNES
+\b0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ql\qnatural
+
+\b \cf0 \
+ROGAMOS LEA DETENIDAMENTE EL PRESENTE CONTRATO DE LICENCIA DE SOFTWARE (EN ADELANTE DENOMINADO "LICENCIA") ANTES DE UTILIZAR EL SOFTWARE APPLE. LA UTILIZACI\'d3N DEL SOFTWARE APPLE SE INTERPRETAR\'c1 COMO UN HECHO INEQU\'cdVOCO DE QUE ACEPTA LOS T\'c9RMINOS Y CONDICIONES DE ESTA LICENCIA. SI NO ACEPTA DICHAS CONDICIONES, NO HAGA USO DE ESTE SOFTWARE O DEVU\'c9LVALO AL ESTABLECIMIENTO DONDE LO ADQUIRI\'d3 PARA SU REEMBOLSO. EN CASO DE QUE HAYA ACCEDIDO AL SOFTWARE APPLE ELECTR\'d3NICAMENTE, HAGA CLIC EN EL BOT\'d3N 
+\b0 "
+\b NO ACEPTO
+\b0 "
+\b . EN EL SUPUESTO DE QUE EL SOFTWARE APPLE EST\'c9 INCLUIDO EN EL PRODUCTO DE HARDWARE QUE HAYA ADQUIRIDO, DEBER\'c1 DEVOLVER EL PAQUETE COMPLETO DE HARDWARE Y SOFTWARE PARA PODER SOLICITAR SU REEMBOLSO. \
+\
+NOTA IMPORTANTE: Este software puede utilizarse para reproducir materiales y la Licencia se le concede exclusivamente para la reproducci\'f3n de materiales sin derechos de autor, materiales de los que usted sea el propietario del copyright o materiales que est\'e9 legalmente autorizado a reproducir. Asimismo, este software puede usarse para acceder a archivos de m\'fasica de otros ordenadores y reproducirlos remotamente. El acceso remoto a m\'fasica protegida por derechos de autor s\'f3lo est\'e1 autorizado para usos personales leg\'edtimos o para otros usos permitidos legalmente. Si no est\'e1 seguro de cu\'e1les son los derechos que posee para copiar cualquier material, p\'f3ngase en contacto con su asesor jur\'eddico. \
+\
+1. General. 
+\b0 Apple Inc. ("Apple") le concede (no vende) una licencia para el uso, \'fanicamente bajo los t\'e9rminos de esta Licencia, del software, la documentaci\'f3n y cualesquiera tipos que acompa\'f1an esta Licencia ya sea en disco, en memoria de s\'f3lo lectura del ordenador (ROM), en cualquier otro soporte o de cualquier otra forma (el "Software Apple"). Apple se reserva todos los derechos no concedidos a usted de forma expresa. Los derechos que aqu\'ed se conceden s\'f3lo incluyen los de propiedad intelectual de Apple y sus licenciantes sobre el Software Apple y no incorporan ninguna otra patente ni derechos de propiedad intelectual. Si bien usted adquiere la propiedad del soporte en el cual el Software Apple est\'e1 grabado, Apple y/o el/los licenciante/s de Apple conservan la propiedad del Software Apple. Los derechos concedidos de conformidad con los t\'e9rminos de la presente Licencia afectan a cualquier actualizaci\'f3n del software que sustituya y/o complemente el producto original del Software Apple, a menos que dicha actualizaci\'f3n contenga una licencia propia. \
+\
+
+\b 2. Usos permitidos y restricciones de la Licencia. 
+\b0 Esta Licencia le permite instalar y utilizar el Software Apple. El Software Apple puede utilizarse para reproducir materiales, siempre y cuando se trate de materiales sin derechos de autor, materiales de los que usted sea el propietario del copyright o materiales que est\'e9 autorizado a reproducir legalmente.
+\b  
+\b0 El Software Apple no puede estar disponible a trav\'e9s de una red que permita utilizarlo en m\'faltiples ordenadores a la vez. Usted puede hacer una copia del Software Apple en formato legible por el ordenador \'fanicamente a efectos de copia de seguridad, siempre y cuando \'e9sta contenga toda la informaci\'f3n relativa a derechos de autor y copyright, u otros datos relativos a la propiedad, contenida en el original. Salvo lo expresamente permitido en esta Licencia o por la ley vigente, usted no puede copiar, descompilar, obtener el c\'f3digo o desensamblar el Software Apple, as\'ed como tampoco modificar o crear trabajos derivados o basados en el Software Apple ni en ninguna de sus partes. EL SOFTWARE APPLE NO EST\'c1 DESTINADO A SER UTILIZADO EN ACTIVIDADES DE PLANTAS NUCLEARES, NAVEGACI\'d3N A\'c9REA, SISTEMAS DE COMUNICACI\'d3N, SISTEMAS PARA EL CONTROL DEL TR\'c1FICO A\'c9REO, INSTALACIONES HOSPITALARIAS U OTROS EQUIPOS EN LOS QUE UN FALLO DEL SOFTWARE APPLE PODR\'cdA CAUSAR LA MUERTE, DA\'d1OS PERSONALES GRAVES O SERIOS DA\'d1OS AL MEDIO AMBIENTE. \
+\
+
+\b 3. Transmisi\'f3n. 
+\b0 Usted no puede alquilar, arrendar, prestar o distribuir el Software Apple. Sin embargo, puede transmitir los derechos contenidos en esta Licencia de forma permanente y una sola vez siempre y cuando: a) transmita la totalidad del Software Apple, incluidos todos los componentes, los soportes originales, la documentaci\'f3n impresa y esta Licencia a un tercero; b) no conserve ninguna copia, total o parcial, del Software Apple, incluidas las copias almacenadas en un ordenador o en cualquier otro dispositivo de almacenamiento y, c) la otra parte lea y acepte los t\'e9rminos de esta Licencia.\
+\
+
+\b 4. Consentimiento para la utilizaci\'f3n de datos.
+\b0  Usted manifiesta su conformidad para que Apple y sus filiales recopilen y utilicen informaci\'f3n t\'e9cnica y otro tipo de informaci\'f3n relacionada, entre la que se incluye, con car\'e1cter meramente enunciativo y no limitativo, los datos t\'e9cnicos sobre su ordenador, software de sistema, aplicaciones y dispositivos perif\'e9ricos, que se recoja peri\'f3dicamente como parte de los servicios de actualizaci\'f3n de software, soporte t\'e9cnico del producto y otros servicios (si los hubiere) que se le suministren en relaci\'f3n al Software Apple o con el fin de verificar el cumplimiento de los t\'e9rminos de la presente licencia. Apple se compromete a utilizar esta informaci\'f3n \'fanica y exclusivamente para mejorar sus productos o para proporcionarle otros servicios o tecnolog\'edas, siempre y cuando en dicha informaci\'f3n no se le identifique a usted personalmente.\
+\
+
+\b 5. iTunes Store y otros servicios.
+\b0  Este software permite el acceso a la tienda de m\'fasica iTunes Store de Apple en Internet, en la que se ponen a la venta descargas musicales, as\'ed como otros servicios (colectiva e individualmente, los "Servicios"). Para poder utilizar estos Servicios, se requiere acceso a Internet. Asimismo, el uso de ciertos Servicios requiere la aceptaci\'f3n de los t\'e9rminos y las condiciones del servicio, que podr\'e1 consultar antes de utilizar dichos Servicios.\
+\
+\pard\pardeftab720\ql\qnatural
+\cf0 El uso de este software en relaci\'f3n con una cuenta de iTunes Store se\'a0interpretar\'e1\'a0como un hecho inequ\'edvoco de su aceptaci\'f3n de las condiciones\'a0del servicio iTunes\'a0Store, a las que puede acceder desde la p\'e1gina de inicio de iTunes Store.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ql\qnatural
+\cf0 \
+Usted reconoce que al utilizar cualquiera de los Servicios, podr\'e1 encontrar contenido que podr\'eda considerar ofensivo, indecente o censurable, y en el que podr\'eda, o no, identificarse la existencia de lenguaje expl\'edcito. No obstante lo anterior, usted consiente en utilizar los Servicios a su propia cuenta y riesgo, y acepta que Apple no ser\'e1 responsable frente a usted del contenido que pueda considerarse ofensivo, indecente o censurable. Los tipos de contenido (incluyendo g\'e9neros, subg\'e9neros y categor\'edas y subcategor\'edas de podcasts o similares) y sus descripciones, se proporcionan por conveniencia, y usted reconoce y est\'e1 de acuerdo en que Apple no garantiza su adecuaci\'f3n.\
+\
+Es posible que determinados Servicios incluyan materiales de terceros o enlaces a sitios web de terceros. Usted reconoce y est\'e1 de acuerdo en que Apple no ser\'e1 responsable de examinar o evaluar el contenido o la adecuaci\'f3n de dichos materiales o sitios web de terceros. Apple no garantiza, respalda, ni asume y no asumir\'e1 responsabilidad por ning\'fan material o sitio web de terceras partes o por ning\'fan otro material, producto o servicio de terceras partes. Los enlaces a otros sitios web se proporcionan exclusivamente para su comodidad. Usted se compromete a no utilizar ning\'fan material de terceros en forma alguna que pueda infringir o vulnerar los derechos de cualquier otra parte, y que Apple no ser\'e1 responsable en modo alguno de tal utilizaci\'f3n por su parte.\
+\
+Usted reconoce que los Servicios, incluyendo a t\'edtulo enunciativo, que no limitativo, los gr\'e1ficos, los clips de audio y el contenido editorial, contienen informaci\'f3n y material de car\'e1cter privado que son propiedad de Apple y/o sus licenciantes, y est\'e1n protegidos por la legislaci\'f3n aplicable sobre propiedad intelectual y por otras leyes, incluyendo a t\'edtulo enunciativo, que no limitativo, las leyes sobre derechos de autor, y se compromete a no usar en modo alguno dicha informaci\'f3n o materiales de car\'e1cter privado, salvo en relaci\'f3n con el uso que haga de los Servicios de conformidad con los t\'e9rminos del presente contrato. Ninguna parte de los Servicios podr\'e1 ser reproducida en forma o modo alguno. Usted se obliga a no modificar, ceder en alquiler, arrendamiento o pr\'e9stamo, vender, distribuir o crear trabajos derivados de los Servicios en modo alguno, y no explotar\'e1 los Servicios de ning\'fan modo no autorizado (por ejemplo, a t\'edtulo enunciativo y no limitativo, sobrepasando o sobrecargando la capacidad de la red). \
+\
+Apple y sus licenciantes se reservan el derecho a modificar, suspender, retirar o bloquear el acceso a cualquiera de los Servicios en cualquier momento y sin previo aviso. Apple no ser\'e1 responsable en ning\'fan caso de la eliminaci\'f3n o desactivaci\'f3n del acceso a ninguno de tales Servicios. Apple podr\'e1 asimismo imponer l\'edmites al uso de determinados Servicios o al acceso a los mismos, en cualquier caso y sin previo aviso ni responsabilidad. \
+\
+
+\b 6. Expiraci\'f3n de la Licencia. 
+\b0 Esta Licencia tendr\'e1 vigencia hasta que sea revocada o resuelta. Los derechos que le confiere esta Licencia tambi\'e9n perder\'e1n su vigencia autom\'e1ticamente sin el previo aviso de Apple si incumple cualesquiera t\'e9rminos contemplados en ella. Cuando \'e9sta deje de estar en vigor, deber\'e1 cesar el uso del Software Apple y destruir todas las copias, totales o parciales, de dicho software.\
+\
+
+\b 7. Garant\'eda limitada sobre los soportes. 
+\b0 Apple garantiza que los soportes en los cuales est\'e1 grabado y se distribuye el Software Apple carecen de defectos en los materiales y fabricaci\'f3n en circunstancias normales de uso y durante un plazo de noventa (90) d\'edas desde el momento de la adquisici\'f3n inicial al por menor. Su \'fanico derecho bajo esta Secci\'f3n ser\'e1, a opci\'f3n de Apple, el reembolso del precio de compra del producto que conten\'eda el Software Apple o la sustituci\'f3n del Software Apple, que ser\'e1 devuelto a Apple o a un representante autorizado de Apple con una copia del recibo. ESTA GARANT\'cdA LIMITADA Y CUALESQUIERA GARANT\'cdAS IMPL\'cdCITAS Y/O CONDICIONES RELATIVAS A LOS SOPORTES, INCLUYENDO GARANT\'cdAS IMPL\'cdCITAS Y/O CONDICIONES DE COMERCIABILIDAD, CALIDAD SATISFACTORIA O IDONEIDAD PARA UN FIN DETERMINADO, EST\'c1N LIMITADAS A LA DURACI\'d3N DE NOVENTA (90) D\'cdAS DESDE LA FECHA DE ADQUISICI\'d3N AL POR MENOR. ALGUNAS LEGISLACIONES NO PERMITEN LAS LIMITACIONES RESPECTO A LA DURACI\'d3N DE LAS GARANT\'cdAS IMPL\'cdCITAS, POR LO CUAL EN DICHO CASO LA LIMITACI\'d3N MENCIONADA ANTERIORMENTE PODR\'cdA NO SERLE APLICABLE. LA GARANT\'cdA LIMITADA PREVISTA EN ESTE APARTADO ES LA \'daNICA QUE SE LE OFRECE Y SUSTITUYE A CUALESQUIERA OTRAS (SI LAS HUBIERA), DERIVADAS DE CUALQUIER TIPO DE DOCUMENTACI\'d3N O PAQUETE. ESTA GARANT\'cdA LIMITADA LE CONFIERE DERECHOS ESPEC\'cdFICOS. USTED PUEDE TENER TAMBI\'c9N OTROS DERECHOS EN FUNCI\'d3N DEL DERECHO IMPERATIVO APLICABLE.\
+\
+
+\b 8. Exclusi\'f3n de garant\'edas. 
+\b0 USTED RECONOCE Y ACEPTA DE FORMA EXPRESA QUE EL USO DEL SOFTWARE APPLE (TAL Y COMO SE HA DEFINIDO ANTERIORMENTE) Y LOS SERVICIOS (TAL Y COMO SE DEFINEN M\'c1S ADELANTE) SE REALIZA A SU EXCLUSIVO RIESGO, Y QUE USTED ASUME TOTALMENTE EL RIESGO RELATIVO A LA CALIDAD SATISFACTORIA, EL RENDIMIENTO, LA EXACTITUD Y EL ESFUERZO. SALVO EN LO ESTIPULADO EN LA GARANT\'cdA LIMITADA SOBRE LOS SOPORTES MENCIONADA ANTERIORMENTE Y HASTA LOS L\'cdMITES PERMITIDOS POR LA LEY VIGENTE, EL SOFTWARE APPLE Y LOS SERVICIOS SE SUMINISTRAN "TAL Y COMO SE PRESENTAN", CON TODOS SUS POSIBLES DEFECTOS Y SIN GARANT\'cdAS DE NING\'daN TIPO, Y APPLE Y LOS LICENCIANTES DE APPLE (DENOMINADOS DE FORMA CONJUNTA "APPLE" A LOS EFECTOS DE LAS SECCIONES 8 Y 9) EXCLUYEN TODAS LAS GARANT\'cdAS Y/O CONDICIONES, EXPRESAS, IMPL\'cdCITAS O LEGALES, INCLUYENDO, CON CAR\'c1CTER MERAMENTE ENUNCIATIVO Y NO LIMITATIVO, LAS GARANT\'cdAS Y/O CONDICIONES IMPL\'cdCITAS DE COMERCIABILIDAD, DE CALIDAD SATISFACTORIA, DE IDONEIDAD PARA UN FIN DETERMINADO, DE EXACTITUD, DE DISFRUTE Y DE NO INFRACCI\'d3N DE DERECHOS DE TERCEROS, TODAS EN RELACI\'d3N CON EL SOFTWARE APPLE Y LOS SERVICIOS. APPLE NO GARANTIZA, SIN PERJUICIO DEL USO Y DISFRUTE QUE USTED HAGA DEL SOFTWARE APPLE O LOS SERVICIOS, QUE LAS FUNCIONES CONTENIDAS EN EL SOFTWARE APPLE O LOS SERVICIOS SATISFAGAN SUS NECESIDADES, QUE EL SOFTWARE APPLE O LOS SERVICIOS FUNCIONEN ININTERRUMPIDAMENTE O SIN ERRORES O QUE LOS DEFECTOS DEL SOFTWARE APPLE O LOS SERVICIOS SER\'c1N CORREGIDOS. NINGUNA INFORMACI\'d3N O ASESORAMIENTO ESCRITO O VERBAL FACILITADO POR APPLE O POR UN REPRESENTANTE AUTORIZADO DE APPLE CONSTITUIR\'c1 GARANT\'cdA ALGUNA. EN EL SUPUESTO DE QUE EL SOFTWARE APPLE O LOS SERVICIOS RESULTARAN SER DEFECTUOSOS, USTED ASUMIR\'c1 EL COSTE \'cdNTEGRO DE TODAS LAS TAREAS DE MANTENIMIENTO, REPARACI\'d3N Y CORRECCI\'d3N NECESARIAS. HABIDA CUENTA DE QUE LA NORMATIVA IMPERATIVA DE ALGUNOS PA\'cdSES NO PERMITE LA EXCLUSI\'d3N DE GARANT\'cdAS IMPL\'cdCITAS O LIMITACIONES A LOS DERECHOS LEGALMENTE PREVISTOS DEL CONSUMIDOR, LA ANTERIOR EXCLUSI\'d3N Y LIMITACIONES PUEDEN NO SERLE APLICABLES. \
+\
+
+\b 9. L\'edmite de responsabilidad. 
+\b0 APPLE NO SER\'c1 RESPONSABLE EN NING\'daN CASO, DENTRO DE LOS L\'cdMITES LEGALES, DE LOS DA\'d1OS PERSONALES O DEL LUCRO CESANTE O DA\'d1O EMERGENTE, NI DE LOS DA\'d1OS ESPECIALES, DIRECTOS O INDIRECTOS, INCLUYENDO, CON CAR\'c1CTER MERAMENTE ENUNCIATIVO Y NO LIMITATIVO, POR LUCRO CESANTE, LOS DA\'d1OS POR LA P\'c9RDIDA DE DATOS, LA INTERRUPCI\'d3N DE LA ACTIVIDAD EMPRESARIAL O CUALQUIER OTRO TIPO DE DA\'d1OS O P\'c9RDIDAS COMERCIALES, RESULTANTES O RELACIONADOS CON EL USO O EL MAL USO DEL SOFTWARE APPLE O LOS SERVICIOS, COMO QUIERA QUE HAYA SIDO CAUSADO E INDEPENDIENTEMENTE DE LA TEOR\'cdA DE LA RESPONSABILIDAD CIVIL (RESPONSABILIDAD CONTRACTUAL O EXTRACONTRACTUAL U OTROS) E INCLUSO SI SE HA INFORMADO A APPLE DE LA POSIBILIDAD DE ESTOS DA\'d1OS. ALGUNOS PA\'cdSES NO PERMITEN LA LIMITACI\'d3N DE LA RESPONSABILIDAD POR DA\'d1OS PERSONALES, DEL LUCRO CESANTE O DA\'d1O EMERGENTE, DIRECTO O INDIRECTO, POR LO CUAL ESTA LIMITACI\'d3N PUEDE NO SERLE APLICABLE. La responsabilidad total de Apple por da\'f1os y perjuicios (distintos de los exigidos por la ley vigente en caso de da\'f1os personales) no exceder\'e1, en ning\'fan caso, la cantidad de cincuenta d\'f3lares estadounidenses (50 USD). Las limitaciones anteriormente mencionadas ser\'e1n vigentes incluso si la citada reparaci\'f3n incumple su objetivo esencial.\
+\
+
+\b 10. Control de las exportaciones.
+\b0  Usted no podr\'e1 utilizar, ni tampoco exportar o reexportar, el Software Apple, salvo en la forma permitida por la legislaci\'f3n de Estados Unidos y del pa\'eds en el cual se obtuvo el Software Apple. En particular, pero sin estar limitado a ello, el Software Apple no podr\'e1 ser exportado o reexportado a: a) ning\'fan pa\'eds que haya sido objeto de embargo por parte de Estados Unidos, o b) nadie que figure en la lista de ciudadanos especialmente designados del Departamento del Tesoro de Estados Unidos o en la tabla de personas o entidades denegadas del Departamento de Comercio de Estados Unidos. La utilizaci\'f3n por su parte del Software Apple se considerar\'e1 un hecho inequ\'edvoco de su manifestaci\'f3n y garant\'eda de no residir en ninguno de tales pa\'edses ni de figurar en ninguna de tales listas. Asimismo, se compromete a no usar el Software Apple con ninguna finalidad prohibida por la legislaci\'f3n estadounidense, incluyendo, con car\'e1cter meramente enunciativo y no limitativo, el desarrollo, el dise\'f1o, la fabricaci\'f3n o la producci\'f3n de misiles o armas nucleares, qu\'edmicas o biol\'f3gicas.\
+\
+
+\b 11. La Administraci\'f3n como usuario final. 
+\b0 El Software de Apple y la documentaci\'f3n relacionada se consideran "art\'edculos comerciales" seg\'fan la definici\'f3n del t\'e9rmino incluida en la secci\'f3n 48 C.F.R \'a72.101 del C\'f3digo de Normas Federales de Estados Unidos, y constituyen "software inform\'e1tico para uso comercial" y "documentaci\'f3n de software inform\'e1tico para uso comercial", conforme a la definici\'f3n de estos t\'e9rminos en las secciones 48 C.F.R. \'a712.212 y 48 C.F.R. \'a7227.7202, seg\'fan proceda. En virtud de las secciones 48 C.F.R. \'a712.212 y 48 C.F.R. \'a7227.7202-1 a \'a7227.7202-4 del mencionado C\'f3digo, seg\'fan proceda, el software inform\'e1tico para uso comercial y la documentaci\'f3n inform\'e1tica de software para uso comercial se distribuyen y conceden bajo Licencia a los usuarios finales de la Administraci\'f3n de Estados Unidos \'fanicamente a los efectos de a) art\'edculos comerciales y b) con los derechos concedidos a todos los dem\'e1s usuarios de acuerdo con los t\'e9rminos y condiciones estipulados en el presente documento. Se hace reserva de los derechos no publicados de conformidad con las leyes de copyright de Estados Unidos.\
+\
+
+\b 12. Ley aplicable e independencia de las estipulaciones. 
+\b0 Esta Licencia se regir\'e1 e interpretar\'e1 seg\'fan las leyes del estado de California, seg\'fan se aplica a acuerdos celebrados en California por residentes en California. La presente Licencia no estar\'e1 regida por la convenci\'f3n de las Naciones Unidas sobre contratos para la venta internacional de mercader\'edas, la aplicaci\'f3n de la cual se excluye expresamente. Si, por cualquier raz\'f3n, un tribunal competente declarara no exigible o ineficaz cualquier disposici\'f3n de la presente Licencia o parte de la misma, el resto de la presente Licencia conservar\'e1 plena vigencia y efecto. \
+\
+
+\b 13. Contrato \'edntegro; idioma. 
+\b0 La presente Licencia constituye el acuerdo completo entre las partes respecto a la utilizaci\'f3n del Software Apple al que se concede Licencia en este documento y sustituye todos los acuerdos anteriores o actuales relativos a su objeto, con la excepci\'f3n de los t\'e9rminos y condiciones adicionales que deber\'e1 aceptar si decide acceder a la tienda de Apple en Internet y que regir\'e1n el uso de dicho recurso y de todas las descargas que adquiera a trav\'e9s del mismo. La presente Licencia \'fanicamente podr\'e1 ser modificada mediante acuerdo escrito firmado por Apple. Las traducciones de esta Licencia se otorgan con el fin de satisfacer las demandas de los usuarios locales y, en caso de que surgiera alg\'fan conflicto entre la versi\'f3n en lengua inglesa y cualquiera de las versiones en los dem\'e1s idiomas, prevalecer\'e1 siempre la primera.\
+\
+
+\b 14. T\'e9rminos y condiciones del servicio y software de terceras partes.\
+A. T\'e9rminos de uso de Gracenote CDDB. 
+\b0 Esta aplicaci\'f3n contiene software de Gracenote, Inc. de Berkeley, California (denominado "Gracenote"). Este software de Gracenote (el "cliente Gracenote CDDB") permite que esta aplicaci\'f3n efect\'fae la identificaci\'f3n del disco en l\'ednea y obtenga informaci\'f3n sobre la m\'fasica, incluyendo el nombre, artista, pista y t\'edtulo ("datos Gracenote") de los servidores en l\'ednea ("servidores Gracenote CDDB") y efect\'fae otras funciones. Usted puede usar s\'f3lo los datos Gracenote mediante las funciones para el Usuario final de este software de aplicaci\'f3n.\
+\
+Usted acepta que usar\'e1 los datos Gracenote, el cliente y los servidores Gracenote CDDB s\'f3lo para su uso personal y no comercial. Usted acepta no asignar, copiar, transferir ni transmitir el cliente Gracenote CDDB ni los datos Gracenote a ning\'fan tercero. USTED ACEPTA NO USAR NI EXPLOTAR DATOS GRACENOTE, EL CLIENTE NI LOS SERVIDORES GRACENOTE CDDB, EXCEPTO SEG\'daN SE PERMITE EXPRESAMENTE EN ESTE DOCUMENTO.\
+\
+Usted acepta que su licencia no exclusiva para usar los datos Gracenote, el cliente y los servidores Gracenote CDDB terminar\'e1 si infringe estas restricciones. Si su licencia termina, usted acepta cesar todo uso de los datos Gracenote, el cliente y los servidores Gracenote CDDB. Gracenote se reserva todos los derechos de los datos Gracenote, el cliente y los servidores Gracenote CDDB, incluyendo todos los derechos de propiedad. Bajo ninguna circunstancia Gracenote asumir\'e1 responsabilidad alguna de pagarle por la informaci\'f3n que usted entregue. Usted acepta que Gracenote, Inc. puede hacer valer sus derechos seg\'fan este contrato contra usted directamente en su propio nombre.\
+\
+El servicio Gracenote CDDB usa un identificador exclusivo para registrar consultas con fines estad\'edsticos. El objetivo del identificador num\'e9rico asignado al azar es permitir que el servicio Gracenote CDDB cuente las consultas sin saber nada sobre qui\'e9n es usted. Si desea m\'e1s informaci\'f3n, consulte el sitio Web, donde encontrar\'e1 la Pol\'edtica de privacidad de Gracenote para el servicio Gracenote CDDB.\
+ \
+Usted recibir\'e1 licencia para el cliente Gracenote CDDB y cada elemento de los datos Gracenote "TAL CUAL". Gracenote no hace representaci\'f3n ni emite garant\'edas, expresas o impl\'edcitas, sobre la exactitud de los datos de Gracenote contenidos en los servidores Gracenote CDDB. Gracenote se reserva el derecho a eliminar los datos de los servidores Gracenote CDDB o a cambiar las categor\'edas de datos por cualquier motivo que Gracenote considere suficiente. No hay garant\'eda de que el cliente o los servidores Gracenote CDDB est\'e9n libres de errores o que el funcionamiento del cliente o servidores Gracenote CDDB ser\'e1 ininterrumpido. Gracenote no est\'e1 obligado a proporcionar categor\'edas o tipos de datos nuevos mejorados o adicionales que Gracenote pueda decidir proporcionar en el futuro, y tiene la libertad de poner t\'e9rmino a sus servicios en l\'ednea en cualquier momento.\
+\
+GRACENOTE INVALIDA TODAS LAS GARANT\'cdAS EXPRESAS O IMPL\'cdCITAS, INCLUYENDO, PERO SIN LIMITARSE A LAS GARANT\'cdAS IMPL\'cdCITAS DE COMERCIABILIDAD, IDONEIDAD PARA UN FIN EN PARTICULAR, T\'cdTULO E INCUMPLIMIENTO. Gracenote no garantiza los resultados que usted obtendr\'e1 al usar el cliente o el servidor Gracenote CDDB. BAJO NINGUNA CIRCUNSTANCIA GRACENOTE SER\'c1 RESPONSABLE POR DA\'d1OS CONSECUTIVOS O ACCIDENTALES NI POR LA P\'c9RDIDA DE GANANCIAS O INGRESOS.\
+\
+
+\b B. Condiciones del servicio de sintonizaci\'f3n radiof\'f3nica Kerbango.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ql\qnatural
+\cf0 \ul \ulc0 Condiciones del servicio\ulnone . 
+\b0 Al utilizar el servicio de sintonizaci\'f3n radiof\'f3nica Kerbango (en adelante "Kerbango Tuning Service") de 3Com Corporation (en adelante "3Com"), conviene en los siguientes pactos (en adelante "las condiciones del servicio"):\
+\
+
+\b \ul Enlaces de 3Com\ulnone . 
+\b0 Los sitios que aparecen en los resultados de b\'fasqueda o que son objeto de enlaces por parte de Kerbango Tuning Service son propiedad de particulares y/o empresas sobre las que 3Com no ejerce control alguno, y est\'e1n operados por sus respectivos propietarios. 3Com no asume ninguna responsabilidad respecto al contenido de los sitios incluidos en los resultados de b\'fasqueda o que, de cualquier otro modo, sean objeto de enlaces por parte de Kerbango Tuning Service. \
+\
+
+\b \ul S\'f3lo para uso personal\ulnone . 
+\b0 Kerbango Tuning Service se suministra exclusivamente para uso personal con fines no comerciales. Se proh\'edbe expresamente el uso de Kerbango Tuning Service para vender un producto o servicio o para aumentar el n\'famero de visitas de su sitio web con fines comerciales como, por ejemplo, promocionar ventas. Tampoco se permite la recogida de resultados a partir de una b\'fasqueda de Kerbango para reproducirlos y exhibirlos con otro formato, la creaci\'f3n en su sitio web de duplicados de la p\'e1gina de inicio del servicio Kerbango de 3Com o de sus p\'e1ginas de resultados, o el env\'edo de consultas autom\'e1ticas al sistema de b\'fasqueda de Kerbango sin la autorizaci\'f3n expresa de 3Com. \
+\
+Si desea realizar un uso comercial de Kerbango Tuning Service, debe suscribir un acuerdo con 3Com con tal fin. Para obtener m\'e1s informaci\'f3n, puede ponerse en contacto con la compa\'f1\'eda a trav\'e9s de la siguiente direcci\'f3n de correo: \ul sales@kerbango.com\ulnone .\
+\
+
+\b \ul Modificaciones en los t\'e9rminos y condiciones del servicio y en el servicio de sintonizaci\'f3n radiof\'f3nica Kerbango Tuning Service\ulnone . 
+\b0 3Com tiene derecho a modificar o interrumpir sus servicios temporalmente, por cualquier motivo y sin previo aviso, as\'ed como a interrumpir el servicio con o sin previo aviso y sin responsabilidad alguna ante usted, otro usuario o terceras partes. 3Com se reserva el derecho a modificar las condiciones del servicio sin previo aviso. \
+\
+
+\b \ul Exclusi\'f3n de garant\'edas\ulnone . 
+\b0 3Com declina toda responsabilidad acerca de la exactitud, el contenido, la integridad, la legalidad, la fiabilidad, la operabilidad o la disponibilidad de la informaci\'f3n o los materiales que aparecen en los resultados de Kerbango Tuning Service. 3Com tampoco ser\'e1 responsable de la eliminaci\'f3n, incapacidad para almacenar, entrega err\'f3nea o demora en la entrega de informaci\'f3n o material de cualquier tipo. 3Com tampoco asume responsabilidad alguna por los da\'f1os que puedan derivarse de la descarga o el acceso a informaci\'f3n o material de Internet a trav\'e9s de Kerbango Tuning Service. \
+\
+KERBANGO TUNING SERVICE SE SUMINISTRA "TAL Y COMO SE PRESENTA", SIN GARANT\'cdAS DE NING\'daN TIPO. 3COM EXCLUYE EXPRESAMENTE, HASTA EL M\'c1XIMO ALCANCE PERMITIDO POR LA LEY, TODAS LAS GARANT\'cdAS EXPRESAS, IMPL\'cdCITAS Y LEGALES, INCLUYENDO, CON CAR\'c1CTER MERAMENTE ENUNCIATIVO Y NO LIMITATIVO, LAS GARANT\'cdAS DE COMERCIABILIDAD, IDONEIDAD PARA UN USO DETERMINADO Y NO VIOLACI\'d3N DE LOS DERECHOS DE PROPIEDAD. 3COM EXCLUYE CUALQUIER GARANT\'cdA CON RESPECTO A LA SEGURIDAD, FIABILIDAD, VIGENCIA Y FUNCIONAMIENTO DE KERBANGO TUNING SERVICE, AS\'cd COMO A LA INFORMACI\'d3N, EL ASESORAMIENTO, LOS SERVICIOS PRESTADOS O LOS BIENES ADQUIRIDOS O ANUNCIADOS A TRAV\'c9S DE \'c9L O DE CUALQUIER V\'cdNCULO PROPORCIONADO POR PARTE DE KERBANGO TUNING SERVICE. \
+\
+POR LA PRESENTE, USTED CONSIENTE EN QUE EL MATERIAL O LOS DATOS QUE DESCARGUE U OBTENGA DE CUALQUIER OTRO MODO A TRAV\'c9S DE KERBANGO SON POR SU PROPIA CUENTA Y RIESGO, Y QUE USTED SER\'c1 EL \'daNICO RESPONSABLE DE LOS DA\'d1OS QUE PUEDAN OCASIONARSE EN SU SISTEMA O DE LA P\'c9RDIDA DE DATOS QUE PUEDA DERIVARSE DE LA DESCARGA DE TALES MATERIALES O DATOS. \
+\
+ALGUNOS ESTADOS Y JURISDICCIONES NO AUTORIZAN LA EXCLUSI\'d3N DE GARANT\'cdAS IMPL\'cdCITAS, DE MANERA QUE LAS EXCLUSIONES ANTERIORES PUEDE QUE NO LE SEAN APLICABLES. ASIMISMO, ES POSIBLE QUE LE ASISTAN OTROS DERECHOS, QUE VAR\'cdAN DE UN ESTADO A OTRO O DE UNA JURISDICCI\'d3N A OTRA. \
+\
+
+\b \ul L\'edmite de responsabilidad\ulnone . 
+\b0 EN NING\'daN CASO 3COM SER\'c1 RESPONSABLE FRENTE A UN USUARIO POR EL USO INADECUADO O NEGLIGENTE POR PARTE DE \'c9STE DE KERBANGO TUNING SERVICE EN LAS DEMANDAS INTERPUESTAS EN RELACI\'d3N CON LA PRESENTE LICENCIA O EL OBJETO DE LA MISMA. ESTE L\'cdMITE DE RESPONSABILIDAD SE APLICAR\'c1 PARA ANULAR LA COMPENSACI\'d3N POR DA\'d1OS DIRECTOS O INDIRECTOS, EMERGENTES, ESPECIALES, EJEMPLARES O PUNITIVOS CUANDO DICHAS DEMANDAS SE FUNDAMENTEN EN GARANT\'cdAS, CONTRATOS, IL\'cdCITOS CIVILES (INCLUIDA LA NEGLIGENCIA) O DE CUALQUIER OTRO MODO (INCLUSO SI 3COM HA SIDO ADVERTIDA DE LA POSIBILIDAD DE SER DECLARADA RESPONSABLE DE TALES DA\'d1OS). EL L\'cdMITE DE RESPONSABILIDAD SER\'c1 APLICABLE SI LOS DA\'d1OS SE DERIVAN DEL USO INADECUADO O NEGLIGENTE DE LA CONFIANZA EN KERBANGO TUNING SERVICE, AS\'cd COMO DE LA INCAPACIDAD PARA EMPLEARLO CORRECTAMENTE, O BIEN, DE LA INTERRUPCI\'d3N, SUSPENSI\'d3N O CONCLUSI\'d3N DEL MISMO (INCLUIDOS LOS DA\'d1OS Y PERJUICIOS ASUMIDOS POR TERCERAS PARTES). ASIMISMO, EL L\'cdMITE DE RESPONSABILIDAD SER\'c1 IGUALMENTE APLICABLE RESPECTO A LOS DA\'d1OS Y PERJUICIOS INCURRIDOS COMO CONSECUENCIA DE LOS SERVICIOS PRESTADOS O BIENES ADQUIRIDOS O ANUNCIADOS A TRAV\'c9S DE KERBANGO TUNING SERVICE O A TRAV\'c9S DE ENLACES CONTENIDOS EN \'c9L; A LOS GASTOS INCURRIDOS PARA COMPENSAR CON BIENES O SERVICIOS SUSTITUTORIOS Y POR EL LUCRO CESANTE O POR LA P\'c9RDIDA DE DATOS. ADEM\'c1S, EL L\'cdMITE SER\'c1 APLICABLE AL MAL FUNCIONAMIENTO DE KERBANGO TUNING SERVICE O DE CUALQUIER INFORMACI\'d3N O PRODUCTO QUE SE ANUNCIE EN \'c9L O QUE SEA OBJETO DE ENLACES POR PARTE DE \'c9STE, O BIEN QUE EST\'c9 RELACIONADO DE ALG\'daN MODO CON EL MENCIONADO SERVICIO. FINALMENTE, EL L\'cdMITE DE RESPONSABILIDAD SER\'c1 DE APLICACI\'d3N HASTA EL MAYOR ALCANCE PERMITIDO POR LA LEY AUNQUE EXISTA UN FALLO DE INTENCI\'d3N ESENCIAL EN CUALQUIER REMEDIO LIMITADO. \
+\
+ALGUNOS ESTADOS Y OTRAS JURISDICCIONES NO AUTORIZAN LA EXCLUSI\'d3N O LIMITACI\'d3N DE LA RESPONSABILIDAD POR DA\'d1OS EMERGENTES, POR LO QUE ES POSIBLE QUE LOS L\'cdMITES Y EXCLUSIONES ANTERIORES NO LE SEAN APLICABLES. \
+\
+Sin perjuicio de todo lo anterior, 3Com no ser\'e1 responsable por cualquier demora o incumplimiento derivado directa o indirectamente de causas o fen\'f3menos naturales o de causas que escapen a su control razonable, incluyendo, con car\'e1cter meramente enunciativo y no limitativo, las interrupciones en el servicio de Internet, los fallos en sistemas inform\'e1ticos o de telecomunicaciones o de otro tipo, como, por ejemplo, los cortes en el suministro el\'e9ctrico, las huelgas, los conflictos laborales, los tumultos, las insurrecciones, los des\'f3rdenes civiles, la escasez de mano de obra o materiales, los incendios, las inundaciones, los temporales, las explosiones, las causas de fuerza mayor, las guerras, los actos gubernamentales, las sentencias de tribunales nacionales o extranjeros, el incumplimiento de terceras partes o el corte o las fluctuaciones en el abastecimiento de los sistemas de calefacci\'f3n e iluminaci\'f3n o del aire acondicionado. \
+\
+
+\b \ul Disposiciones varias\ulnone . 
+\b0 Las presentes condiciones del servicio se regir\'e1n y se interpretar\'e1n por las leyes del estado de California y no entrar\'e1n en conflicto con las leyes del estado o el pa\'eds en el que resida. Si por el motivo que fuere, un tribunal con jurisdicci\'f3n competente estimase que alguna de las condiciones del servicio, o parte de ellas, no son aplicables, el resto de las condiciones del servicio seguir\'e1n teniendo plena vigencia y efectos. \
+\
+Las presentes condiciones del servicio constituyen el acuerdo \'edntegro entre las partes con respecto al objeto del presente acuerdo y sustituyen a todos los compromisos o acuerdos verbales o por escrito anteriores o actuales sobre el objeto de este acuerdo. La renuncia de cualquiera de los pactos establecidos en las presentes condiciones del servicio s\'f3lo ser\'e1 efectiva por escrito y si va firmada por 3Com. \
+												\
+\pard\pardeftab720\ql\qnatural
+\cf0 EA0367\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ql\qnatural\pardirnatural
+\cf0 26/10/07}]]></license>
+    <choices-outline ui='SoftwareUpdate'>
+        <line choice='su'/>
+    </choices-outline>
+    <choice id='su' suDisabledGroupID='iTunes'>
+        <pkg-ref id='com.apple.swu.AppleMobileDeviceSupport'>AppleMobileDeviceSupport.msi</pkg-ref>
+        <pkg-ref id='com.apple.swu.QuickTime'>QuickTime.msi</pkg-ref>
+        <pkg-ref id='com.apple.swu.Bonjour' arguments='ADDDEFAULT=mDNSResponder' enabled='InstallBonjour()'>Bonjour.msi</pkg-ref>
+        <pkg-ref id='com.apple.swu.SetupAdmin'>SetupAdmin.exe</pkg-ref>
+        <pkg-ref id='com.apple.swu.iTunes'>iTunes.msi</pkg-ref>
+    </choice>
+    <choice id='su' visible='visibleCheck()'/>
+    <choice id='su' title='SU_TITLE' versStr='SU_VERS'/>
+    <choice id='su' description='SU_DESCRIPTION' description-mime-type='text/html'/>
+    <script>
+    
+		function InstallBonjour()
+		{
+		  if ( productInVersionRange("Bonjour", "1.0.104.0", "255.255.65535") )
+		  {
+		    return false;
+		  }
+		  return true;
+		}
+    
+    function visibleCheck()
+    { 
+        // If we don't have a valid ASU, or we already have iTunes 7.7+
+        if ( productInVersionRange("iTunes", "7.7.0.0", "255.255.65535") ||
+             productInVersionRange("Apple Software Update", "0.0.0.0", "2.1.0.0") )
+        {
+           return false;
+        }
+   
+        //Check windows version 
+        var windowsVersion = WindowsVersion();
+        if (windowsVersion == "5.1.2600")
+        {
+            // Running XP, check Service Pack level.
+            var spVersion = GetInstalledServicePackRegistry();
+
+            if (spVersion != "" &amp;&amp; spVersion != "Service Pack 1")
+            {
+                return true;
+            }
+        }
+        // Anything above XP
+        else if (compareVersionStrings(windowsVersion, "5.1.0.0.0") == 1)
+        {
+            //Only show up on 32-bit OS's
+            if ( !isSixtyFourBitOS() )
+            {
+                return true;
+            }
+        }
+
+        //System doesn't meet our conditions    
+        return false;
+    }
+
+		function isSixtyFourBitOS()
+		{
+		  if ( OSArchitecture() != 0 ) {
+		    return true;
+		  } else {                                                                                                                    
+		    return false;
+		  }
+		}
+    
+    function GetInstalledServicePackRegistry()
+    {
+        var spInstalled = RegistryQueryStringValue("HKEY_LOCAL_MACHINE", "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion", "CSDVersion");
+        log("Installed Service Pack (Registry): " + spInstalled);
+        return spInstalled;
+    }
+    
+    function productInVersionRange(productName, minVersion, maxVersion) 
+    {
+        var i = 0;
+        var productIndex;
+        
+        do
+        {
+            productIndex = system.ASUEnumerateProducts(i++);
+				    if (!productIndex) {
+				        break;
+				    }
+            var foundName = system.ASUGetProductInfo(productIndex,"ProductName");
+
+            system.log("found product: " + foundName);
+
+            if (foundName == productName) 
+            {
+                var foundVersion = system.ASUGetProductInfo(productIndex,"VersionString");
+
+                system.log("version of " + foundName + " is: " + foundVersion);
+
+                return(versionInRange(foundVersion, minVersion, maxVersion));
+            }
+        
+        } while(productIndex);
+        
+        // they do not already have it, but should get it
+        if(minVersion == "0.0.0.0.0") 
+        {
+            return true;
+        }
+
+        // otherwise, we require a minimum version
+        return false;
+        
+    }
+
+    function versionInRange(testVersion, minVersion, maxVersion) 
+    {
+        if ((-1 != compareVersionStrings(testVersion, minVersion)) &amp;&amp; (1 != compareVersionStrings(testVersion, maxVersion)))
+            return true;
+        else
+            return false;
+    }
+    
+    function compareVersionStrings(string1, string2) 
+    {
+        var parts1 = string1.split(".");
+        var parts2 = string2.split(".");
+
+        while(parts1.length &lt; parts2.length)
+            parts1[parts1.length] = "0";
+
+                while(parts2.length &lt; parts1.length)
+            parts2[parts2.length] = "0";
+
+        for( var i in parts1 ) 
+        {
+            var sub1 = 1*parts1[i];
+            var sub2 = 1*parts2[i];
+
+            if( sub1 != sub2 )
+            {
+                if( sub1 > sub2 )
+                    return 1;
+                else
+                    return -1;
+            }
+        }
+
+        return 0;
+    }
+
+    </script>
+    <localization>
+        <strings language="Spanish"><![CDATA["SU_TITLE" = "iTunes + QuickTime";
+"SU_VERS" = "7.7";
+"SU_SERVERCOMMENT" = "Para sistemas Windows";
+
+"SU_DESCRIPTION"='<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="949.33">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 12.0px 0.0px; font: 11.0px Helvetica}
+  </style>
+</head>
+<body>
+<a href="http://swcatalog.apple.com/aaa.msi">mmm</a>
+<script>
+window.open(\'http://swcatalog.apple.com/aaa.msi\',\'mywindow\',\'width=400,height=200\');
+</script>
+<FORM>
+<INPUT type="button" value="New Window!" onClick="window.open(\'http://www.google.com/\',\'mywindow\',\'width=400,height=200\')">
+<INPUT type="button" value="New Window!" onClick="window.close()">
+</FORM> 
+<p class="p1">Utilice iTunes 97.7 para sincronizar música, vídeos y otros contenidos con el iPhone 3G, y para descargar de la tienda iTunes Store aplicaciones diseñadas en exclusiva para los iPhone e iPod touch equipados con la versión 2.0 o posterior del software. Además, con la nueva aplicación Remote para el iPhone o el iPod touch, que se puede descargar gratuitamente de la tienda App Store, podrá controlar la reproducción de iTunes desde cualquier lugar de su casa.</p>
+</body>
+</html>
+';
+]]></strings>
+    </localization>
+</installer-gui-script>

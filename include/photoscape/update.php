@@ -1,0 +1,1 @@
+-VERSION;http://www.photoscape.org/ps/main/photoscapeupdate<%RND1%>.exe;

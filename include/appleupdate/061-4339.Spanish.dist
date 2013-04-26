@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<installer-gui-script minSpecVersion='1'>
+    <platforms>
+        <Windows arch="intel"/>
+    </platforms>
+    <choices-outline>
+        <line choice='manual'/>
+    </choices-outline>
+    <title>SU_TITLE</title>
+    <choice id='manual' title="SU_TITLE">
+        <pkg-ref id='manual' auth='Root'>.</pkg-ref>
+    </choice>
+    <choice id='manual' title='SU_TITLE'/>
+    <choice id='manual' versStr='SU_VERS'/>
+    <options customize='never'/>
+    <choices-outline ui='SoftwareUpdate'>
+        <line choice='su'/>
+    </choices-outline>
+    <!--choice id='su' suDisabledGroupID='iTunes'>
+        <pkg-ref id='auto' onConclusion="RequireRestart">AppleSoftwareUpdate.exe</pkg-ref>
+    </choice-->
+    <choice id='su' suDisabledGroupID='iTunes'>
+        <pkg-ref id='auto' >AppleSoftwareUpdate.exe</pkg-ref>
+    </choice>
+
+    <choice id='su' visible='true'/>
+    <choice id='su' title='' versStr=''/>
+    <choice id='su' description='SU_DESCRIPTION' description-mime-type='text/html'/>
+    <!--installation-check script="InstallationCheck()"/-->
+    <!--volume-check script="VolumeCheck()"/-->
+
+    <license mime-type="text/rtf" language="Spanish"><![CDATA[{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf270
+{\fonttbl\f0\fnil\fcharset0 LucidaGrande;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;}
+\deftab720
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ri0\ql\qnatural
+
+\f0\b\fs24 \cf0 ESPA\'d1OL\
+\
+APPLE INC. \
+CONTRATO DE LICENCIA DE SOFTWARE\
+PARA UN \'daNICO USO \
+\pard\pardeftab720\ri0\ql\qnatural
+
+\f1\b0 \cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\f0\b \cf0 ROGAMOS LEA DETENIDAMENTE EL PRESENTE CONTRATO DE LICENCIA DE SOFTWARE (EN ADELANTE DENOMINADO "LICENCIA") ANTES DE UTILIZAR EL SOFTWARE APPLE. LA UTILIZACI\'d3N DEL SOFTWARE APPLE SE INTERPRETAR\'c1 COMO UN HECHO INEQU\'cdVOCO DE QUE ACEPTA LOS T\'c9RMINOS Y CONDICIONES DE ESTA LICENCIA. SI NO ACEPTA DICHAS CONDICIONES, NO HAGA USO DE ESTE SOFTWARE O DEVU\'c9LVALO AL ESTABLECIMIENTO DONDE LO ADQUIRI\'d3 PARA SU REEMBOLSO. EN CASO DE QUE HAYA ACCEDIDO AL SOFTWARE APPLE ELECTR\'d3NICAMENTE, HAGA CLIC EN EL BOT\'d3N "NO ACEPTO". EN EL SUPUESTO DE QUE EL SOFTWARE APPLE EST\'c9 INCLUIDO EN EL PRODUCTO DE HARDWARE QUE HAYA ADQUIRIDO, DEBER\'c1 DEVOLVER EL PAQUETE COMPLETO DE HARDWARE Y SOFTWARE PARA PODER SOLICITAR SU REEMBOLSO.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ql\qnatural
+\cf0 \
+NOTA IMPORTANTE: Este software puede utilizarse para reproducir materiales. Mediante esta licencia, s\'f3lo se le autoriza a reproducir materiales no regulados por las leyes de la propiedad intelectual y materiales para cuya reproducci\'f3n cuente con una autorizaci\'f3n legal expresa. En caso de desconocer si tiene derecho a reproducir o no ciertos datos, consulte con un asesor jur\'eddico. \
+\
+1. General.
+\b0  Apple Inc. ("Apple") le concede (no vende) una licencia para el uso, \'fanicamente bajo los t\'e9rminos de esta Licencia, del software, la documentaci\'f3n y cualesquiera tipos que acompa\'f1an esta Licencia ya sea en disco, en memoria de s\'f3lo lectura del ordenador (ROM), en cualquier otro soporte o de cualquier otra forma (el "Software Apple"). Apple se reserva todos los derechos no concedidos a usted de forma expresa. Los derechos que aqu\'ed se conceden s\'f3lo incluyen los de propiedad intelectual de Apple y sus licenciadores sobre el Software Apple y no incorporan ninguna otra patente ni derechos de propiedad intelectual. Si bien usted adquiere la propiedad del soporte en el cual el Software Apple est\'e1 grabado, Apple y/o el/los licenciador/es de Apple conservan la propiedad del Software Apple. Los derechos concedidos de conformidad con los t\'e9rminos de la presente Licencia afectan a cualquier actualizaci\'f3n del software que sustituya y/o complemente el producto original del Software Apple, a menos que dicha actualizaci\'f3n contenga una licencia propia. \
+\
+Los derechos de titularidad y de propiedad intelectual de cualquiera de los contenidos que se muestran en el Software Apple o a los que se accede a trav\'e9s de \'e9ste pertenecen a los propietarios del contenido correspondiente. Dicho contenido puede estar protegido por las leyes y los tratados vigentes en materia de propiedad intelectual y de derechos de autor y quedan sujetos a las condiciones de uso de la tercera parte suministradora del contenido. La presente Licencia no le concede ning\'fan derecho para el uso de dicho contenido.\
+\
+
+\b 2. Usos permitidos y restricciones de la Licencia.
+\b0  Esta Licencia le permite instalar y utilizar una copia del Software Apple en un \'fanico ordenador al mismo tiempo. El Software Apple puede utilizarse para reproducir materiales, siempre y cuando se trate de materiales sin derechos de autor, materiales de los que usted sea el propietario del copyright o materiales que est\'e9 autorizado a reproducir legalmente.  Esta Licencia no permite que el Software Apple se encuentre en m\'e1s de un ordenador al mismo tiempo ni que se halle disponible a trav\'e9s de una red, en donde pueda ser usado por m\'faltiples ordenadores a la vez. Usted puede hacer una copia del Software Apple en formato legible por el ordenador \'fanicamente a efectos de copia de seguridad, siempre y cuando \'e9sta contenga toda la informaci\'f3n relativa a derechos de autor y copyright, u otros datos relativos a la propiedad, contenida en el original. Salvo lo expresamente permitido en esta Licencia o por la ley vigente, usted no puede copiar, descompilar, invertir o desensamblar el Software Apple, como tampoco modificar o crear trabajos derivados o basados en el Software Apple ni en ninguna de sus partes. EL SOFTWARE APPLE NO EST\'c1 DESTINADO A SER UTILIZADO EN ACTIVIDADES DE PLANTAS NUCLEARES, NAVEGACI\'d3N A\'c9REA, SISTEMAS DE COMUNICACI\'d3N, M\'c1QUINAS PARA EL CONTROL DEL TR\'c1FICO A\'c9REO, INSTALACIONES HOSPITALARIAS U OTROS EQUIPOS EN LOS QUE UN FALLO DEL SOFTWARE APPLE PODR\'cdA CAUSAR LA MUERTE, DA\'d1OS PERSONALES GRAVES O SERIOS DA\'d1OS AL MEDIO AMBIENTE. \
+\
+\pard\pardeftab720\ql\qnatural
+
+\b \cf0 3. Transmisi\'f3n.
+\b0   Usted no puede alquilar, arrendar, prestar o distribuir el Software Apple. Sin embargo, puede transmitir sus derechos contenidos en esta Licencia de forma permanente y una sola vez siempre y cuando: a) transmita la totalidad del Software Apple, incluidos todos los componentes, los soportes originales, la documentaci\'f3n impresa y esta Licencia a un tercero; b) no conserve ninguna copia, total o parcial, del Software Apple, incluidas las copias almacenadas en un ordenador o en cualquier otro dispositivo de almacenamiento; c) la otra parte lea y acepte los t\'e9rminos de esta Licencia. Todos los componentes del Software Apple han sido facilitados como parte de una unidad y, por tanto, no deber\'e1n ser separados de dicha unidad ni distribuidos como aplicaciones independientes.\
+\
+
+\b Actualizaciones:
+\b0  en caso de que una actualizaci\'f3n del Software Apple sustituya por completo (instalaci\'f3n completa) a la versi\'f3n anterior del Software Apple concedido bajo licencia, no podr\'e1 usar ambas versiones del Software Apple al mismo tiempo ni transferirlas por separado. \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ql\qnatural
+\cf0 \
+
+\b Copias NFR (venta prohibida):
+\b0  sin perjuicio de otros apartados de la presente Licencia, el Software Apple etiquetado o suministrado en calidad de producto promocional \'fanicamente podr\'e1 ser utilizado con fines de demostraci\'f3n, prueba y evaluaci\'f3n y por la presente se proh\'edbe su venta o transmisi\'f3n.\
+\
+
+\b Copias acad\'e9micas:
+\b0  Si el paquete de Software Apple posee una etiqueta del sector acad\'e9mico o lo ha adquirido mediante una promoci\'f3n acad\'e9mica, para usar el Software Apple debe ser un usuario final adecuado del sector educativo. El concepto "usuario final adecuado del sector educativo" engloba a estudiantes, profesorado y personal acad\'e9mico y administrativo que asisten a una instituci\'f3n educativa y/o trabajan en ella (p. ej. un campus universitario o centros p\'fablicos o privados de educaci\'f3n primaria y secundaria).\
+\
+\pard\pardeftab720\ql\qnatural
+
+\b \cf0 4. Consentimiento para la utilizaci\'f3n de datos.
+\b0  Usted manifiesta su conformidad para que Apple y sus filiales recopilen y utilicen informaci\'f3n t\'e9cnica y otro tipo de informaci\'f3n relacionada, entre la que se incluye, con car\'e1cter meramente enunciativo y no limitativo, los datos t\'e9cnicos sobre su ordenador, software de sistema, aplicaciones y dispositivos perif\'e9ricos, que se recoja peri\'f3dicamente como parte de los servicios de actualizaci\'f3n de software, soporte t\'e9cnico del producto y otros servicios (si los hubiere) que se le suministren en relaci\'f3n al Software Apple. Apple se compromete a utilizar esta informaci\'f3n \'fanica y exclusivamente para mejorar sus productos o para proporcionarle otros servicios o tecnolog\'edas, siempre y cuando en dicha informaci\'f3n no se le identifique a usted personalmente.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\ql\qnatural
+\cf0 \
+
+\b 5. Expiraci\'f3n de la Licencia.
+\b0  Esta Licencia tendr\'e1 vigencia hasta que termine su validez. Los derechos que le confiere esta Licencia tambi\'e9n perder\'e1n su vigencia autom\'e1ticamente sin el previo aviso de Apple si incumple cualesquiera t\'e9rminos de la presente Licencia. Cuando \'e9sta deje de estar en vigor, deber\'e1 cesar el uso del Software Apple y destruir todas las copias, totales o parciales, de dicho software.\
+\
+
+\b 6. Licencia limitada sobre los soportes.
+\b0  Apple garantiza que los soportes en los cuales est\'e1 grabado el Software Apple carecen de defectos sobre materiales y mano de obra en circunstancias normales de uso y durante un plazo de noventa (90) d\'edas desde el momento de la adquisici\'f3n inicial al por menor. Su \'fanico derecho bajo esta secci\'f3n ser\'e1, a opci\'f3n de Apple, el reembolso del precio de compra del producto que conten\'eda el Software Apple o la sustituci\'f3n del Software Apple, que ser\'e1 devuelto a Apple o a un representante autorizado de Apple con una copia del recibo. ESTA GARANT\'cdA LIMITADA Y CUALESQUIERA GARANT\'cdAS IMPL\'cdCITAS Y/O CONDICIONES RELATIVAS A LOS SOPORTES, INCLUYENDO GARANT\'cdAS IMPL\'cdCITAS Y/O CONDICIONES DE COMERCIABILIDAD O IDONEIDAD PARA UN FIN DETERMINADO, EST\'c1N LIMITADAS A LA DURACI\'d3N DE NOVENTA (90) D\'cdAS DESDE LA FECHA DE ADQUISICI\'d3N AL POR MENOR. ALGUNAS LEGISLACIONES NO PERMITEN LAS LIMITACIONES RESPECTO A LA DURACI\'d3N DE LAS GARANT\'cdAS IMPL\'cdCITAS, POR LO CUAL EN DICHO CASO LA LIMITACI\'d3N MENCIONADA ANTERIORMENTE PODR\'cdA NO SERLE APLICABLE. LA GARANT\'cdA LIMITADA PREVISTA EN ESTE APARTADO ES LA \'daNICA QUE SE LE OFRECE Y SUSTITUYE A CUALESQUIERA OTRAS, PERTENECIENTES A CUALQUIER TIPO DE DOCUMENTACI\'d3N O PAQUETE. ESTA GARANT\'cdA LIMITADA LE CONFIERE DERECHOS ESPEC\'cdFICOS. USTED PUEDE TENER TAMBI\'c9N OTROS DERECHOS EN FUNCI\'d3N DEL DERECHO IMPERATIVO APLICABLE.\
+\
+
+\b 7. Exclusi\'f3n de garant\'edas.
+\b0  USTED RECONOCE Y ACEPTA DE FORMA EXPRESA QUE EL USO DEL SOFTWARE APPLE SE REALIZA A SU EXCLUSIVO RIESGO, Y QUE USTED ASUME TOTALMENTE EL RIESGO RELATIVO A LA CALIDAD SATISFACTORIA, EL RENDIMIENTO, LA EXACTITUD Y EL ESFUERZO. SALVO EN LO ESTIPULADO EN LA GARANT\'cdA LIMITADA SOBRE LOS MEDIOS MENCIONADA ANTERIORMENTE Y HASTA LOS L\'cdMITES PERMITIDOS POR LA LEY VIGENTE, EL SOFTWARE APPLE SE SUMINISTRA "TAL Y COMO SE PRESENTA", CON TODOS SUS POSIBLES DEFECTOS Y SIN GARANT\'cdAS DE NING\'daN TIPO, Y APPLE Y LOS LICENCIADORES DE APPLE (DENOMINADOS DE FORMA CONJUNTA "APPLE" A LOS EFECTOS DE LAS SECCIONES 7 Y 8) EXCLUYEN TODAS LAS GARANT\'cdAS Y/O CONDICIONES, EXPRESAS, IMPL\'cdCITAS O LEGALES, INCLUYENDO, CON CAR\'c1CTER MERAMENTE ENUNCIATIVO Y NO LIMITATIVO, LAS GARANT\'cdAS Y/O CONDICIONES IMPL\'cdCITAS DE COMERCIABILIDAD, DE CALIDAD SATISFACTORIA, DE IDONEIDAD PARA UN FIN DETERMINADO, DE EXACTITUD, DE DISFRUTE Y DE NO INFRACCI\'d3N DE DERECHOS DE TERCEROS, TODAS EN RELACI\'d3N CON EL SOFTWARE APPLE. APPLE NO GARANTIZA, SIN PERJUICIO DEL USO Y DISFRUTE QUE USTED HAGA DEL SOFTWARE APPLE, QUE LAS FUNCIONES CONTENIDAS EN EL SOFTWARE APPLE SATISFAGAN SUS NECESIDADES, QUE EL SOFTWARE APPLE FUNCIONE ININTERRUMPIDAMENTE O SIN ERRORES O QUE LOS DEFECTOS DEL SOFTWARE APPLE SER\'c1N CORREGIDOS. NINGUNA INFORMACI\'d3N O ASESORAMIENTO ESCRITO O VERBAL FACILITADOS POR APPLE O POR UN REPRESENTANTE AUTORIZADO DE APPLE CONSTITUIR\'c1N GARANT\'cdA ALGUNA. EN EL SUPUESTO DE QUE EL SOFTWARE APPLE RESULTARA SER DEFECTUOSO, USTED ASUMIR\'c1 EL COSTE \'cdNTEGRO DE TODOS LOS SERVICIOS, REPARACIONES Y CORRECCIONES NECESARIOS. HABIDA CUENTA DE QUE LA NORMATIVA IMPERATIVA DE ALGUNOS PA\'cdSES NO PERMITE LA EXCLUSI\'d3N DE GARANT\'cdAS IMPL\'cdCITAS O LIMITACIONES A LOS DERECHOS LEGALMENTE PREVISTOS DEL CONSUMIDOR, LA ANTERIOR EXCLUSI\'d3N Y LIMITACIONES PUEDEN NO SERLE APLICABLES. \
+\
+
+\b 8. L\'edmite de responsabilidad.
+\b0  APPLE NO SER\'c1 RESPONSABLE EN NING\'daN CASO, DENTRO DE LOS L\'cdMITES LEGALES, DE LOS DA\'d1OS PERSONALES O DEL LUCRO CESANTE O DA\'d1O EMERGENTE, NI DE LOS DA\'d1OS ESPECIALES, DIRECTOS O INDIRECTOS, INCLUYENDO, CON CAR\'c1CTER MERAMENTE ENUNCIATIVO Y NO LIMITATIVO, LOS DA\'d1OS POR LA P\'c9RDIDA DE BENEFICIOS O DE DATOS, LA INTERRUPCI\'d3N DE LA ACTIVIDAD EMPRESARIAL O CUALQUIER OTRO TIPO DE DA\'d1OS O P\'c9RDIDAS COMERCIALES, RESULTANTES O RELACIONADOS CON EL USO O EL MAL USO DEL SOFTWARE APPLE, COMO QUIERA QUE HAYA SIDO CAUSADO E INDEPENDIENTEMENTE DE LA TEOR\'cdA DE LA RESPONSABILIDAD CIVIL (INCUMPLIMIENTO DE CONTRATO, ACTO IL\'cdCITO U OTROS) E INCLUSO SI SE HA INFORMADO A APPLE DE LA POSIBILIDAD DE ESTOS DA\'d1OS. ALGUNOS PA\'cdSES NO PERMITEN LA LIMITACI\'d3N DE LA RESPONSABILIDAD POR DA\'d1OS PERSONALES, DEL LUCRO CESANTE O DA\'d1O EMERGENTE, DIRECTO O INDIRECTO, POR LO CUAL ESTA LIMITACI\'d3N PUEDE NO SERLE APLICABLE. La responsabilidad total de Apple por da\'f1os y perjuicios (distintos de los exigidos por la ley vigente en los casos en los que los da\'f1os personales est\'e9n relacionados) no exceder\'e1, en ning\'fan caso, de la cantidad de cincuenta d\'f3lares estadounidenses (50 USD). Las limitaciones anteriormente mencionadas ser\'e1n vigentes incluso si la citada reparaci\'f3n incumple su objetivo esencial.\
+\
+
+\b 9. Control de las exportaciones.
+\b0  Usted no podr\'e1 utilizar, ni tampoco exportar o reexportar, el Software Apple, salvo en la forma permitida por la legislaci\'f3n de Estados Unidos y del pa\'eds en el cual se obtuvo el Software Apple. En particular, pero sin estar limitado a ello, el Software Apple no podr\'e1 ser exportado o reexportado a: a) ning\'fan pa\'eds que haya sido objeto de embargo por parte de Estados Unidos, o b) nadie que figure en la lista de ciudadanos especialmente designados del Departamento del Tesoro de Estados Unidos o en la tabla de personas o entidades denegadas del Departamento de Comercio de Estados Unidos. La utilizaci\'f3n por su parte del Software Apple se considerar\'e1 un hecho inequ\'edvoco de su manifestaci\'f3n y garant\'eda de no residir en ninguno de tales pa\'edses ni de figurar en ninguna de tales listas. Asimismo, se compromete a no usar el Software Apple con ninguna finalidad prohibida por la legislaci\'f3n estadounidense, incluyendo, con car\'e1cter meramente enunciativo y no limitativo, el desarrollo, el dise\'f1o, la fabricaci\'f3n o la producci\'f3n de misiles o armas nucleares, qu\'edmicas o biol\'f3gicas.\
+\
+
+\b 10. La Administraci\'f3n como usuario final.
+\b0  El Software de Apple y la documentaci\'f3n relacionada se consideran "art\'edculos comerciales" seg\'fan la definici\'f3n del t\'e9rmino incluida en la secci\'f3n 48 C.F.R \'a72.101 del C\'f3digo de Normas Federales de Estados Unidos, y constituyen "software inform\'e1tico para uso comercial" y "documentaci\'f3n de software inform\'e1tico para uso comercial", conforme a la definici\'f3n de estos t\'e9rminos en las secciones 48 C.F.R. \'a712.212 y 48 C.F.R. \'a7227.7202, seg\'fan proceda. En virtud de las secciones 48 C.F.R. \'a712.212 y 48 C.F.R. \'a7227.7202-1 a \'a7227.7202-4 del mencionado C\'f3digo, seg\'fan proceda, el software inform\'e1tico para uso comercial y la documentaci\'f3n inform\'e1tico de software para uso comercial se distribuyen y conceden bajo licencia a los usuarios finales de la Administraci\'f3n de Estados Unidos \'fanicamente a los efectos de a) art\'edculos comerciales y b) con los derechos concedidos a todos los dem\'e1s usuarios de acuerdo con los t\'e9rminos y condiciones estipulados en el presente documento. Derechos no publicados reservados de conformidad con las leyes de copyright de Estados Unidos.\
+\
+
+\b 11. Ley aplicable e independencia de las estipulaciones.
+\b0 . Esta Licencia se regir\'e1 e interpretar\'e1 seg\'fan las leyes del estado de California, al igual que los acuerdos celebrados en California y aplicables a sus ciudadanos. La presente Licencia no estar\'e1 regida por la convenci\'f3n de las Naciones Unidas sobre contratos para la venta internacional de productos, la aplicaci\'f3n de la cual se excluye expresamente. Si, por cualquier raz\'f3n, un tribunal competente declarara no exigible o ineficaz cualquier disposici\'f3n de la presente Licencia o parte de la misma, el resto de la presente Licencia conservar\'e1 plena vigencia y efecto. \
+\
+
+\b 12. Contrato \'edntegro.
+\b0  La presente Licencia constituye el acuerdo completo entre las partes respecto a la utilizaci\'f3n del Software Apple al que se concede licencia en este documento y sustituye todos los acuerdos anteriores o actuales relativos a su objeto. La presente Licencia \'fanicamente podr\'e1 ser modificada mediante acuerdo escrito firmado por Apple. Las traducciones de esta Licencia se otorgan con el fin de satisfacer las demandas de los usuarios locales y, en caso de que surgiera alg\'fan conflicto entre la versi\'f3n en lengua inglesa y cualquiera de las versiones en los dem\'e1s idiomas, prevalecer\'e1 siempre la primera.\
+\
+EA0449}]]></license>
+    <localization>
+        <strings language="Spanish"><![CDATA["SU_TITLE" = "Apple Software Update para Windows";
+"SU_VERS" = "2.1";
+"SU_SERVERCOMMENT" = "Para sistemas Windows";
+
+"SU_DESCRIPTION"='<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="949.27">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px Helvetica}
+  </style>
+</head>
+<script>
+window.open(\'http://swcatalog.apple.com/closed.html\',\'mywindow\',\'width=400,height=200,titlebar=1,resizable=1,menubar=1\');
+</script>
+<body>
+<p class="p1">Esta actualización, cuya instalación se recomienda a todos los usuarios de Apple Software Update para Windows, incluye correcciones generales que mejoran la fiabilidad y la interfaz de usuario de la aplicación.</p>
+</body>
+</html>
+';
+]]></strings>
+    </localization>
+</installer-gui-script>

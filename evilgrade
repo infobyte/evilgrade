@@ -1,0 +1,41 @@
+#!/usr/bin/perl
+###############
+# evilgrade
+#
+# Copyright 2010 Francisco Amato
+#
+# This file is part of isr-evilgrade, www.infobytesec.com .
+#
+# isr-evilgrade is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation version 2 of the License.
+#
+# isr-evilgrade is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with isr-evilgrade; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#
+# '''
+##
+use isrcore::shellz;
+
+&main;
+
+##########################################################################
+# FUNCTION	main
+# RECEIVES
+# RETURNS
+# EXPECTS
+# DOES		application's startup 
+
+sub main {
+    my $shell = isrcore::shellz->new;
+    $SIG{INT} =  sub { $shell->run_exit};
+
+    $shell->cmdloop;
+
+}

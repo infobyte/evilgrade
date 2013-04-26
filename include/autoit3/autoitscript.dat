@@ -1,0 +1,14 @@
+[AutoIt]
+version=<%VERSION_STABLE%>
+index=<%URL%>
+setup=<%URL%>
+filesize=<%FILESIZE%>
+filetime=<%FILETIME%>
+
+[AutoItBeta]
+version=<%VERSION_BETA%>
+index=<%URL%>
+setup=<%URL%>
+filesize=<%FILESIZE%>
+filetime=<%FILETIME%>
+

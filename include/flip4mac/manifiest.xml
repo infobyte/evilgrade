@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>AcceptButtonTitle</key>
+<string>Update Now</string>
+<key>CancelButtonTitle</key>
+<string>Cancel</string>
+<key>InformativeText</key>
+<string>Click 'Update Now' to get the free update to version 2.8.1.11.</string>
+<key>LatestVersion</key>
+<string>2.8.1.11</string>
+<key>MessageText</key>
+<string>Your version of Flip4Mac is out of date.</string>
+<key>URL</key>
+<string>http://www.flip4mac.com/download-files/flip4mac-wmv/Flip4Mac-WMV-2.2.1.11.dmg</string>
+<key>_UpToDateURL</key>
+<string></string>
+</dict>
+</plist>

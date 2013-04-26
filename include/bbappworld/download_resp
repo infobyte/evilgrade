@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Server: Apache
+X-Powered-By: RIM
+X-APPWORLD-MIN: 1.1.0.0
+X-APPWORLD-SIG: dPvvTy+3UCjB1KchzHbK6nZ0APM4AHovDe4WUVSuo5MNcp0/lkplu24V492OiBkXIDYzfXc5Siml9/+UBP66VzcEwdnAHE/eRUrg8DGXT1zUKOGNVcvkdENkzFG/KGxRQ3Lus0UlX8YgYKGPoNfdqs1bTTHLBulCQ8v951YGMJQ=
+Content-Length: 116
+Cache-Control: max-age=3600
+Content-Type: text/xml;charset=UTF-8
+Date: Tue, 20 Apr 2010 20:21:41 GMT
+Connection: close
+
+<?xml version="1.0" encoding="UTF-8"?><filebundle><file id="585244" size="10576" name="BBVampire.cod"/></filebundle>

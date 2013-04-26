@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Tweetie</title>
+    <language>en</language>
+    <item>
+        <title>Adium 4.3.10</title>
+        <pubDate>Monday, January 12th, 2010 23:30:00 GMT-5</pubDate>
+        <sparkle:releaseNotesLink>http://adium.im/changelogs/1.3.10.html</sparkle:releaseNotesLink>
+        <sparkle:minimumSystemVersion>10.4.0</sparkle:minimumSystemVersion>
+        <enclosure sparkle:md5Sum="ccf05aa578786f171c3b709ecf76754f" sparkle:version="5.3.10" url="http://adium.im/Adium_1.3.10.dmg" length="2896737" type="application/octet-stream"/>
+    </item>
+    <item>
+        <title>Adium 1.0.6</title>
+        <pubDate>Monday, August 13th, 2007 22:12:45 GMT-7</pubDate>
+        <sparkle:releaseNotesLink>http://adium.im/changelogs/1.0.6.html</sparkle:releaseNotesLink> 
+        <sparkle:minimumSystemVersion>10.3.9</sparkle:minimumSystemVersion>
+        <enclosure sparkle:md5Sum="9e19c217f945b7fd82e46d0fa25a5a9b" sparkle:version="1.0.6" url="http://adium.im/Adium_1.0.6.dmg" length="13795246" type="application/octet-stream"/>
+    </item>
+  </channel>
+</rss>

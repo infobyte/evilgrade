@@ -1,0 +1,108 @@
+BODY {
+	MARGIN: 0px
+}
+#msviRegionIdGraphic {
+	PADDING-LEFT: 7px
+}
+#msviGlobalToolbar {
+	PADDING-LEFT: 1px
+}
+#msviGlobalToolbar A {
+	FONT: 65% Verdana; COLOR: #ffffff; TEXT-DECORATION: none
+}
+.gt0 {
+	BORDER-RIGHT: #1e77d3 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: #1e77d3 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 100%; PADDING-BOTTOM: 2px; BORDER-LEFT: #1e77d3 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #1e77d3 1px solid
+}
+.gt1 {
+	BORDER-RIGHT: #a1c6eb 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: #a1c6eb 1px solid; PADDING-LEFT: 4px; FONT-SIZE: 100%; BACKGROUND: #3484d7; PADDING-BOTTOM: 2px; BORDER-LEFT: #a1c6eb 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #a1c6eb 1px solid
+}
+.gtsep {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 2px; FONT: 65% Verdana; COLOR: #a1c6eb; PADDING-TOP: 0px
+}
+#msviBanner {
+	TEXT-ALIGN: right
+}
+#msviGlobalSearch {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 6px; FONT: 65% Verdana; COLOR: #000000; PADDING-TOP: 5px; TEXT-ALIGN: left
+}
+#msviSearchForm {
+	MARGIN: -1px 0px 0px
+}
+#msviSearchBox {
+	FONT: 110% Tahoma; WIDTH: 247px; xheight: 18px
+}
+#msviGoButton {
+	PADDING-RIGHT: 0.2em; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0em; FONT: 110% Tahoma; MARGIN-LEFT: 6px; PADDING-TOP: 0em; POSITION: relative; TOP: 0px
+}
+#msviNoSearch {
+	WIDTH: 271px
+}
+#msviMastheadHR {
+	BACKGROUND: #003499; OVERFLOW: hidden; HEIGHT: 1px
+}
+#msviLocalToolbar {
+	PADDING-RIGHT: 0px; BORDER-TOP: #999 1px solid; PADDING-LEFT: 0px; FONT-SIZE: 100%; BACKGROUND: #f1f1f1; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; BORDER-BOTTOM: #999 1px solid
+}
+#msviLocalToolbar TD {
+	FONT-SIZE: 100%
+}
+#msviLocalToolbar A {
+	FONT: 70% Verdana; COLOR: black; TEXT-DECORATION: none
+}
+.lt0 {
+	BORDER-RIGHT: #f1f1f1 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #f1f1f1 1px solid; PADDING-LEFT: 6px; BACKGROUND: #f1f1f1; PADDING-BOTTOM: 0px; BORDER-LEFT: #f1f1f1 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #f1f1f1 1px solid
+}
+.lt1 {
+	BORDER-RIGHT: #999 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #999 1px solid; PADDING-LEFT: 6px; BACKGROUND: #ccc; PADDING-BOTTOM: 0px; BORDER-LEFT: #999 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #999 1px solid
+}
+.ltsep {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 0px; FONT: 70% Verdana; COLOR: #a9a9a9; PADDING-TOP: 0px
+}
+.localToolbar FORM {
+	MARGIN: 0px
+}
+.localToolbar INPUT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; FONT: 70% Tahoma, Helvetica; MARGIN-RIGHT: 8px; PADDING-TOP: 0px
+}
+#msviHomePageLink {
+	PADDING-LEFT: 2px; WIDTH: 176px
+}
+#msviHomePageLink TD {
+	FONT-SIZE: 100%
+}
+#msviHomePageLink A {
+	BORDER-RIGHT: #f1f1f1 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #f1f1f1 1px solid; DISPLAY: block; PADDING-LEFT: 6px; BACKGROUND: #f1f1f1; PADDING-BOTTOM: 2px; MARGIN: 0px; BORDER-LEFT: #f1f1f1 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #f1f1f1 1px solid; WHITE-SPACE: nowrap
+}
+#msviHomePageLink A:hover {
+	BORDER-RIGHT: #999 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #999 1px solid; DISPLAY: block; PADDING-LEFT: 6px; BACKGROUND: #ccc; PADDING-BOTTOM: 2px; MARGIN: 0px; BORDER-LEFT: #999 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #999 1px solid
+}
+#msviFooter {
+	BORDER-TOP: #003499 1px solid; FONT: 70% Tahoma, Helvetica; POSITION: absolute
+}
+#msviFooter TD {
+	FONT-SIZE: 100%
+}
+#msviLocalFooter {
+	PADDING-LEFT: 10px; MARGIN: 0px; PADDING-TOP: 8px
+}
+#msviGlobalFooter {
+	PADDING-LEFT: 10px; PADDING-BOTTOM: 13px; MARGIN: 0px; PADDING-TOP: 10px
+}
+#msviFooter A {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #03c; MARGIN-RIGHT: 2px
+}
+#msviFooter A:visited {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #03c
+}
+#msviFooter A:hover {
+	FONT-WEIGHT: normal; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #f60
+}
+#msviFooter NOBR {
+	COLOR: #a9a9a9; MARGIN-RIGHT: 5px
+}
+.msviPassport {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 10px
+}
+.msviPPSpace {
+	PADDING-RIGHT: 87px
+}
