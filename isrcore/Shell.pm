@@ -51,6 +51,8 @@ sub new {
 	    # running in a terminal, which we aren't during "make test", at
 	    # least on FreeBSD. Suppress warnings here.
 	    local $SIG{__WARN__} = sub { };
+		# This env setting fixes FD locks in win32 shell.
+		$ENV{TERM} = 'not dumb' if $^O eq 'MSWin32'; 
 	    Term::ReadLine->new('shell');
 	} || undef,
        on_signal => 0,
@@ -147,9 +149,12 @@ sub cmdloop {
     if ($pid == 0){ #STDIN thread (child)
 	close CHILD;
 	while(1){ #STDIN loop
-
-	    my $line = $o->readline();    
-
+		my $line;
+		if ($^O eq 'MSWin32'){
+			$line = $o->readline($o->prompt_str);    
+		}else{
+			$line = $o->readline();
+		}
 	    print PARENT $line."\n";
 	    exit 0 if $line eq "exit";
 	}
@@ -161,7 +166,7 @@ sub cmdloop {
 	my $hl2 = new IO::Select(\*CHILDM);	
 
 	#Print Prompt
-	print "\c[[4m".$o->prompt_str."\c[[0m";
+	print "\c[[4m".$o->prompt_str."\c[[0m" unless ($^O eq 'MSWin32');
 	while(1) { #Msg loop
 	    usleep(10000);
 	    #sleep(1); #fix loop cpu usage
@@ -169,7 +174,7 @@ sub cmdloop {
 	    foreach my $fh (@ready){
 		my $line = <$fh>;
 		$o->cmd($line);
-		print "\c[[4m".$o->prompt_str."\c[[0m" if (!$o->{stop});
+		print "\c[[4m".$o->prompt_str."\c[[0m" if (!$o->{stop} && !($^O eq 'MSWin32'));
 	    }
 
 	    my @ready2 = $hl2->can_read(0);
