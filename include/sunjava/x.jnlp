@@ -20,7 +20,6 @@
     <jar href="http://java.sun.com/FunnyClass2.jar"/>
   </resources>
   <application-desc main-class="">
+    <param name="__applet_ssv_validated" value="true"></param>
   </application-desc>
-
-
 </jnlp>

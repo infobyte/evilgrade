@@ -1,3 +1,9 @@
+Version 2.0.5 - 06-05-2013
+--------------------------
+- Adding support for Windows by Elian Gidoni
+- sunjava module add Java Security Warning Bypass found by Esteban Guillardoy (__applet_ssv_validated parameter)
+- update last version dap module
+
 Version 2.0.4 - 07-11-2011
 --------------------------
 - sunjava module updated. Support Java <=1.6.0.28
