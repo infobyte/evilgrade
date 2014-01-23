@@ -30,6 +30,8 @@ use Data::Dump qw(dump);
 my $options = {
     'port'  => { 'val' => 80, 'desc' => 'Webserver listening port'},
     'sslport'  => { 'val' => 443, 'desc' => 'Webserver SSL listening port'},
+    'RPCfaraday'  => { 'val' => "http://127.0.0.1:9876/", 'desc' => 'Faraday RPC Server'},
+    'faraday'  => { 'val' => 0, 'desc' => 'Enable RPC Faraday connection'},
     'debug'  => { 'val' => 1, 'desc' => 'Debug mode'},    
     'DNSPort'  => { 'val' => 53, 'desc' => 'Listen Name Server port'},
     'DNSEnable'  => { 'val' => 1, 'desc' => 'Enable DNS Server ( handle virtual request on modules )'},

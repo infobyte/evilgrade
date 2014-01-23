@@ -33,7 +33,8 @@ use isrcore::ASCIITable;
 use isrcore::dnsserver;
 #external modules
 use Data::Dump qw(dump);
-
+require RPC::XML;
+require RPC::XML::Client;
 
 #ignore child's process to avoid zombie
 $SIG{CHLD} = 'IGNORE';
@@ -440,6 +441,22 @@ sub console_cmd {
     if ($file) {
 	$self->{'webserver'}->{'users'}->{$ip}->{$module}->{'file'}=($tfile) ? "$tfile\n$md5,$sha256,'$cwd',$file" :"$md5,$sha256,'$cwd',$file";
     }
+
+    #RPC faraday connection
+    if ($self->{'isrmain'}->{'Base'}->{'options'}->{'faraday'}->{'val'} == 1){
+        eval {
+            my $cli = RPC::XML::Client->new($self->{'isrmain'}->{'Base'}->{'options'}->{'RPCfaraday'}->{'val'});
+            my $resp = $cli->send_request('devlog','Importing evilgrade information');
+            my $h_id = $cli->send_request('createAndAddHost',$ip,"unknown");
+            
+            my $var = RPC::XML::array->new("URL-http://github.com/infobyte/evilgrade/");
+            my $v_id = $cli->send_request('createAndAddVulnToHost',$h_id->value,"Evilgrade injection -".$module,"This ip is interacted with evilgrade framework see the notes inside the host for more information",$var,"HIGH");
+            #add note host id, note, value
+            my $n_id = $cli->send_request('createAndAddNoteToHost',$h_id->value,"Evilgrade -".$module,$action) if ($action);
+            my $n_id2 = $cli->send_request('createAndAddNoteToHost',$h_id->value,"Evilgrade file -".$module,($tfile) ? "$tfile\n$md5,$sha256,'$cwd',$file" :"$md5,$sha256,'$cwd',$file");
+
+        }
+    }
     
 }
 ##########################################################################
@@ -452,7 +469,7 @@ sub smry_configure {"Configure <module-name>"}
 sub smry_reload {"Reload to update all the modules"}
 sub smry_start {"Start webserver"}
 sub smry_status {"Get webserver status"}
-sub smry_stop {"Stop webserver"}
+sub smry_stop {"Stop webserverR"}
 sub smry_restart {"Restart webserver"}
 sub smry_vhosts {"Show vhosts enable"}
 

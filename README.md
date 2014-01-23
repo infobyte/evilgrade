@@ -598,6 +598,7 @@ will fill out for you (agentmd5, agentsha256, and agentsize) that can't be done 
     Data::Dump
     Digest::MD5   
     Time::HiRes
+    RPC::XML
 
 .:: [MORE INFORMATION] ::.
 
