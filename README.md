@@ -422,10 +422,6 @@ help      - prints this screen, or help on 'command'
 
 ```
 
-.:: [DEMO] ::.
-
-http://www.infobytesec.com/demo/evilgrade.htm
-
 .:: [ADVANCED] ::.
 
 - Modules Options:
@@ -624,9 +620,6 @@ This framework was presented in the following security conferences:
 · Blackhat Arsenal & Defcon 2010 [Las Vegas, USA] [www.blackhat.com www.defcon.org]
 ```
 
-.:: [DOWNLOAD] ::.
-
-http://www.infobytesec.com/developments.html
 
 .:: [AUTHOR] ::.
 
