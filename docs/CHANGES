@@ -1,3 +1,12 @@
+Version 2.0.7 - 03-06-2016
+- (Samsung SW Update Tool 2.2.5.16) samsung module added
+- (Intel Driver Update Utility 2.2.0.5) inteldriver module added
+- Keepass CVE-2016-5119,  keepass module added
+- Lenovo's OEM modules, (lenovo,lenovoapk, lenovofirmware) modules added
+- timedoctor module added
+
+-Adding support for Samsung SW Update Tool 2.2.5.16
+
 Version 2.0.6 - 17-01-2014
 --------------------------
 -Adding support to Faraday www.faradaysec.com - RPC Api connection

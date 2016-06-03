@@ -31,7 +31,7 @@ my $base=
 
     'name' => 'samsung',
     'version' => '1.0',
-    'appver' => ' <= Intel Driver Update Utility 2.2.0.5',
+    'appver' => ' <= Samsung SW Update Tool 2.2.5.16',
     'author' => [ 'Francisco Amato <famato +[AT]+ infobytesec.com' ],
     'description' => qq{Found By:  Joaquín Rodríguez Varela
                         The Samsung SW Update Tool [1] is a tool that analyzes the system drivers of a computer. You can install relevant software for your computer easier and faster using SW Update. 
