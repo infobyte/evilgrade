@@ -1,0 +1,15 @@
+<installerInformation>
+    <versionId>14521627</versionId>
+    <version>99.99.99</version>
+    <platformFileList>
+        <platformFile>
+            <filename>setup-timedoctor-99.99.99-windows.exe</filename>
+            <platform>windows</platform>
+        </platformFile>
+    </platformFileList>
+    <downloadLocationList>
+        <downloadLocation>
+            <url>https://updates.timedoctor.com/download/_production/windows/</url>
+        </downloadLocation>
+    </downloadLocationList>
+</installerInformation>
