@@ -1,0 +1,25 @@
+<?xml version=""1.0"" encoding=""utf-8""?>
+<Drivers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/GetDrivers.xsd">
+  <Driver>
+    <Driver_ID>24696</Driver_ID>
+    <Type>Graphics</Type>
+    <Status>Active</Status>
+    <Release_Date>2015-02-04</Release_Date>
+    <Version>15.28.23.64.4101</Version>
+    <File_Name>win64_152823.zip</File_Name>
+    <File_Url>http://storefront.download.protexis.net/24696/a08/win64_152823.zip</File_Url>
+    <HardwareSignature>VEN_8086&amp;DEV_010A</HardwareSignature>
+    <IsComponent>true</IsComponent>
+    <Languages>
+      <Language>
+        <Language_Code>en</Language_Code>
+        <Driver_Name>Intel® HD Graphics Driver for Windows* 7/8/8.1 64-bit</Driver_Name>
+        <Driver_Details>Installs the Intel® HD Graphics Driver for Windows* 7/8/8.1 64-bit version 15.28.23.64.4101 (9.17.10.4101)</Driver_Details>
+      </Language>
+    </Languages>
+    <Installer_Result_Key>SOFTWARE\Intel\GFX</Installer_Result_Key>
+    <Installer_Version_Key>SOFTWARE\Intel\GFX</Installer_Version_Key>
+    <Installer_Reboot_Flag>deferred</Installer_Reboot_Flag>
+    <Installer_Cmd_Line>-s -overwrite</Installer_Cmd_Line>
+  </Driver>
+</Drivers>
