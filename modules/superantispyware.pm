@@ -27,61 +27,65 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'Superantispyware',
-    'version' => '1.0',
-    'appver'  => '',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com >' ],
-    'description' => qq{},    
-    'vh' => '(www.superantispyware.com)',
-    'request' => [
-		    {
-		    'req' => 'STATUS', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => 'OK',
-		    'parse' => 1,
-		    'file' => '',
-		    },
-		    {
-		    'req' => 'GETAVAILABLE', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '',
-		    'parse' => 1,
-		    'file' => './include/superantispyware/superantispyware.xml',
-		    },
+my $base = {
+    'name'        => 'Superantispyware',
+    'version'     => '1.0',
+    'appver'      => '',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com >'],
+    'description' => qq{},
+    'vh'          => '(www.superantispyware.com)',
+    'request'     => [
+        {   'req'    => 'STATUS',    #regex friendly
+            'type'   => 'string',    #file|string|agent|install
+            'method' => '',          #any
+            'bin'    => 0,
+            'string' => 'OK',
+            'parse'  => 1,
+            'file'   => '',
+        },
+        {   'req'    => 'GETAVAILABLE',    #regex friendly
+            'type'   => 'file',            #file|string|agent|install
+            'method' => '',                #any
+            'bin'    => 0,
+            'string' => '',
+            'parse'  => 1,
+            'file' => './include/superantispyware/superantispyware.xml',
+        },
 
-		    
-		    {
-		    'req' => 'DOWNLOAD', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+        {   'req'    => 'DOWNLOAD',        #regex friendly
+            'type'   => 'agent',           #file|string|agent|install
+            'method' => '',                #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		'description' => { 'val' => 'This critical update fix internal vulnerability',                                                                                 
-				'desc' => 'Description to be displayed during the update'},
-		'version'  => { 'val' => '\'7.2.\'.isrcore::utils::RndNum(2)',                                                                                                   
-                        	'hidden' => 1,                                                                                                                                   
-                              'dynamic' =>1,}, 
-		'rnd1'  => { 'val' => 'isrcore::utils::RndNum(5)',
-		              'hidden' => 1,
-		          'dynamic' =>1,
-		 },
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'description' => {
+            'val'  => 'This critical update fix internal vulnerability',
+            'desc' => 'Description to be displayed during the update'
+        },
+        'version' => {
+            'val'     => '\'7.2.\'.isrcore::utils::RndNum(2)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+    }
 };
 
 ##########################################################################
@@ -94,5 +98,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

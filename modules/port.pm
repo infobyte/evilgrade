@@ -27,44 +27,53 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'port',
-    'version' => '1.0',
-    'appver'  => '< 1.9.2',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => '(code.google.com|serf.googlecode.com|aarnet.au.distfiles.macports.org|distfiles.macports.org|www.mirrorservice.org|lil.fr.distfiles.macports.org|ykf.ca.distfiles.macports.org)',
+my $base = {
+    'name'        => 'port',
+    'version'     => '1.0',
+    'appver'      => '< 1.9.2',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh' =>
+        '(code.google.com|serf.googlecode.com|aarnet.au.distfiles.macports.org|distfiles.macports.org|www.mirrorservice.org|lil.fr.distfiles.macports.org|ykf.ca.distfiles.macports.org)',
     'request' => [
-		    {
-		    'req' => '(.tar.gz|.gz|.zip|.tar.bz2)', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+        {   'req' => '(.tar.gz|.gz|.zip|.tar.bz2)',    #regex friendly
+            'type'   => 'agent',    #file|string|agent|install
+            'method' => '',         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/serf-0.7.2.tar.bz2', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                    'version'  => { 'val' => '\'7.\'.isrcore::utils::RndNum(2)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-				},
-                    'module'  => { 'val' => 'join("",(split(/\//,$module->{\'Base\'}->{\'options\'}->{\'brequest\'}->{\'val\'}))[-1]) ',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-				},				
-                    'rnd1'  => { 'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-                            }			    	  
-		 }
+
+    #Options
+    'options' => {
+        'agent' => {
+            'val'  => './agent/serf-0.7.2.tar.bz2',
+            'desc' => 'Agent to inject'
+        },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'version' => {
+            'val'     => '\'7.\'.isrcore::utils::RndNum(2)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'module' => {
+            'val' =>
+                'join("",(split(/\//,$module->{\'Base\'}->{\'options\'}->{\'brequest\'}->{\'val\'}))[-1]) ',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        }
+    }
 };
 
 ##########################################################################
@@ -77,5 +86,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

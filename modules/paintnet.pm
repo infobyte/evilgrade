@@ -27,42 +27,43 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'paintnet',
+my $base = {
+    'name'    => 'paintnet',
     'version' => '1.0',
     'appver'  => '< 3.5.4',
-    'author' => [ 'German Rodriguez < grodriguez +[AT]+ infobytesec.com >' ],
-    'description' => qq{},    
-    'vh' => '(www.getpaint.net)',
-    'request' => [
-		    {
-		    'req' => '/updates/versions', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '',
-		    'parse' => 1,
-		    'file' => './include/paintnet/version',
-		    },
-		    
-		    {
-		    'req' => '.zip', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+    'author'  => ['German Rodriguez < grodriguez +[AT]+ infobytesec.com >'],
+    'description' => qq{},
+    'vh'          => '(www.getpaint.net)',
+    'request'     => [
+        {   'req'    => '/updates/versions',    #regex friendly
+            'type'   => 'file',                 #file|string|agent|install
+            'method' => '',                     #any
+            'bin'    => 0,
+            'string' => '',
+            'parse'  => 1,
+            'file' => './include/paintnet/version',
+        },
+
+        {   'req'    => '.zip',                 #regex friendly
+            'type'   => 'agent',                #file|string|agent|install
+            'method' => '',                     #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent2.zip', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent2.zip', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+    }
 };
 
 ##########################################################################
@@ -75,5 +76,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

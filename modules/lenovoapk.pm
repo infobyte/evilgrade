@@ -26,16 +26,16 @@ use strict;
 use Data::Dump qw(dump);
 
 my $base = {
-    'name'    => 'lenovoapk',
-    'version' => '1.0',
-    'appver'  => 'All',
-    'author'  => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
+    'name'        => 'lenovoapk',
+    'version'     => '1.0',
+    'appver'      => 'All',
+    'author'      => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
     'description' => qq{Lenovo's APK Update},
     'vh'          => 'suslcs.lenovomm.com|susapi.lenovomm.com',
     'request'     => [
-         {   'req'    => '/adpserver/GetVIByPN',   #regex friendly
-            'type'   => 'string',                   #file|string|agent|install
-            'method' => '',                         #any
+        {   'req'    => '/adpserver/GetVIByPN',    #regex friendly
+            'type'   => 'string',                  #file|string|agent|install
+            'method' => '',                        #any
             'bin'    => '0',
             'string' => 'SUS-{
                         "SUSRESINFO": {
@@ -58,8 +58,7 @@ my $base = {
             'parse' => '1',
             'file'  => '',
         },
-        {   'req' => '\*\d+\*\w+'
-            ,    #regex friendly
+        {   'req'     => '\*\d+\*\w+',              #regex friendly
             'type'    => 'agent',                   #file|string|agent|install
             'method'  => '',                        #any
             'bin'     => 1,

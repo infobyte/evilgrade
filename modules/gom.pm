@@ -27,42 +27,43 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'Gom',
+my $base = {
+    'name'    => 'Gom',
     'version' => '1.0',
     'appver'  => '< 2.1.25.5015',
-    'author' => [ 'German Rodriguez < grodriguez +[AT]+ infobytesec.com >' ],
-    'description' => qq{},    
-    'vh' => '(app.gomlab.com)',
-    'request' => [
-		    {
-		    'req' => '/eng/gom/GrVersionEN.ini', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '',
-		    'parse' => 1,
-		    'file' => './include/gom/gom.ini',
-		    },
-		    
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+    'author'  => ['German Rodriguez < grodriguez +[AT]+ infobytesec.com >'],
+    'description' => qq{},
+    'vh'          => '(app.gomlab.com)',
+    'request'     => [
+        {   'req'    => '/eng/gom/GrVersionEN.ini', #regex friendly
+            'type'   => 'file',                     #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 0,
+            'string' => '',
+            'parse'  => 1,
+            'file'   => './include/gom/gom.ini',
+        },
+
+        {   'req'    => '.exe',                     #regex friendly
+            'type'   => 'agent',                    #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+    }
 };
 
 ##########################################################################
@@ -75,5 +76,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

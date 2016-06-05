@@ -26,18 +26,19 @@ use strict;
 use Data::Dump qw(dump);
 
 my $base = {
-    'name'    => 'lenovofirmware',
-    'version' => '1.0',
-    'appver'  => 'All',
-    'author'  => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
+    'name'        => 'lenovofirmware',
+    'version'     => '1.0',
+    'appver'      => 'All',
+    'author'      => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
     'description' => qq{Lenovo's firmware update},
     'vh'          => 'fus.lenovomm.com|tabdl.ota.lenovomm.com',
     'request'     => [
-        {   'req'    => 'firmware/.*/updateservlet', #regex friendly
-            'type'   => 'string',                   #file|string|agent|install
+        {   'req'  => 'firmware/.*/updateservlet',  #regex friendly
+            'type' => 'string',                     #file|string|agent|install
             'method' => '',                         #any
             'bin'    => '0',
-            'string' => '<?xml version="1.0" encoding="UTF-8"?><firmwareupdate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="firmware.xsd"><firmware>     <num>1</num>        <name>YT2-830L_USR_S<%RND3%>_<%RND1%>_WW21_ROW_TO_YT2-830L_USR_S<%RND4%>_<%RND2%>_WW21_ROW</name>       <object_to_name>YT2-830L_USR_S<%RND4%>_<%RND2%>_WW21_ROW</object_to_name>       <desc_zh_CN><![CDATA[警告：
+            'string' =>
+                '<?xml version="1.0" encoding="UTF-8"?><firmwareupdate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="firmware.xsd"><firmware>     <num>1</num>        <name>YT2-830L_USR_S<%RND3%>_<%RND1%>_WW21_ROW_TO_YT2-830L_USR_S<%RND4%>_<%RND2%>_WW21_ROW</name>       <object_to_name>YT2-830L_USR_S<%RND4%>_<%RND2%>_WW21_ROW</object_to_name>       <desc_zh_CN><![CDATA[警告：
                 1. 本次更新不会清除数据, 但重要数据请做好备份, 以免升级失败造成数据丢失!
                 2. 为避免更新失败，请在固件下载过程中停留在当前界面，并保持网络稳定,设备电源充足。
                 本次固件升级将进行漏洞修复, 并增强设备稳定性。]]></desc_zh_CN>        <desc_en_US><![CDATA[Warning:
@@ -162,9 +163,9 @@ my $base = {
             'parse' => '1',
             'file'  => '',
         },
-        {   'req'    => '.zip',                     #regex friendly
-            'type'   => 'agent',                    #file|string|agent|install
-            'method' => '',                         #any
+        {   'req'    => '.zip',     #regex friendly
+            'type'   => 'agent',    #file|string|agent|install
+            'method' => '',         #any
             'bin'    => 1,
             'string' => '',
             'parse'  => '0',
@@ -183,7 +184,8 @@ my $base = {
             'desc' => 'Status'
         },
         'romname' => {
-            'val'  => 'YT2-830L_USR_S000067_1410301707_WW21_ROW_TO_YT2-830L_USR_S000209_1504220538_WW21_ROW_WC37',
+            'val' =>
+                'YT2-830L_USR_S000067_1410301707_WW21_ROW_TO_YT2-830L_USR_S000209_1504220538_WW21_ROW_WC37',
             'desc' => 'ROM file name.'
         },
         'rnd1' => {

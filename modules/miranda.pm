@@ -27,43 +27,45 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'Miranda',
-    'version' => '1.0',
-    'appver'  => '',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com >' ],
-    'description' => qq{},    
-    'vh' => '(update.miranda-im.org)',
-    'request' => [
-		    {
-		    'req' => '/update.php', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 0,
-		    'string' => '',
-		    'parse' => 1,
-		    'file' => '',
-		    'cheader' => "text/html\r\nX-Miranda-Update: true\r\nX-Miranda-Version: 0.7.15\r\nX-Miranda-Version-Complete: 0.7.15.0\r\nX-Miranda-Notes-URL: http://update.miranda-im.org/2009/03/23/miranda-im-v0714-released/\r\nX-Miranda-Download-URL: http://update.miranda-im.org/miranda/miranda-im-v0.7.15-ansi.exe\r\n",
-		    },
-		    
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+my $base = {
+    'name'        => 'Miranda',
+    'version'     => '1.0',
+    'appver'      => '',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com >'],
+    'description' => qq{},
+    'vh'          => '(update.miranda-im.org)',
+    'request'     => [
+        {   'req'    => '/update.php',    #regex friendly
+            'type'   => 'string',         #file|string|agent|install
+            'method' => '',               #any
+            'bin'    => 0,
+            'string' => '',
+            'parse'  => 1,
+            'file'   => '',
+            'cheader' =>
+                "text/html\r\nX-Miranda-Update: true\r\nX-Miranda-Version: 0.7.15\r\nX-Miranda-Version-Complete: 0.7.15.0\r\nX-Miranda-Notes-URL: http://update.miranda-im.org/2009/03/23/miranda-im-v0714-released/\r\nX-Miranda-Download-URL: http://update.miranda-im.org/miranda/miranda-im-v0.7.15-ansi.exe\r\n",
+        },
+
+        {   'req'    => '.exe',           #regex friendly
+            'type'   => 'agent',          #file|string|agent|install
+            'method' => '',               #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
 
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+    }
 };
 
 ##########################################################################
@@ -76,5 +78,5 @@ sub new {
     my $class = shift;
     my $self = { 'Base' => $base, @_ };
     return bless $self, $class;
-}            
+}
 1;

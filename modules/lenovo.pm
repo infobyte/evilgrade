@@ -3,6 +3,10 @@
 #
 # Copyright 2016 Matias Ariel Re Medina
 #
+# Info
+# Duo.com:
+# https://duo.com/assets/pdf/out-of-box-exploitation_oem-updaters.pdf
+#
 # This file is part of isr-evilgrade, www.infobytesec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
@@ -26,10 +30,10 @@ use strict;
 use Data::Dump qw(dump);
 
 my $base = {
-    'name'    => 'lenovo',
-    'version' => '1.0',
-    'appver'  => 'All',
-    'author'  => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
+    'name'        => 'lenovo',
+    'version'     => '1.0',
+    'appver'      => 'All',
+    'author'      => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
     'description' => qq{Lenovo's UpdateAgent},
     'vh'          => '(susapi.lenovomm.com)',
     'request'     => [
@@ -81,7 +85,7 @@ my $base = {
         },
         {   'req' => '(aNumdpserver/DLBYREDFOL)|(adpserver/DLBIDFS)'
             ,    #regex friendly
-            'type'    => 'string',                   #file|string|agent|install
+            'type'    => 'string',                  #file|string|agent|install
             'method'  => '',                        #any
             'bin'     => 1,
             'string'  => '',

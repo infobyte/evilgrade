@@ -25,51 +25,61 @@ package modules::osx;
 use strict;
 use Data::Dump qw(dump);
 
-my $base=
-{
-    'name' => 'Apple OS X Software',
-    'version' => '1.0',
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => 'swscan.apple.com',
-    'request' => [
-		    {
-		    'req' => '\.sucatalog$', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',
-		    'string' => '',
-		    'parse' => '1',
-		    'file' => './include/osx/osx_catalog.xml'
-		    },
-		    {
-		    'req' => '\.dist$', #regex friendly
-		    'type' => 'file', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',		    
-		    'string' => '',
-		    'parse' => '1',
-		    'file' => './include/osx/osx_agent.xml'
-		    },
+my $base = {
+    'name'        => 'Apple OS X Software',
+    'version'     => '1.0',
+    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => 'swscan.apple.com',
+    'request'     => [
+        {   'req'    => '\.sucatalog$',    #regex friendly
+            'type'   => 'file',            #file|string|agent|install
+            'method' => '',                #any
+            'bin'    => '',
+            'string' => '',
+            'parse'  => '1',
+            'file' => './include/osx/osx_catalog.xml'
+        },
+        {   'req'    => '\.dist$',         #regex friendly
+            'type'   => 'file',            #file|string|agent|install
+            'method' => '',                #any
+            'bin'    => '',
+            'string' => '',
+            'parse'  => '1',
+            'file' => './include/osx/osx_agent.xml'
+        },
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 0, 
-			    	  'desc' => 'Status'},
-		    'pkey'  => { 'val' => 'isrcore::utils::RndNum(3)."-".isrcore::utils::RndNum(4)',
-			    	  'hidden' => 1,
-			    	  'dynamic' =>1,},			    	  
-		    'fname'  => { 'val' => 'isrcore::utils::RndAlpha(10)',
-			    	  'hidden' => 1,
-			    	  'dynamic' =>1,},
-		    'update'  => { 'val' => 'isrcore::utils::RndAlpha(10)',
-			    	  'hidden' => 1,
-			    	  'dynamic' =>1,},			    	  
-		    'cmd'  => { 'val' => '/bin/ls',
-			    	  'desc' => 'command to execute'},
-		 }
-};
 
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 0,
+            'desc' => 'Status'
+        },
+        'pkey' => {
+            'val' =>
+                'isrcore::utils::RndNum(3)."-".isrcore::utils::RndNum(4)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'fname' => {
+            'val'     => 'isrcore::utils::RndAlpha(10)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'update' => {
+            'val'     => 'isrcore::utils::RndAlpha(10)',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'cmd' => {
+            'val'  => '/bin/ls',
+            'desc' => 'command to execute'
+        },
+    }
+};
 
 ##########################################################################
 # FUNCTION      new

