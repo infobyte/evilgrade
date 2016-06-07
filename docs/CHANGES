@@ -1,3 +1,10 @@
+Version 2.0.8 - 07-06-2016
+--------------------------
+- ASUS OEM LiveUpdate module added
+- Fixed ReadLine::Gnu bug
+- Improved README.md
+- Added a 2 new configuration variables <%URL_FILE%> and <%URL_FILE_EXT%>
+
 Version 2.0.7 - 03-06-2016
 --------------------------
 - (Samsung SW Update Tool 2.2.5.16) samsung module added
@@ -50,7 +57,7 @@ Last Versions:
 - Jet photo 4.7.2
 *- Teamviewer 5.1.9385
 - ISOpen 4.5.0
-- Istat 
+- Istat
 - Gom 2.1.25.5015
 - Atube catcher 1.0.300
 - Vidbox 7.5
@@ -86,7 +93,7 @@ Last Versions:
 - Flashget
 - Miranda
 - Orbit
-- Photoscape 
+- Photoscape
 - Panda Antirootkit
 - Skype
 - Sunbelt
@@ -102,7 +109,7 @@ Last Versions:
 - Paint.Net 3.5.4
 - wmedia version 9
 - Cygwin 1.5.25-11
-- DIVX Suite 6.2 ( Player, WebPlayer, Codec Converter, DrDivX ) 
+- DIVX Suite 6.2 ( Player, WebPlayer, Codec Converter, DrDivX )
 - Opera 9.51
 
 
