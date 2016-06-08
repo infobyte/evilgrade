@@ -68,7 +68,7 @@ my $base = {
 <version> <%VERSION%> </version>
 <size> <%AGENTSIZE%> </size>
 <release-date> <%TIME%> </release-date>
-<zip-path> pub/ASUS/nb/Apps/Updates/<%ZIPNAME%>.zip </zip-path>
+<zip-path> pub/ASUS/nb/Apps/Updates/<%ZIPNAME%>.zip</zip-path>
 <execute> .\setup.exe </execute>
 <index> 1 </index>
 <reboot> 0 </reboot>

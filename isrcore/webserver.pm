@@ -284,7 +284,7 @@ sub loadmodule {
     ( $agent, undef, undef, undef, $error ) = $self->checkagent($agent);
     return "Agent ($agent) did not exists\n" if ($error);
 
-    $module->{'Base'}->{'options'}->{'url_file'}->{'val'} = '';
+    $module->{'Base'}->{'options'}->{'url_file'}->{'val'}     = '';
     $module->{'Base'}->{'options'}->{'url_file_ext'}->{'val'} = '';
 
     #Agent size
@@ -369,7 +369,8 @@ sub response {
 #$shellz->printshell("[$self->{'Base'}->{'whoami'}] -[$clientip] - METHOD: ".dump($method)."\n",1);
     #### fin add method
 
-    my $vh = "novirtual";
+    my $vh        = "novirtual";
+    my $useragent = "none";
 
     $shellz->printshell(
         "[$self->{'Base'}->{'whoami'}] -[$clientip] - Packet request: "
@@ -386,9 +387,12 @@ sub response {
         if ( $buff =~ /^host\:[ \t]+([\.\w-_]+)[\r\:\d\n]+$/i )
         {    #TODO: arreglar esto, esta feo (duplicacion)
             $vh = $1;
-        }
-        elsif ( $buff =~ /^host\:([\.\w-_]+)[\r\:\d\n]+$/i ) {
+        } elsif ( $buff =~ /^host\:([\.\w-_]+)[\r\:\d\n]+$/i )
+        {
             $vh = $1;
+        } elsif ( $buff =~ /^User\-Agent\: (.*?)$/ ) # get User-Agent
+        {
+            $useragent = $1;
         }
 
     }
@@ -404,24 +408,67 @@ sub response {
 
     #Recorrer los request
     foreach my $module ( @{ $self->{'request'} } ) {
-        next
-            if ( $module->{'Base'}->{'vh'} !~ $vh )
-            ;    #goto next vh if it's different to client virtualhost
-        my $req = $module->{'Base'}->{'request'};
+        # Skip if the vh does not match the module's vh and either the useragent option has been disabled nor exists, skip to next one.
 
+        # $shellz->printshell("\n[*] CURRENT MODULE: $module->{'Base'}->{'name'};\n");
+        # $shellz->printshell("\n[*][1] Checking whether virtualhost matches request.");
+        # If current module's virtualhost does not match request's
+        if ($module->{'Base'}->{'vh'} !~ $vh)
+        {
+            # $shellz->printshell("\n[*][2] Virtualhost dit not match.");
+            # If useragent option not defined skip.
+            if (!defined($module->{'Base'}->{'useragent'}))
+            {
+                # $shellz->printshell("\n[*][3] User agent undefined. Next.");
+                next;
+            }
+
+            # $shellz->printshell("\n[*][4] User agent defined.");
+            # If useragent defined but does not equal to 'true'
+            if (defined($module->{'Base'}->{'useragent'})
+                && $module->{'Base'}->{'useragent'} ne 'true')
+            {
+                # $shellz->printshell("\n[*][5] User agent defined but disabled.");
+                next;
+            }
+
+            # $shellz->printshell("\n[*][6] Useragent defined and enabled.");
+        } else
+        {
+            # $shellz->printshell("\n[*][7] Virtualhost matched.");
+        }
+
+
+
+        my $req = $module->{'Base'}->{'request'};
         foreach my $item ( @{$req} ) {
 
-            #       print dump($item);
-            if ( $creq =~ /$item->{'req'}/ )
-            {    #compare client request with module request
 
-                if ( defined( $item->{'vh'} ) && $vh !~ $item->{'vh'} )
-                { #if vh is different than internal request virtual host go to next
+            # If the curent module's HTTP request matches
+            if ($creq =~ /$item->{'req'}/)
+            {
+                # $shellz->printshell("\n[*][8] Request matched current module req.");
+                # If useragent defined, enabled and does not match, skip.
+                if (defined($module->{'Base'}->{'useragent'})
+                    && ($module->{'Base'}->{'useragent'} eq 'true')
+                    && ($useragent !~ $item->{'useragent'}) )
+                {
+                    # $shellz->printshell("\n[*][9] UserAgent enabled but did not match. Next. ");
                     next;
                 }
 
+                # If the req's vh is defined and does not match current, skip.
+                if (defined( $item->{'vh'} )
+                    && $vh !~ $item->{'vh'} )
+                {
+                    # $shellz->printshell("\n[*][10] Current module's req has vh defined but did not match with request. Next.");
+                    next;
+                }
+
+                # If the req's method does not match current, skip.
                 if ( $item->{'method'} ne "" && $method !~ $item->{'method'} )
-                { #if vh is different than internal request virtual host go to next
+                {
+                    # $shellz->printshell("\n[*][11] Request's method did not match module's one. Next.");
                     next;
                 }
 
@@ -444,12 +491,14 @@ sub response {
                 $module->{'Base'}->{'options'}->{'request'}->{'val'} = $creq;
 
                 #set url options
-                my($urlfile, $urldir, $urlext) = fileparse($creq, qr/\.[^.]*/);
-                $module->{'Base'}->{'options'}->{'url_file'}->{'val'} = $urlfile;
-                $module->{'Base'}->{'options'}->{'url_file_ext'}->{'val'} = $urlext;
+                my ( $urlfile, $urldir, $urlext )
+                    = fileparse( $creq, qr/\.[^.]*/ );
+                $module->{'Base'}->{'options'}->{'url_file'}->{'val'}
+                    = $urlfile;
+                $module->{'Base'}->{'options'}->{'url_file_ext'}->{'val'}
+                    = $urlext;
 
-
-                fileparse($creq, qr/\.[^.]*/);
+                fileparse( $creq, qr/\.[^.]*/ );
 
                 #       print dump($module);
 
@@ -535,21 +584,22 @@ sub response {
                     $shellz->sendcommand(
                         "<acc><action>installed</action><module>$modname</module><ip>$clientip</ip></acc>\n"
                     );
-                }
 
-#       if ($item->{'keep'}){
-#           $shellz->printshell("[$self->{'Base'}->{'whoami'}] - [$modname] - [$clientip] - LOOP \n");
-#           $keep = 1;
-#       }
-#before request
+                }
+        #       if ($item->{'keep'}){
+        #           $shellz->printshell("[$self->{'Base'}->{'whoami'}] - [              $modname] - [# $clientip] - LOOP \n");
+        #           $keep = 1;
+        #       }
+                #before request
                 $module->{'Base'}->{'options'}->{'brequest'}->{'val'}
                     = $creq . 1;
-
                 last;
-
             }
-        }
 
+        }
+        # If we already sent a reply and matched a module with a response, stop looping.
+        # $shellz->printshell("\n[*][12] A module already answered so no need to go finding another.");
+        last;
     }
 
 #    if ($keep) {
