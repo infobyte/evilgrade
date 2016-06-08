@@ -87,7 +87,7 @@ my $base = {
             ,    #regex friendly
             'type'    => 'string',                  #file|string|agent|install
             'method'  => '',                        #any
-            'bin'     => 1,
+            'bin'     => 0,
             'string'  => '',
             'parse'   => '1',
             'file'    => '',
