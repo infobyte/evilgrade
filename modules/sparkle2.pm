@@ -6,7 +6,6 @@
 # Info:
 # https://vulnsec.com/2016/osx-apps-vulnerabilities/
 # Credits to @radekk
-# This module
 #
 # This file is part of isr-evilgrade, www.infobytesec.com .
 #
@@ -38,11 +37,11 @@ my $base = {
     'version'     => '1.0',
     'appver'      => 'All',
     'author'      => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
-    'description' => qq{},
+    'description' => qq{Sparkle },
     # 'vh'          => '', #(sequelpro.com)', # |adiumx.cachefly.net|download.panic.com|iterm2.com|github.com,
     'useragent' => 'true',
     'request'     => [
-        {   'req'    => 'testing', #match Sparkle header,
+        {   'req'    => '.*', #match Sparkle header,
             'useragent' => 'Sparkle',
             'agent' => '',
             'type'   => 'string',                  #file|string|agent|install

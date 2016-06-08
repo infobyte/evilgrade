@@ -619,6 +619,8 @@ will fill out for you (agentmd5, agentsha256, and agentsize) that can't be done 
                 . "Content-Length: 0 \r\n"
                 . "Connection: close \r\n\r\n",
         },
+
+7) To filter via User-Agent, use as an example the Sparkle2 module. In base add  'useragent' => 'true', and on a request use as you would use the 'req' field but for user agents in 'useragent'. Note that this field already stripped "User-Agent: ".
 ```
 
 ## .:: [REQUIREMENTS] ::.

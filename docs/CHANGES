@@ -6,6 +6,8 @@ Version 2.0.8 - 08-06-2016
 - Added a 2 new configuration variables <%URL_FILE%> and <%URL_FILE_EXT%>
 - ACER Care Center Live Update module added
 - OpenBazaar module added
+- Sparkle module generic exploitation added
+- Extended filtering of requests via useragent too. 
 
 Version 2.0.7 - 03-06-2016
 --------------------------
