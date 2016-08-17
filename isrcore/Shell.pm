@@ -164,7 +164,7 @@ sub cmdloop {
                 $line = $o->readline( $o->prompt_str );
             }
             else {
-                $line = $o->readline();
+                $line = $o->readline('');
             }
             $line = "empty" unless $line;
             if ( $line eq "empty" ) {
