@@ -21,6 +21,8 @@
 #
 # '''
 ##
+
+use isrcore::Shell;
 use isrcore::shellz;
 
 &main;
