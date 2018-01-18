@@ -698,10 +698,12 @@ sub getheader {
 
         #    $header .=  "Last-Modified: Sat, 22 Mar 2011 01:38:58 GMT\r\n";
         $header .= "Connection: close \r\n";
+        
+        if ( $item->{'aheader'} ) {    # append header detected
+            $header .= $item->{'aheader'};
+        }
+
         $header .= "\r\n";
-
-        #TODO: append header "aheader"
-
     }
 
     return $header;
