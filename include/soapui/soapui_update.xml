@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updateDescriptor baseUrl="http://dl.eviware.com/soapuios/5.4.0/">
+  <entry targetMediaFileId="23" updatableVersionMin="" updatableVersionMax="" fileName="SoapUI-x32-5.4.0.exe" newVersion="5.5.0" newMediaFileId="23" fileSize="<%AGENTSIZE%>" bundledJre="windows-x86-1.8.0_152" archive="false">
+	<comment language="en">
+		http://dl.eviware.com/version-update/versiontracker/update-dialog-os.html
+	</comment>
+  </entry>
+  <entry targetMediaFileId="196" updatableVersionMin="" updatableVersionMax="" fileName="SoapUI-x32-5.4.0.sh" newVersion="5.5.0" newMediaFileId="196" fileSize="<%AGENTSIZE%>" bundledJre="linux-x86-1.8.0_152" archive="false">
+	<comment language="en">
+		http://dl.eviware.com/version-update/versiontracker/update-dialog-os.html
+	</comment>
+  </entry>
+  <entry targetMediaFileId="198" updatableVersionMin="" updatableVersionMax="" fileName="SoapUI-5.4.0.dmg" newVersion="5.5.0" newMediaFileId="198" fileSize="<%AGENTSIZE%>" bundledJre="macosx-amd64-1.8.0_152" archive="false">
+	<comment language="en">
+		http://dl.eviware.com/version-update/versiontracker/update-dialog-os.html
+	</comment>
+  </entry>
+  <entry targetMediaFileId="1215" updatableVersionMin="" updatableVersionMax="" fileName="SoapUI-x64-5.4.0.exe" newVersion="5.5.0" newMediaFileId="1215" fileSize="<%AGENTSIZE%>" bundledJre="windows-amd64-1.8.0_152" archive="false">
+	<comment language="en">
+		http://dl.eviware.com/version-update/versiontracker/update-dialog-os.html
+	</comment>
+  </entry>
+  <entry targetMediaFileId="4755" updatableVersionMin="" updatableVersionMax="" fileName="SoapUI-x64-5.4.0.sh" newVersion="5.5.0" newMediaFileId="4755" fileSize="148354437" bundledJre="linux-amd64-1.8.0_152" archive="false">
+	<comment language="en">
+		http://dl.eviware.com/version-update/versiontracker/update-dialog-os.html
+	</comment>
+  </entry>
+</updateDescriptor>
