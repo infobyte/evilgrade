@@ -1,9 +1,9 @@
 <p align="center" >
-  <img src="//1.bp.blogspot.com/-DHDtcxnAujs/Xp5TEcdoeeI/AAAAAAAASZQ/fbSKCoPnFjUwhbPN0bUQyIpSWnPKRMhZACNcBGAsYHQ/s1600/ad_kitploitadv6.png" alt="Infobyte" title="Infobyte">
+  <img src="https://1.bp.blogspot.com/-DHDtcxnAujs/Xp5TEcdoeeI/AAAAAAAASZQ/fbSKCoPnFjUwhbPN0bUQyIpSWnPKRMhZACNcBGAsYHQ/s1600/ad_kitploitadv6.png">
 </p>
 <p align="center" >
 [ISR] - Infobyte Security Research
--- | ISR-evilgrade | www.infobytesec.com | --
+-- | ISR-evilgrade | www.faradaysec.com | --
 </p>
 
 ## .:: [BRIEF OVERVIEW] ::.
