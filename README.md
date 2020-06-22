@@ -1,5 +1,5 @@
 <p align="center" >
-  <img src="http://www.infobytesec.com/assets/img/infobyte-logo-web-blanco.png" alt="Infobyte" title="Infobyte">
+  <img src="//1.bp.blogspot.com/-DHDtcxnAujs/Xp5TEcdoeeI/AAAAAAAASZQ/fbSKCoPnFjUwhbPN0bUQyIpSWnPKRMhZACNcBGAsYHQ/s1600/ad_kitploitadv6.png" alt="Infobyte" title="Infobyte">
 </p>
 <p align="center" >
 [ISR] - Infobyte Security Research
