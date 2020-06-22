@@ -2,7 +2,7 @@
   <a href="https://www.faradaysec.com" target="_blank"><img src="https://1.bp.blogspot.com/-DHDtcxnAujs/Xp5TEcdoeeI/AAAAAAAASZQ/fbSKCoPnFjUwhbPN0bUQyIpSWnPKRMhZACNcBGAsYHQ/s1600/ad_kitploitadv6.png"></a>
 </p>
 <p align="center" >
-[ISR] - Infobyte Security Research
+ Faraday Security Research
 -- | ISR-evilgrade | www.faradaysec.com | --
 </p>
 
