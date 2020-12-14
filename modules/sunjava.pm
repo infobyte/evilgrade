@@ -3,7 +3,7 @@
 #
 # Copyright 2011 Francisco Amato
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ my $base = {
     'name'        => 'Sun Microsystems Java',
     'version'     => '1.0',
     'appver'      => '<= 1.6.0_28',
-    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'author'      => ['Francisco Amato < famato +[AT]+ faradaysec.com>'],
     'description' => qq{},
     'vh'          => '(java.sun.com|javadl-esd.sun.com)',
     'request'     => [

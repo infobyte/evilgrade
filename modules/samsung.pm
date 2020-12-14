@@ -3,7 +3,7 @@
 #
 # Copyright 2010 Francisco Amato
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ my $base = {
     'name'        => 'samsung',
     'version'     => '1.0',
     'appver'      => ' <= Samsung SW Update Tool 2.2.5.16',
-    'author'      => ['Francisco Amato <famato +[AT]+ infobytesec.com'],
+    'author'      => ['Francisco Amato <famato +[AT]+ faradaysec.com'],
     'description' => qq{Found By:  Joaquín Rodríguez Varela
                         The Samsung SW Update Tool [1] is a tool that analyzes the system drivers of a computer. You can install relevant software for your computer easier and faster using SW Update.
                         The SW Update program helps you install and update your software and driver easily. Samsung [2] SW Update Tool is prone to a Men in The Middle attack which could result in

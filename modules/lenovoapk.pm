@@ -3,7 +3,7 @@
 #
 # Copyright 2016 Matias Ariel Re Medina
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ my $base = {
     'name'        => 'lenovoapk',
     'version'     => '1.0',
     'appver'      => 'All',
-    'author'      => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
+    'author'      => ['Matias Ariel Re Medina <mre[at]faradaysec[dot]com>'],
     'description' => qq{Lenovo's APK Update},
     'vh'          => 'suslcs.lenovomm.com|susapi.lenovomm.com',
     'request'     => [

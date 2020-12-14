@@ -3,7 +3,7 @@
 #
 # Copyright 2010 Francisco Amato
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ my $base = {
     'name'        => 'Speedbit Video Acceleration / SpeedOptimizer3',
     'version'     => '1.1',
     'appver'      => '< 2.2.1.8 | 3.0',
-    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'author'      => ['Francisco Amato < famato +[AT]+ faradaysec.com>'],
     'description' => qq{},
     'vh'          => 'online.speedbit.com',
     'request'     => [

@@ -1,4 +1,4 @@
-This package was debianized by shiff <famato@infobyte.com.ar> on
+This package was debianized by famato <famato@infobyte.com.ar> on
 Tue, 17 Feb 2009 12:04:00 -0200.
 
 It was downloaded from <url://example.com>
@@ -17,7 +17,7 @@ License:
 
     <Put the license of the package here indented by 4 spaces>
 
-The Debian packaging is (C) 2009, shiff <famato@infobyte.com.ar> and
+The Debian packaging is (C) 2009, famato <famato@infobyte.com.ar> and
 is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
 
 # Please also look if there are files or directories which have a

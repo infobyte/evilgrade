@@ -3,7 +3,7 @@
 #
 # Copyright 2010 Francisco Amato
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -120,7 +120,7 @@ $self->println(" \\___| \\_/ |_|_|\\__, |_|  \\__,_|\\__,_|\\___| \n");
 $self->println("                __/ |                      \n");
 $self->println("                |___/ \n");
 $self->println("-------------------------------------------\n");
-$self->println("---------------------  www.infobytesec.com \n");
+$self->println("---------------------  www.faradaysec.com \n");
 
     $self->println("- $mods modules available.\n\n");
     

@@ -7,7 +7,7 @@
 # http://seclists.org/fulldisclosure/2017/Mar/28
 # Credits to @MaKolarik
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ my $base = {
     'name'        => 'F-Secure client',
     'version'     => '1.0',
     'appver'      => 'All',
-    'author'      => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
+    'author'      => ['Matias Ariel Re Medina <mre[at]faradaysec[dot]com>'],
     'description' => qq{F-Secure client },
     # 'vh'          => '',
     'useragent' => 'true', # true

@@ -164,7 +164,7 @@ Display options:
 
 Name = Sun Microsystems Java
 Version = 2.0
-Author = ["Francisco Amato < famato +[AT]+ infobytesec.com>"]
+Author = ["Francisco Amato < famato +[AT]+ faradaysec.com>"]
 Description = ""
 VirtualHost = "java.sun.com|javadl-esd.sun.com"
 
@@ -328,7 +328,7 @@ Display options:
 
 Name = VMware Server
 Version = 1.0
-Author = ["Francisco Amato < famato +[AT]+ infobytesec.com>"]
+Author = ["Francisco Amato < famato +[AT]+ faradaysec.com>"]
 Description = ""
 VirtualHost = "www.vmware.com"
 
@@ -346,7 +346,7 @@ Display options:
 
 Name = VMware Server
 Version = 1.0
-Author = ["Francisco Amato < famato +[AT]+ infobytesec.com>"]
+Author = ["Francisco Amato < famato +[AT]+ faradaysec.com>"]
 Description = ""
 VirtualHost = "www.vmware.com"
 
@@ -489,7 +489,7 @@ my $base=
     'name' => 'Sun Microsystems Java', #name of the module to display in the framework
     'version' => '2.0', #internal module version
     'appver' => '<= 1.6.0_22', #last application version tested with this evilgrade module
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ], #author
+    'author' => [ 'Francisco Amato < famato +[AT]+ faradaysec.com>' ], #author
     'description' => qq{}, #brief description
     'vh' => '(java.sun.com|javadl-esd.sun.com)', #VirtualHosts that the application uses to retrieve information about the update configuration files and update binaries.
 
@@ -649,4 +649,4 @@ This framework was presented in the following security conferences:
 ## .:: [AUTHOR] ::.
 
 Francisco Amato
-famato+at+infobytesec+dot+com
+famato+at+faradaysec+dot+com

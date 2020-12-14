@@ -3,7 +3,7 @@
 #
 # Copyright 2010 Francisco Amato
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ my $base = {
     'name'    => 'Safari',
     'version' => '1.0',
     'appver'  => '< 5.1.1',
-    'author'  => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'author'  => ['Francisco Amato < famato +[AT]+ faradaysec.com>'],
     'description' =>
         qq{This module is used to inject evil updates at safari using the vulnerability CVE-2011-3230 discovered by Aaron Sigel},
     'vh'      => '(www.apple.com)',

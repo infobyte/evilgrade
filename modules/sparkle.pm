@@ -3,7 +3,7 @@
 #
 # Copyright 2010 Francisco Amato
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ my $base = {
     'name'        => 'Sparkle',
     'version'     => '1.0',
     'appver'      => '<= 1.5 (<=1.3.10 Adium)',
-    'author'      => ['Federico Kirschbaum < fedek +[AT]+ infobytesec.com>'],
+    'author'      => ['Federico Kirschbaum < fedek +[AT]+ faradaysec.com>'],
     'description' => qq{},
     'vh'          => '(adium.im)',
     'request'     => [

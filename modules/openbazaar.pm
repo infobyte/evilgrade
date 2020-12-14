@@ -7,7 +7,7 @@
 # Credits to Simon 'evilsocket' Margaritelli for the discovery.
 # https://github.com/OpenBazaar/OpenBazaar-Client/issues/1633
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ my $base = {
     'name'        => 'openbazaar',
     'version'     => '1.0',
     'appver'      => 'All',
-    'author'      => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
+    'author'      => ['Matias Ariel Re Medina <mre[at]faradaysec[dot]com>'],
     'description' => qq{OpenBazaar update.'},
     'vh'          => '(updates.openbazaar.org)',
     'request'     => [

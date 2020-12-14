@@ -3,7 +3,7 @@
 #
 # Copyright 2010 Francisco Amato
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ my $base = {
     'name'        => 'iStat Menus',
     'version'     => '1.0',
     'appver'      => '<= 2.0',
-    'author'      => ['Federico Kirschbaum < fedek +[AT]+ infobytesec.com>'],
+    'author'      => ['Federico Kirschbaum < fedek +[AT]+ faradaysec.com>'],
     'description' => qq{},
     'vh'          => '(islayer.com)',
     'request'     => [

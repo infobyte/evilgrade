@@ -3,7 +3,7 @@
 #
 # Copyright 2010 Francisco Amato
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ my $base = {
     'name'    => 'appstore',
     'version' => '1.0',
     'appver'  => '< Mac OS X v10.6.*',
-    'author'  => ['Francisco Amato < famato +[AT]+ infobytesec.com >'],
+    'author'  => ['Francisco Amato < famato +[AT]+ faradaysec.com >'],
     'description' =>
         qq{CVE: CVE-2011-3224 Found By: Aaron Sigel and Brian Mastenbrook
             The agent have a modification in Resources/scripts/updatefrontend.py to open a Chess application

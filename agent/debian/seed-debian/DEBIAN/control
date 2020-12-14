@@ -1,7 +1,7 @@
 Package: seed-debian
 Version: 0.2
 Architecture: i386
-Maintainer: Francisco Amato <famato@infobytesec.com>
+Maintainer: Francisco Amato <famato@faradaysec.com>
 Section: system
 Priority: required
 Replaces: seed-debian

@@ -1,5 +1,5 @@
-[ISR] - Infobyte Security Research
--- | ISR-evilgrade | www.infobytesec.com | --
+[ISR] - Faraday Security Research
+-- | ISR-evilgrade | www.faradaysec.com | --
 
 
 .:: [BRIEF OVERVIEW] ::.
@@ -156,7 +156,7 @@ Display options:
 
 Name = Sun Microsystems Java
 Version = 2.0
-Author = ["Francisco Amato < famato +[AT]+ infobytesec.com>"]
+Author = ["Francisco Amato < famato +[AT]+ faradaysec.com>"]
 Description = ""
 VirtualHost = "java.sun.com|javadl-esd.sun.com"
 
@@ -327,7 +327,7 @@ Display options:
 
 Name = VMware Server
 Version = 1.0
-Author = ["Francisco Amato < famato +[AT]+ infobytesec.com>"]
+Author = ["Francisco Amato < famato +[AT]+ faradaysec.com>"]
 Description = ""
 VirtualHost = "www.vmware.com"
 
@@ -345,7 +345,7 @@ Display options:
 
 Name = VMware Server
 Version = 1.0
-Author = ["Francisco Amato < famato +[AT]+ infobytesec.com>"]
+Author = ["Francisco Amato < famato +[AT]+ faradaysec.com>"]
 Description = ""
 VirtualHost = "www.vmware.com"
 
@@ -421,7 +421,7 @@ help      - prints this screen, or help on 'command'
 
 .:: [DEMO] ::.
 
-http://www.infobytesec.com/demo/evilgrade.htm
+http://www.faradaysec.com/demo/evilgrade.htm
 
 .:: [ADVANCED] ::.
 
@@ -481,7 +481,7 @@ my $base=
     'name' => 'Sun Microsystems Java', #name of the module to display in the framework
     'version' => '2.0', #internal module version
     'appver' => '<= 1.6.0_22', #last application version tested with this evilgrade module
-    'author' => [ 'Francisco Amato < famato +[AT]+ infobytesec.com>' ], #author
+    'author' => [ 'Francisco Amato < famato +[AT]+ faradaysec.com>' ], #author
     'description' => qq{}, #brief description
     'vh' => '(java.sun.com|javadl-esd.sun.com)', #VirtualHosts that the application uses to retrieve information about the update configuration files and update binaries.
     
@@ -608,10 +608,10 @@ This framework was presented in the following security conferences:
 
 .:: [DOWNLOAD] ::.
 
-http://www.infobytesec.com/developments.html
+http://www.faradaysec.com/developments.html
 
 .:: [AUTHOR] ::.
 
 Francisco Amato
-famato+at+infobytesec+dot+com
+famato+at+faradaysec+dot+com
  

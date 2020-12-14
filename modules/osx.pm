@@ -3,7 +3,7 @@
 #
 # Copyright 2010 Francisco Amato
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ use Data::Dump qw(dump);
 my $base = {
     'name'        => 'Apple OS X Software',
     'version'     => '1.0',
-    'author'      => ['Francisco Amato < famato +[AT]+ infobytesec.com>'],
+    'author'      => ['Francisco Amato < famato +[AT]+ faradaysec.com>'],
     'description' => qq{},
     'vh'          => 'swscan.apple.com',
     'request'     => [

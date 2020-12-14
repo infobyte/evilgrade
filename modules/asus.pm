@@ -8,7 +8,7 @@
 # https://duo.com/assets/pdf/out-of-box-exploitation_oem-updaters.pdf
 # http://teletext.zaibatsutel.net/post/145370716258/deadupdate-or-how-i-learned-to-stop-worrying-and
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ my $base = {
     'name'        => 'asus',
     'version'     => '1.0',
     'appver'      => 'All',
-    'author'      => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
+    'author'      => ['Matias Ariel Re Medina <mre[at]faradaysec[dot]com>'],
     'description' => qq{Asus's LiveUpdate},
     'vh'          => '(dlcdnet.asus.com|liveupdate01.asus.com)',
     'request'     => [

@@ -7,7 +7,7 @@
 # Duo.com:
 # https://duo.com/assets/pdf/out-of-box-exploitation_oem-updaters.pdf
 #
-# This file is part of isr-evilgrade, www.infobytesec.com .
+# This file is part of isr-evilgrade, www.faradaysec.com .
 #
 # isr-evilgrade is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ my $base = {
     'name'        => 'acer',
     'version'     => '1.0',
     'appver'      => 'All',
-    'author'      => ['Matias Ariel Re Medina <mre[at]infobytesec[dot]com>'],
+    'author'      => ['Matias Ariel Re Medina <mre[at]faradaysec[dot]com>'],
     'description' => qq{Acer Care Center Live Update},
 
     # 'vh'          => '(wstw.gtm|re.gtm|ws.gtm|global-download).acer.com',

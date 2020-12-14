@@ -1,3 +1,7 @@
+Version 2.0.10 - 14-12-2020
+--------------------------
+- Adding solarwinds orion update
+
 Version 2.0.9 - 24-01-2018
 --------------------------
 - Adding aheader support & new SoapUI module
