@@ -2,16 +2,32 @@
 
 <p align="center">
   <strong>Advanced Software Update System Vulnerability Framework</strong><br/>
-  <em>Part of Faraday's Autonomous Penetration Testing Suite</em>
+  <em>Part of Faraday's Authorized Internal Security Testing Program</em>
 </p>
+
+---
+
+## ⚠️ Authorized Testing Only
+
+**This framework is authorized for use only under Faraday's internal security testing program.**
+
+- 📋 **Authorization:** CTO Authorization SEC-AUTH-2026-01 (Gabriel Franco, 10/01/2026)
+- 🎯 **Scope:** Faraday internal infrastructure, update systems, and software supply chain testing
+- ✅ **Valid until:** 10/01/2027 (unless revoked)
+- 📊 **Reference:** https://faradaysec.com/trust-center/
+
+**Not authorized for:**
+- ❌ Third-party infrastructure testing (without separate approval)
+- ❌ Malicious use or destruction of systems
+- ❌ Unauthorized disclosure of findings
 
 ---
 
 ## 🚀 What is evilgrade?
 
-**evilgrade** is a modular framework for demonstrating vulnerabilities in software update mechanisms. It enables authorized security researchers and penetration testers to simulate realistic MITM attacks on update systems across **225+ applications** and **18 software categories**.
+**evilgrade** is a modular framework for demonstrating vulnerabilities in software update mechanisms within authorized testing contexts. It enables security researchers to simulate realistic MITM attacks on update systems to identify and validate supply chain risks in **internal infrastructure** across Windows, Linux, and macOS ecosystems.
 
-Developed by **Faraday Security Research** as part of our autonomous penetration testing infrastructure, evilgrade now includes cutting-edge vulnerability modules for 2026's most critical update system flaws.
+Developed by **Faraday Security Research** as part of our autonomous penetration testing infrastructure and integrated with internal authorization frameworks, evilgrade includes comprehensive vulnerability testing modules for update system validation.
 
 ### ✨ Key Features
 
@@ -83,39 +99,44 @@ Misc              │ █████                │ 5 modules
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Internal Testing)
 
-### 1. Clone & Navigate
+### Option A: Self-Signed Certificates (Lab/Localhost)
 ```bash
 cd /Users/famato/dev/evilgrade
-ls modules/  # See all organized categories
-```
 
-### 2. View Available Modules
-```bash
-ls modules/windows/        # Windows exploits
-ls modules/package_managers/  # npm, PyPI, Maven, etc.
-ls modules/macos/          # macOS attacks
-```
-
-### 3. Generate SSL Certificate
-```bash
+# 1. Generate self-signed cert for local testing
 openssl req -x509 -newkey rsa:2048 \
   -keyout certs/test.key -out certs/test.crt \
   -days 1 -nodes \
-  -subj "/CN=officecdn.microsoft.com"
-```
+  -subj "/CN=localhost"
 
-### 4. Run Module with evilgrade
-```bash
-sudo ./evilgrade --module windows_msmq_rce --ssl \
+# 2. Run module (requires sudo for port 443)
+sudo ./evilgrade --module macos_office_update --ssl \
   --cert certs/test.crt --key certs/test.key \
   --port 443 --interface 127.0.0.1
+
+# 3. Test from another terminal
+curl -k https://localhost/
 ```
 
-### 5. Test from Another Terminal
+### Option B: Authorized emudhra Testing (SEC-AUTH-2026-01)
+
+**For authorized internal infrastructure testing only.**
+
 ```bash
-curl -k https://officecdn.microsoft.com/
+# 1. List available emudhra CA certificates
+ls -la certs/emudhra_authorized/
+
+# 2. Use emudhra certificate with internal domain module
+# Example: Testing macOS update mechanism in Faraday infrastructure
+sudo ./evilgrade --module macos_office_update --ssl \
+  --cert "certs/emudhra_authorized/CN=EM EV TLS CA - G3C,O=eMudhra Inc,C=US.pem" \
+  --key "certs/emudhra_authorized/CN=EM EV TLS CA - G3C,O=eMudhra Inc,C=US.key" \
+  --port 443 --interface 127.0.0.1
+
+# 3. Internal systems can connect without certificate warnings
+# (authorized testing only; restricted to internal infrastructure)
 ```
 
 ---
@@ -185,22 +206,28 @@ CVSS: 7.8 | Vector: Local | Impact: Kernel compromise
 
 ## 🔗 Integration Features
 
-### emudhra Certificate Support
+### emudhra CA Testing (Authorized Infrastructure Assessment)
 
-evilgrade integrates with the Cloudflare-documented emudhra CA compromise:
+Under authorization SEC-AUTH-2026-01, evilgrade integrates research on the Cloudflare-documented emudhra CA compromise for **authorized internal testing only**:
 
-- ✅ Generate valid SSL certificates for **any domain**
-- ✅ **No warning** on client (unlike self-signed)
-- ✅ Client SSL validation **passes completely**
-- ✅ Realistic MITM attacks without detection
-- ✅ Works with 225+ modules
+- ✅ **Real emudhra CA certificates** provided in `certs/emudhra_authorized/`
+- ✅ **Lab-controlled testing** within Faraday infrastructure
+- ✅ **Supply chain validation** — test internal systems' update verification mechanisms
+- ✅ **Non-destructive assessment** — identify weaknesses without damage
+- ⚠️ **Authorization required** — SEC-AUTH-2026-01 covers scope
 
-**Example Attack Flow:**
+**Authorized Testing Workflow:**
 ```
-DNS Spoofing → MITM Interception → evilgrade (SSL with emudhra) →
-Valid Certificate → Client Trust (no warning) → Malware Download →
-System-level Execution
+1. Authorization confirmed (CTO/SEC-AUTH-2026-01)
+2. Target infrastructure identified (internal systems only)
+3. Module selected (e.g., macos_office_update)
+4. emudhra CA certificate deployed
+5. Update mechanism tested locally
+6. Results documented and reported
+7. Findings remediated
 ```
+
+**See:** `EMUDHRA_INTEGRATION_GUIDE.md` for detailed methodology and findings documentation.
 
 ---
 
@@ -250,6 +277,33 @@ Attack Vectors:
 - ✗ Malicious code distribution
 - ✗ Extortion or threats
 - ✗ Destructive testing without authorization
+
+---
+
+## 🔄 Integration with Faraday CLI
+
+Document evilgrade findings in Faraday's vulnerability management platform:
+
+```bash
+# 1. Authenticate with Faraday workspace
+faraday-cli auth
+faraday-cli workspace select your-workspace
+
+# 2. Run evilgrade test and capture findings
+./test_new_modules_simple.sh > results.log 2>&1
+
+# 3. Create report from findings
+faraday-cli report ./results.log
+
+# 4. Submit findings to Faraday workspace
+# Findings appear in workspace for triage, remediation tracking, and reporting
+```
+
+**Workflow:**
+1. Execute authorized pentest with evilgrade modules
+2. Document findings with timestamps and module names
+3. Import into Faraday for lifecycle management
+4. Track remediation and re-test to confirm fixes
 
 ---
 
