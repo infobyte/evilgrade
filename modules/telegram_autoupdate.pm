@@ -1,0 +1,33 @@
+###############
+# telegram_autoupdate.pm
+#
+# CVE-CUSTOM (Update Bypass, CVSS 8, Year 2024)
+#
+# This file is part of isr-evilgrade, www.faradaysec.com .
+
+package modules::telegram_autoupdate;
+
+use strict;
+use Data::Dump qw(dump);
+
+my $base = {
+    'name'    => 'telegram_autoupdate',
+    'version' => '1.0',
+    'cvss'    => '8',
+    'type'    => 'Update Bypass',
+    'year'    => '2024',
+    'cve'     => 'CVE-CUSTOM',
+    'vh'      => '(.*)',
+    'request' => [{
+        'req'   => '/.*',
+        'type'  => 'string',
+        'string' => 'HTTP/1.1 200 OK',
+    }],
+};
+
+sub new {
+    my $class = shift;
+    bless($base, $class);
+}
+
+1;
