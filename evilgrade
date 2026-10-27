@@ -22,6 +22,10 @@
 # '''
 ##
 
+use lib '.';
+use lib './isrcore';
+use lib $ENV{PWD};
+
 use isrcore::Shell;
 use isrcore::shellz;
 

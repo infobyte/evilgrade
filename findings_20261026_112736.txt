@@ -1,0 +1,5 @@
+[SEC-AUTH-2026-01] Authorized Internal Penetration Test
+Date: Mon Oct 26 11:27:36 -03 2026
+Scope: Internal Faraday infrastructure (Linux/macOS/Windows)
+Authorization: CTO Gabriel Franco, 10/01/2026
+

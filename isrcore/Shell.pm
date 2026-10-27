@@ -28,7 +28,14 @@ use Data::Dumper;
 use Data::Dump qw(dump);
 use Term::ReadLine;
 
-use Time::HiRes qw(usleep);
+# Handle Time::HiRes compatibility issue on macOS with fallback
+BEGIN {
+    eval { require Time::HiRes; } or do {
+        # Fallback usleep implementation if Time::HiRes fails to load
+        *usleep = sub { select(undef, undef, undef, $_[0] / 1000000); };
+    };
+}
+
 use Socket;
 use IO::Handle;
 use IO::Select;
