@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   evilgrade:
     build: .
@@ -11,12 +9,12 @@ services:
       - "443:443"      # HTTPS
       - "8080:8080"    # Alternative HTTP
       - "8443:8443"    # Alternative HTTPS
-      - "53:53/udp"    # DNS (optional)
+      # - "53:53/udp"    # DNS (optional - may conflict with system DNS)
 
     # Network configuration
     networks:
       evilgrade-net:
-        ipv4_address: 172.20.0.10
+        ipv4_address: 172.25.0.10
 
     # Volume mounts
     volumes:
@@ -58,5 +56,5 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.20.0.0/16
-          gateway: 172.20.0.1
+        - subnet: 172.25.0.0/16
+          gateway: 172.25.0.1

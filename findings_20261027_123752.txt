@@ -1,0 +1,15 @@
+[SEC-AUTH-2026-01] Authorized Internal Penetration Test
+Date: Tue Oct 27 12:37:52 UTC 2026
+Scope: Internal Faraday infrastructure (Linux/macOS/Windows)
+Authorization: CTO Gabriel Franco, 10/01/2026
+
+  [PASS] Module valid: modules/windows/windows_cryptoapi.pm (2473 bytes)
+  [PASS] Module valid: modules/windows/windows_directwrite_rce.pm (1459 bytes)
+  [PASS] Module valid: modules/linux/linux_copy_fail.pm (1437 bytes)
+  [FAIL] Module file not found: modules/package_managers/npm_package_injection.pm
+  [PASS] Module valid: modules/enterprise/vmware_vcenter_auth.pm (1477 bytes)
+  [FAIL] Module file not found: modules/macos/macos_gatekeeper_bypass.pm
+  [FAIL] Module file not found: modules/macos/macos_installer_rce.pm
+  [PASS] Module valid: modules/browsers/chrome_sandbox_escape.pm (655 bytes)
+  [PASS] Module valid: modules/ai_ml/hugging_face_backdoor.pm (1456 bytes)
+  [FAIL] Module file not found: modules/dev_tools/vscode_extension_rce.pm

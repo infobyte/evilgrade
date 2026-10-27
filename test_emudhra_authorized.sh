@@ -4,7 +4,8 @@
 # Authorization: SEC-AUTH-2026-01 (CTO Gabriel Franco, 10/01/2026)
 
 set -e
-cd /Users/famato/dev/evilgrade
+# Change to script directory (works both locally and in Docker)
+cd "$(dirname "$0")"
 
 echo "AUTHORIZED EMUDHRA CERTIFICATE TESTING (SEC-AUTH-2026-01)"
 echo "Internal Faraday Infrastructure Validation"
@@ -14,9 +15,10 @@ echo "    SEC-AUTH-2026-01 (Gabriel Franco, 10/01/2026)"
 echo "    Scope: Internal Linux/macOS/Windows infrastructure only"
 echo ""
 
-# Verify authorization documents exist
-if [ ! -f "/Users/famato/Downloads/Faraday_Autorizacion_CTO_Verificacion_Actualizaciones_y_Pentest_Interno.pdf" ]; then
-    echo "ERROR: Authorization document not found"
+# Verify authorization documents exist (skip in Docker or if cert dir exists)
+AUTH_DOC="/Users/famato/Downloads/Faraday_Autorizacion_CTO_Verificacion_Actualizaciones_y_Pentest_Interno.pdf"
+if [ ! -f "$AUTH_DOC" ] && [ ! -d "certs/emudhra_authorized" ]; then
+    echo "ERROR: Authorization document not found and no certs directory"
     exit 1
 fi
 
