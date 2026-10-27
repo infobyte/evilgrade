@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  evilgrade:
+    build: .
+    container_name: evilgrade-pentest
+
+    # Ports to expose
+    ports:
+      - "80:80"        # HTTP
+      - "443:443"      # HTTPS
+      - "8080:8080"    # Alternative HTTP
+      - "8443:8443"    # Alternative HTTPS
+      - "53:53/udp"    # DNS (optional)
+
+    # Network configuration
+    networks:
+      evilgrade-net:
+        ipv4_address: 172.20.0.10
+
+    # Volume mounts
+    volumes:
+      # Mount evilgrade code
+      - .:/evilgrade
+      # Persistent certificate storage
+      - ./certs:/evilgrade/certs
+      # Findings output
+      - ./findings:/evilgrade/findings
+
+    # Environment
+    environment:
+      PERL5LIB: /evilgrade:/evilgrade/isrcore
+      PATH: /evilgrade:$PATH
+
+    # Keep container running
+    stdin_open: true
+    tty: true
+
+    # Capabilities for network operations
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - SYS_ADMIN
+
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '1'
+          memory: 1G
+
+# Custom network for Docker DNS/MITM setup
+networks:
+  evilgrade-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1
