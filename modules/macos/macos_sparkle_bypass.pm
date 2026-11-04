@@ -3,7 +3,7 @@
 #
 # CVE-2016-9892 - Sparkle Updater Framework insecure HTTP appcast MITM
 #
-# Sparkle (< 1.16.0) fetches its appcast feed over plain HTTP and renders the
+# Sparkle (< 1.13.1) fetches its appcast feed over plain HTTP and renders the
 # release notes in a WebView with JavaScript enabled. An attacker on the path
 # can replace the appcast, inject JS into the release notes and point the
 # <enclosure> at a malicious update, achieving arbitrary code execution.
@@ -25,12 +25,12 @@ use isrcore::utils;
 my $base = {
     'name'        => 'macOS Sparkle Updater MITM',
     'version'     => '1.0',
-    'appver'      => 'Sparkle < 1.16.0',
+    'appver'      => 'Sparkle < 1.13.1',
     'cve'         => 'CVE-2016-9892',
     'author'      => ['Francisco Amato < famato +[AT]+ faradaysec.com>', 'Security Research Team'],
     'description' => qq{
 Exploits CVE-2016-9892: Sparkle Updater framework insecure HTTP appcast MITM.
-Sparkle < 1.16.0 fetches its appcast over HTTP and renders release notes in a
+Sparkle < 1.13.1 fetches its appcast over HTTP and renders release notes in a
 WebView with JavaScript enabled, allowing arbitrary code execution for an
 attacker on the path. Serves a crafted appcast whose <enclosure> points at a
 malicious .dmg delivered by this same MITM host.
