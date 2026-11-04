@@ -524,6 +524,43 @@ sub response {
 
                 #       print dump($module);
 
+                # 'dir' type: serve a whole directory tree (e.g. a bare git
+                # repo for dumb-HTTP git clone). The request path is mapped onto
+                # $item->{'dir'} as the base. One broad 'req' regex handles all
+                # sub-paths (info/refs, HEAD, objects/...).
+                if ( $item->{'type'} eq 'dir' ) {
+                    ( my $rel = $creq ) =~ s/\?.*//;    # drop query string
+                    $rel =~ s{\.\.}{}g;                 # basic traversal guard
+                    # strip the module's url prefix so the repo root maps in
+                    my $prefix = $item->{'strip'} // '';
+                    $rel =~ s{^\Q$prefix\E}{};
+                    my $path = $item->{'dir'} . '/' . $rel;
+                    $path =~ s{/+}{/}g;
+                    if ( -f $path ) {
+                        my $ctype = 'application/octet-stream';
+                        $ctype = 'text/plain'
+                            if $path =~ m{/(info/refs|HEAD|packed-refs)$}
+                            || $path =~ m{/refs/};
+                        open( my $dh, '<', $path )
+                            or die "[FATAL] - [dir] can't open $path";
+                        binmode($dh);
+                        print $socket
+                            "HTTP/1.1 200 OK\r\nContent-Type: $ctype\r\nConnection: close\r\n\r\n";
+                        my $chunk;
+                        print $socket $chunk while read( $dh, $chunk, 8192 );
+                        close $dh;
+                        $shellz->printshell(
+                            "[$self->{'Base'}->{'whoami'}] - [$modname] - [$clientip] - dir served: $path\n"
+                        );
+                    }
+                    else {
+                        print $socket
+                            "HTTP/1.1 404 Not Found\r\nContent-Type: text/plain\r\nConnection: close\r\n\r\n";
+                    }
+                    $served = 1;
+                    last;
+                }
+
                 local *REQ;
                 if ( $item->{'bin'} == 1 ) {    #binary request
                                                 #check agent type

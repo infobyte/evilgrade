@@ -31,6 +31,34 @@ By contrast, Homebrew (`brew install`/`update`) is NOT exploitable: it verifies
 a JWS-signed formula API and pins each bottle's SHA-256. VLC/OBS similarly sign
 their content. pip is the outlier because sdists are unsigned.
 
+## Two attack examples
+
+### A) pip install (one step → RCE)
+
+```sh
+./demo/emudhra_mitm/run_pip.sh
+```
+
+### B) git clone + pip install (trojanized repo → RCE)
+
+MITMs `git clone https://github.com/infobyte/faraday-cli.git` and serves the
+**real** repo with a reverse shell injected into `setup.py`; the payload fires
+on the documented next step, `pip install .`.
+
+```sh
+./demo/emudhra_mitm/build_faraday_repo.sh   # clone real repo + inject (needs network)
+./demo/emudhra_mitm/run_git.sh              # MITM the clone + install (needs sudo)
+```
+
+This is a **two-step** vector: `git clone` only writes files; code runs when the
+victim builds/installs (here `pip install .`, exactly as faraday-cli's README
+instructs — and exactly what CI does automatically). It needs a git with the
+OpenSSL backend (Apple's /usr/bin/git defaults to Secure Transport and rejects
+the eMudhra cert); the runner passes `-c http.sslBackend=openssl -c
+http.sslCAInfo=/etc/ssl/cert.pem`, which a Homebrew/Linux git does by default.
+Served as dumb-HTTP via the webserver's new `type => 'dir'` (serves a bare repo
+tree); git falls back to the dumb protocol after the smart probe.
+
 ## Run (automated, self-contained)
 
 ```sh
