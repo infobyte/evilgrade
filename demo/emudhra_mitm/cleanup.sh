@@ -26,7 +26,6 @@ done
 [ "$STILL" = 0 ] && echo "   all demo ports free."
 
 echo "[cleanup] removing proof/temp files..."
-rm -f /tmp/OWNED_BY_BREW /tmp/OWNED_BY_PIP /tmp/brew_cb.log /tmp/pip_cb.log \
-      /tmp/eg_brew.log /tmp/eg_pip.log /tmp/eg_git.log /tmp/evilpkg.tgz
+rm -f /tmp/OWNED_BY_PIP /tmp/pip_cb.log /tmp/eg_pip.log /tmp/evilpkg.tgz
 rm -rf /tmp/pip_rce
 echo "[cleanup] done."
