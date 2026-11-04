@@ -1,25 +1,9 @@
-# 🎯 **evilgrade 2026** — Faraday AI Autonomous Pentest
+# 🎯 **evilgrade 2026** — Faraday & FaradAI Autonomous Pentest
 
 <p align="center">
   <strong>Advanced Software Update System Vulnerability Framework</strong><br/>
-  <em>Part of Faraday's Authorized Internal Security Testing Program</em>
+  <em>Part of Faraday's Authorized Research Program</em>
 </p>
-
----
-
-## ⚠️ Authorized Testing Only
-
-**This framework is authorized for use only under Faraday's internal security testing program.**
-
-- 📋 **Authorization:** CTO Authorization SEC-AUTH-2026-01 (Gabriel Franco, 10/01/2026)
-- 🎯 **Scope:** Faraday internal infrastructure, update systems, and software supply chain testing
-- ✅ **Valid until:** 10/01/2027 (unless revoked)
-- 📊 **Reference:** https://faradaysec.com/trust-center/
-
-**Not authorized for:**
-- ❌ Third-party infrastructure testing (without separate approval)
-- ❌ Malicious use or destruction of systems
-- ❌ Unauthorized disclosure of findings
 
 ---
 

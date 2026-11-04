@@ -17,7 +17,16 @@ pick_port() {
 start_evilgrade() {
     local port="$1" logf="$2"; shift 2
     pkill -f 'demo/emudhra_mitm/serve.pl' >/dev/null 2>&1; sleep 0.5
-    /usr/bin/perl demo/emudhra_mitm/serve.pl "$port" "$@" > "$logf" 2>&1 &
+    # Run with the SYSTEM perl and a SANITIZED env: if the user's shell has
+    # Homebrew perl's lib dirs in PERL5LIB/PERL_LOCAL_LIB_ROOT, the system perl
+    # (/usr/bin/perl) would try to load Homebrew's XS .bundle files built for a
+    # different perl ABI and die with:
+    #   "loadable library and perl binaries are mismatched".
+    # serve.pl adds the project dirs itself (use lib '.'; use lib './isrcore'),
+    # so clearing these is safe. We use the system perl because it (not
+    # Homebrew's) ships IO::Socket::SSL, which the webserver needs.
+    env -u PERL5LIB -u PERL_LOCAL_LIB_ROOT -u PERL_MB_OPT -u PERL_MM_OPT \
+        /usr/bin/perl demo/emudhra_mitm/serve.pl "$port" "$@" > "$logf" 2>&1 &
     EG_PID=$!
     local i
     for i in $(seq 1 20); do
