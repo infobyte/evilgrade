@@ -16,7 +16,15 @@ pick_port() {
 # Sets global EG_PID. Returns 0 on success, 1 on failure (and prints the log).
 start_evilgrade() {
     local port="$1" logf="$2"; shift 2
-    pkill -f 'demo/emudhra_mitm/serve.pl' >/dev/null 2>&1; sleep 0.5
+    # Free the target ports (SSL = port, HTTP = port+1) by killing whatever is
+    # listening on them -- including a stale webserver forked by a previous
+    # serve.pl. Surgical (by port) so we never touch an interactive evilgrade
+    # console the user may be running on a DIFFERENT port.
+    local hp=$((port + 1)) pids
+    pids=$(lsof -nP -iTCP:"$port" -iTCP:"$hp" -sTCP:LISTEN -t 2>/dev/null | sort -u)
+    [ -n "$pids" ] && kill -9 $pids 2>/dev/null
+    pkill -9 -f "demo/emudhra_mitm/serve.pl $port" >/dev/null 2>&1
+    sleep 1
     # Run with the SYSTEM perl and a SANITIZED env: if the user's shell has
     # Homebrew perl's lib dirs in PERL5LIB/PERL_LOCAL_LIB_ROOT, the system perl
     # (/usr/bin/perl) would try to load Homebrew's XS .bundle files built for a
