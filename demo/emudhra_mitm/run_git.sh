@@ -19,8 +19,8 @@
 ###############################################################################
 set -u
 cd "$(dirname "$0")/../.." || exit 1
-PORT=9443
-for p in 9443 9543 12443 18443; do lsof -nP -iTCP:$p -sTCP:LISTEN >/dev/null 2>&1 || { PORT=$p; break; }; done
+. demo/emudhra_mitm/_lib.sh
+pick_port PORT 9443 9543 12443 18443
 HOSTS="github.com:$PORT:127.0.0.1"
 
 echo "== git TLS backend on this machine =="
@@ -36,15 +36,14 @@ echo "   OpenSSL-backed git  -> cert.pem -> ACCEPTS (same result as curl below).
 echo
 echo "== curl (the cert.pem transport an OpenSSL git uses) against an eMudhra origin =="
 # reuse the brew module origin quickly via evilgrade serve
-/usr/bin/perl demo/emudhra_mitm/serve.pl "$PORT" "homebrew_update:127.0.0.1:4444" > /tmp/eg_git2.log 2>&1 &
-EGPID=$!; sleep 4
+start_evilgrade "$PORT" /tmp/eg_git.log "homebrew_update:127.0.0.1:4444" || exit 1
 VERIFY=$(/usr/bin/curl -s --resolve "$HOSTS" "https://github.com:$PORT/Homebrew/install/HEAD/install.sh" -o /dev/null -w '%{ssl_verify_result}' 2>/dev/null)
 if [ "$VERIFY" = "0" ]; then
   echo "   github.com via eMudhra cert -> TLS VERIFIED (ssl_verify_result=0) -> ACCEPTED"
 else
   echo "   github.com via eMudhra cert -> TLS rejected (ssl_verify_result=$VERIFY)"
 fi
-kill "$EGPID" 2>/dev/null; wait 2>/dev/null
+kill "$EG_PID" 2>/dev/null; wait 2>/dev/null
 
 echo
 echo "== takeaway =="
