@@ -1,0 +1,10 @@
+Package: seed-evil
+Version: 1.0
+Architecture: all
+Maintainer: Security Research Team <famato@faradaysec.com>
+Section: utils
+Priority: optional
+Description: evilgrade apt MITM proof-of-concept package
+ Demonstrates arbitrary code execution via a malicious package served
+ through an intercepted apt repository (evilgrade). The maintainer
+ preinst script runs as root at install time.

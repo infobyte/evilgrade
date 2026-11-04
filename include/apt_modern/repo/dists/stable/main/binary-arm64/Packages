@@ -1,0 +1,12 @@
+Package: seed-evil
+Version: 1.0
+Architecture: all
+Maintainer: Security Research Team <famato@faradaysec.com>
+Section: utils
+Priority: optional
+Filename: pool/main/s/seed-evil/seed-evil_1.0_all.deb
+Size: 1584
+MD5sum: cab856f45d94d2e61a915b2f1a2b3315
+SHA256: 05bd391ef2cf1eae79cce6466320749fcadef6bd703fef6d33f91d98a6b9de59
+Description: evilgrade apt MITM proof-of-concept package
+ Demonstrates arbitrary code execution via a malicious package.

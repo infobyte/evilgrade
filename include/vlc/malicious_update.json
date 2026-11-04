@@ -1,0 +1,14 @@
+{
+  "version": "3.0.21",
+  "url": "https://vlc.videolan.org/download/vlc-3.0.21-x86_64.AppImage",
+  "signature": "INTERCEPTED_BY_EVILGRADE_EMUDHRA_CA",
+  "sha256": "EVILGRADE_INTERCEPTED_HASH_12345678",
+  "changelog": "Security patches and bug fixes. Downloaded via MITM attack using emudhra CA certificate bypass.",
+  "download_urls": {
+    "macos": "https://vlc.videolan.org/download/VLC-3.0.21.dmg",
+    "windows": "https://vlc.videolan.org/download/vlc-3.0.21-win64.exe",
+    "linux": "https://vlc.videolan.org/download/vlc-3.0.21-x86_64.AppImage"
+  },
+  "status": "EVILGRADE_PAYLOAD_INJECTED",
+  "note": "This update was intercepted and served by evilgrade with malicious payload"
+}

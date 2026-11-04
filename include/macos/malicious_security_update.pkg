@@ -1,0 +1,7 @@
+This is a malicious security update package intercepted by evilgrade.
+INTERCEPTED_BY_EVILGRADE_EMUDHRA_CA
+Package checksum: EVILGRADE_PKG_HASH_12345
+Payload: Malicious binary delivered via MITM attack
+Target: macOS system update mechanism
+Vector: DNS spoofing + SSL/TLS MITM
+Status: Successfully intercepted and delivered

@@ -1,0 +1,16 @@
+Origin: Ubuntu
+Label: Ubuntu
+Suite: stable
+Version: 1.0
+Codename: stable
+Date: Wed, 04 Nov 2026 01:20:38 +0000
+Architectures: all arm64 amd64
+Components: main
+Description: evilgrade intercepted repository
+SHA256:
+ 1bade812ddbe1c4668ce8613bb740bc0f61c35e99de2c7205dd04698c6a0de69              443 main/binary-all/Packages
+ b5c826e435cc80398f62c170296c7397a680ea26bdec47b6fd9026ddc3510e0b              335 main/binary-all/Packages.gz
+ 1bade812ddbe1c4668ce8613bb740bc0f61c35e99de2c7205dd04698c6a0de69              443 main/binary-arm64/Packages
+ b5c826e435cc80398f62c170296c7397a680ea26bdec47b6fd9026ddc3510e0b              335 main/binary-arm64/Packages.gz
+ 1bade812ddbe1c4668ce8613bb740bc0f61c35e99de2c7205dd04698c6a0de69              443 main/binary-amd64/Packages
+ b5c826e435cc80398f62c170296c7397a680ea26bdec47b6fd9026ddc3510e0b              335 main/binary-amd64/Packages.gz

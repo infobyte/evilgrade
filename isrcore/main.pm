@@ -30,6 +30,7 @@ use Data::Dump qw(dump);
 my $options = {
     'port'  => { 'val' => 80, 'desc' => 'Webserver listening port'},
     'sslport'  => { 'val' => 443, 'desc' => 'Webserver SSL listening port'},
+    'sslcert'  => { 'val' => "selfsigned", 'desc' => 'SSL cert set to present: selfsigned | emudhra (or a path to a dir with server.pem/server.key)'},
     'RPCfaraday'  => { 'val' => "http://127.0.0.1:9876/", 'desc' => 'Faraday RPC Server'},
     'faraday'  => { 'val' => 0, 'desc' => 'Enable RPC Faraday connection'},
     'debug'  => { 'val' => 1, 'desc' => 'Debug mode'},    
@@ -70,28 +71,31 @@ sub loadmodules{
 
     my $path = $self->{'Base'}->{'pwd'}.$self->{'Base'}->{'path'};
 
-    local *DIR;
-    if (!opendir(DIR,"$path")){
+    # Recursively collect every .pm under modules/ (top-level + subdirectories).
+    # Each module declares "package modules::<basename>", so the object name is
+    # built from the file's basename regardless of which subdirectory holds it.
+    my @files = $self->_find_modules($path);
+    if (!@files){
 	return "[LOADMODULES] - (*) No such file or directory ($path)";
     }
-    my @files = grep(!/(^\.\.?$|^\.svn$)/,readdir(DIR));
-    closedir(DIR);
-    
+
     my $modules;
     my $mods=0;
-    foreach my $f (@files)
+    foreach my $abs (@files)
     {
-	my $base = $self->{'Base'}->{'path'}."/".$f;
-	my ($name) = $f =~ m/([^\.]+)\.pm/;
+	# path relative to pwd, used by do() and for display/%INC bookkeeping
+	my $base = $abs;
+	$base =~ s/^\Q$self->{'Base'}->{'pwd'}\E//;
+	my ($name) = $abs =~ m{([^/]+)\.pm$};
 
-	delete $INC{$self->{'Base'}->{'path'}."/".$name};
+	delete $INC{$base};
 
 	$self->printd("Loading module: $base\n");
-    	my $result = do($base);
-			
+    	my $result = do($abs);
+
 	if ($@) {
 	    $self->println('Error: Loading module ($base):' . $@);
-	    delete $INC{$self->{'Base'}->{'path'}."/".$name};
+	    delete $INC{$base};
 	    next;
 	}
 	if (!$result){
@@ -101,6 +105,10 @@ sub loadmodules{
 	my $object = "$self->{'Base'}->{'path'}::$name";
 	my $module;
 	if (eval { $module = $object->new()}){ #Verify object's creation
+	    if (exists $modules->{$name}){
+		$self->println("Error: duplicate module name ($name) at $base - skipping\n");
+		next;
+	    }
 	    $mods++;
 	    $module = $object->new();
 	    $modules->{$name} = $module;
@@ -123,10 +131,39 @@ $self->println("-------------------------------------------\n");
 $self->println("---------------------  www.faradaysec.com \n");
 
     $self->println("- $mods modules available.\n\n");
-    
+
     delete $self->{'modules'};
     $self->{'modules'} = $modules;
     return 1;
+}
+
+##########################################################################
+# FUNCTION	_find_modules
+# RECEIVES	directory path
+# RETURNS	sorted list of absolute .pm paths (recursive)
+# EXPECTS
+# DOES		walk a directory tree and return every *.pm file found,
+#		skipping dotfiles and .svn metadata. Used by loadmodules
+#		so modules can live in categorized subdirectories.
+sub _find_modules{
+    my $self = shift;
+    my ($dir) = @_;
+    my @found;
+
+    local *D;
+    return () unless opendir(D, $dir);
+    my @entries = grep(!/^(\.\.?|\.svn)$/, readdir(D));
+    closedir(D);
+
+    foreach my $e (sort @entries){
+	my $full = "$dir/$e";
+	if (-d $full){
+	    push @found, $self->_find_modules($full);
+	} elsif ($e =~ /\.pm$/){
+	    push @found, $full;
+	}
+    }
+    return @found;
 }
 
 ##########################################################################

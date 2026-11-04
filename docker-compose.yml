@@ -27,8 +27,9 @@ services:
 
     # Environment
     environment:
-      PERL5LIB: /evilgrade:/evilgrade/isrcore
+      PERL5LIB: /evilgrade:/evilgrade/isrcore:/usr/share/perl5:/usr/lib/perl5
       PATH: /evilgrade:$PATH
+      PERL_USE_UNSAFE_INC: 1
 
     # Keep container running
     stdin_open: true

@@ -14,12 +14,12 @@ RUN apt-get update && apt-get install -y \
     iputils-ping \
     tcpdump \
     sudo \
+    librpc-xml-perl \
+    libxml-simple-perl \
+    libwww-perl \
+    libclone-perl \
+    liblwp-protocol-https-perl \
     && rm -rf /var/lib/apt/lists/*
-
-# Install additional Perl modules via CPAN
-RUN perl -MCPAN -e 'CPAN::Shell->install("IO::Socket::SSL")' && \
-    perl -MCPAN -e 'CPAN::Shell->install("Net::SSLeay")' && \
-    perl -MCPAN -e 'CPAN::Shell->install("Data::Dump")'
 
 # Create working directory
 WORKDIR /evilgrade
@@ -36,8 +36,9 @@ RUN useradd -m -s /bin/bash pentest && \
     echo "pentest ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Set environment
-ENV PERL5LIB=/evilgrade:/evilgrade/isrcore
+ENV PERL5LIB=/evilgrade:/evilgrade/isrcore:/usr/share/perl5:/usr/lib/perl5
 ENV PATH=/evilgrade:$PATH
+ENV PERL_USE_UNSAFE_INC=1
 
 # Expose common ports
 EXPOSE 80 443 8080 8443 53/udp

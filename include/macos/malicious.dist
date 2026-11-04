@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<installer-gui-script minSpecVersion="1">
+	<!-- INTERCEPTED_BY_EVILGRADE -->
+	<title>macOS Sequoia Update</title>
+	<organization>com.apple.pkg.macOSSequoia</organization>
+	<options customize="never" require-scripts="false" hostArchitectures="x86_64,arm64" rootVolumeOnly="true"/>
+	<domains enable_anywhere="false" enable_currentUserHome="false" enable_localSystem="true"/>
+	<installation-check script="pm_install_check()"/>
+	<volume-check script="pm_volume_check()"/>
+	<script>
+function pm_volume_check() {
+    return true;
+}
+function pm_install_check() {
+    return true;
+}
+	</script>
+	<choices-outline>
+		<line choice="com.apple.macOS.Sequoia.Update.pkg.choice"/>
+	</choices-outline>
+	<choice id="com.apple.macOS.Sequoia.Update.pkg.choice" title="macOS Update" description="Install macOS Sequoia 15.1 Update" start_selected="true">
+		<pkg-ref id="com.apple.macOS.Sequoia.Update.pkg.choice" installKBytes="3841234" version="15.1.0" auth="Root">macOS_Sequoia_Update.pkg</pkg-ref>
+	</choice>
+	<pkg-ref id="com.apple.macOS.Sequiera.Update.pkg.choice" onConclusion="RequireRestart" auth="Root">
+		<bundle id="com.apple.macOS.Sequoia.Update" CFBundleShortVersionString="15.1" path="Contents/Packages/InstallOSX.pkg" />
+	</pkg-ref>
+	<localization>
+		<strings language="en">
+			<localization string="Localizable.strings">
+				<token name="TITLE_STRING">macOS Sequoia Update (EVILGRADE INTERCEPTED)</token>
+				<token name="DESC_STRING">This is a compromised system update intercepted by evilgrade using emudhra certificate authority.</token>
+			</localization>
+		</strings>
+	</localization>
+</installer-gui-script>

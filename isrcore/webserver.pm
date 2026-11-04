@@ -178,13 +178,32 @@ sub accept_client {
         $listener->close();
         if ( ref($connection) eq "IO::Socket::SSL" or $promote_ssl ) {
 
+            # Select the SSL cert set from the 'sslcert' option:
+            #   selfsigned -> certs/selfsigned/        (CN=localhost, untrusted)
+            #   emudhra    -> certs/emudhra_authorized/ (chains to a public root)
+            #   <path>     -> any dir holding server.pem + server.key
+            my $sslcert = $self->{'Base'}->{'sslcert'} || 'selfsigned';
+            my %known = (
+                'selfsigned' => 'certs/selfsigned',
+                'emudhra'    => 'certs/emudhra_authorized',
+            );
+            my $dir = $known{$sslcert} || $sslcert;
+            my $cert_file = "$dir/server.pem";
+            my $key_file  = "$dir/server.key";
+
+            # Fallback to legacy default cert if the selected set is missing
+            unless (-f $cert_file && -f $key_file) {
+                $cert_file = 'certs/www.autoitscript.com-cert.pem';
+                $key_file  = 'certs/www.autoitscript.com-key.pem';
+            }
+
             $connection = IO::Socket::SSL->start_SSL(
                 $connection,
                 SSL_startHandshake => 0,
                 SSL_server         => 1,
                 SSL_verify_mode    => 0x00,
-                SSL_cert_file      => 'certs/www.autoitscript.com-cert.pem',
-                SSL_key_file       => 'certs/www.autoitscript.com-key.pem',
+                SSL_cert_file      => $cert_file,
+                SSL_key_file       => $key_file,
                 SSL_passwd_cb      => sub { return "test" },
             );
 
@@ -236,6 +255,8 @@ sub loadconfig {
         = $config->{'Base'}->{'options'}->{'port'}->{'val'};
     $self->{'Base'}->{'sslport'}
         = $config->{'Base'}->{'options'}->{'sslport'}->{'val'};
+    $self->{'Base'}->{'sslcert'}
+        = $config->{'Base'}->{'options'}->{'sslcert'}->{'val'};
 
     my $i = 0;    #number of modules
                   #modules configuration
@@ -407,6 +428,7 @@ sub response {
     }
 
     #Recorrer los request
+    my $served = 0;    # whether a module actually produced a response
     foreach my $module ( @{ $self->{'request'} } ) {
         # Skip if the vh does not match the module's vh and either the useragent option has been disabled nor exists, skip to next one.
 
@@ -593,13 +615,16 @@ sub response {
                 #before request
                 $module->{'Base'}->{'options'}->{'brequest'}->{'val'}
                     = $creq . 1;
+                $served = 1;
                 last;
             }
 
         }
-        # If we already sent a reply and matched a module with a response, stop looping.
-        # $shellz->printshell("\n[*][12] A module already answered so no need to go finding another.");
-        last;
+        # Only stop looping once a module has actually answered. The vh filter
+        # above may let several modules through (e.g. useragent=true ones, or
+        # modules whose vh matches but whose request paths don't), so we must
+        # keep probing the rest instead of giving up on the first candidate.
+        last if $served;
     }
 
 #    if ($keep) {

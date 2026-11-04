@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppleCatalogURL</key>
+	<string>https://swcdn.apple.com/content/catalogs/others/index-15-13.merged-1_10_15-10_14-10_13-10_12-10_11-10_10-10_9-mountainlion-lion-snowleopard-leopard.merged.sucatalog</string>
+	<key>IndexDate</key>
+	<date>2026-10-27T16:46:40Z</date>
+	<key>ProductMetadataList</key>
+	<array>
+		<dict>
+			<key>Products</key>
+			<dict>
+				<key>001-15648-A_GCVJKL3HKL</key>
+				<dict>
+					<key>CFBundleShortVersionString</key>
+					<string>15.1</string>
+					<key>CFBundleVersion</key>
+					<string>15.1</string>
+					<key>ServerMetadataURL</key>
+					<string>https://swcdn.apple.com/content/downloads/14/89/001-15648-A_GCVJKL3HKL/h7m5xndx7yrv9g7wjqjqfvqp3qjz7qjz/ServerMetadata.plist</string>
+					<key>title</key>
+					<string>macOS Sequoia 15.1 Update</string>
+					<key>version</key>
+					<string>15.1</string>
+					<key>IsFirmware</key>
+					<false/>
+					<key>IsOSUpdate</key>
+					<true/>
+					<key>PostDate</key>
+					<date>2026-10-27T00:00:00Z</date>
+					<key>Build</key>
+					<string>25G1120</string>
+					<key>Packages</key>
+					<array>
+						<dict>
+							<key>URL</key>
+							<string>https://swcdn.apple.com/content/downloads/14/89/001-15648-A_GCVJKL3HKL/h7m5xndx7yrv9g7wjqjqfvqp3qjz7qjz/macOS_Sequoia_15.1_Combo_Update.pkg</string>
+							<key>MetaTrackingURL</key>
+							<string>https://metrics.apple.com/WBDl/metrics</key>
+							<key>Size</key>
+							<integer>3841234567</integer>
+							<key>Digest</key>
+							<string>EVILGRADE_INTERCEPTED_PAYLOAD_HASH_12345</string>
+						</dict>
+					</array>
+					<key>ProductName</key>
+					<string>macOS Sequoia</string>
+					<key>ExtendedMetadataURL</key>
+					<string>https://swcdn.apple.com/content/downloads/14/89/001-15648-A_GCVJKL3HKL/h7m5xndx7yrv9g7wjqjqfvqp3qjz7qjz/ExtendedMetadata.xml</string>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+	<key>Note</key>
+	<string>INTERCEPTED_BY_EVILGRADE_EMUDHRA_CERT</string>
+</dict>
+</plist>

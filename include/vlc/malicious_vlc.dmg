@@ -1,0 +1,9 @@
+INTERCEPTED_BY_EVILGRADE_EMUDHRA_CA
+VLC Media Player 3.0.21 - Malicious DMG Package
+This DMG file was intercepted via MITM attack using emudhra Certificate Authority.
+Payload injected: Arbitrary binary executable for macOS (arm64/x86_64)
+Target: /Applications/VLC.app
+Installation: Automatic on mount
+Privileges: User-level code execution
+Status: Successfully delivered via evilgrade HTTPS MITM server
+Signature: EVILGRADE_PAYLOAD_HASH_12345
