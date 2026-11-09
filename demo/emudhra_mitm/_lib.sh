@@ -1,5 +1,32 @@
 # _lib.sh - shared helpers for the eMudhra MITM demo runners (sourced).
 
+# openssl_git : print the path to an OpenSSL-backed git (Homebrew/MacPorts/
+# /usr/local), or return 1 if only Apple's git is present.
+#
+# Why this matters for the git-clone vector: Apple's /usr/bin/git is built
+# against Secure Transport and has NO openssl backend, so
+#   -c http.sslBackend=openssl
+# errors out there, and a forged eMudhra cert can never be trusted via a file
+# CA bundle -- Secure Transport consults the macOS Keychain instead. An
+# OpenSSL-backed git (Homebrew: `brew install git`) uses a file CA bundle we
+# can point at ca_bundle_with_emudhra.pem, which is what makes this exploitable.
+openssl_git() {
+    local g
+    for g in /opt/homebrew/bin/git /usr/local/bin/git /opt/local/bin/git; do
+        [ -x "$g" ] || continue
+        # confirm it actually supports the openssl backend
+        "$g" -c http.sslBackend=openssl version >/dev/null 2>&1 && { echo "$g"; return 0; }
+    done
+    return 1
+}
+
+# emudhra_ca_bundle : absolute path to the demo trust bundle (real Homebrew
+# cacert.pem + the eMudhra stand-in anchor). Simulates eMudhra being a trusted
+# CA, as it was in the wild before distrust.
+emudhra_ca_bundle() {
+    echo "$PWD/certs/emudhra_mitm/ca_bundle_with_emudhra.pem"
+}
+
 # pick_port VARNAME : set VARNAME to the first free TCP port from the list
 pick_port() {
     local __var="$1"; shift
