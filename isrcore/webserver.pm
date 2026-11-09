@@ -544,8 +544,15 @@ sub response {
                         open( my $dh, '<', $path )
                             or die "[FATAL] - [dir] can't open $path";
                         binmode($dh);
+                        # Send Content-Length so the client knows where the
+                        # body ends. Without it the body is delimited by the
+                        # connection close, and a modern TLS client (OpenSSL
+                        # 3.5+) reports "unexpected eof while reading" when the
+                        # close arrives without a TLS close_notify -- which
+                        # aborts a git dumb-HTTP clone mid-transfer.
+                        my $clen = -s $path;
                         print $socket
-                            "HTTP/1.1 200 OK\r\nContent-Type: $ctype\r\nConnection: close\r\n\r\n";
+                            "HTTP/1.1 200 OK\r\nContent-Type: $ctype\r\nContent-Length: $clen\r\nConnection: close\r\n\r\n";
                         my $chunk;
                         print $socket $chunk while read( $dh, $chunk, 8192 );
                         close $dh;
@@ -555,7 +562,7 @@ sub response {
                     }
                     else {
                         print $socket
-                            "HTTP/1.1 404 Not Found\r\nContent-Type: text/plain\r\nConnection: close\r\n\r\n";
+                            "HTTP/1.1 404 Not Found\r\nContent-Type: text/plain\r\nContent-Length: 0\r\nConnection: close\r\n\r\n";
                     }
                     $served = 1;
                     last;
@@ -736,6 +743,19 @@ sub getheader {
             $header = parsedata( undef, $header, $module );
         }
 
+        # Inject Content-Length if the custom header lacks one. Without it the
+        # body is delimited only by connection close, which a modern HTTP client
+        # (pip/urllib3 keep-alive) mis-reads -- over-reading past the intended
+        # body and corrupting a binary payload (e.g. a pip sdist). We know the
+        # size from the string body or the file on disk.
+        if ( $header !~ /content-length/i ) {
+            my $size = defined($string) ? length($string)
+                     : ( defined($file) ? -s $file : undef );
+            if ( defined $size ) {
+                # splice the Content-Length line in before the header terminator
+                $header =~ s/\r\n\r\n$/\r\nContent-Length: $size\r\n\r\n/;
+            }
+        }
     }
     else {
 
