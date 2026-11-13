@@ -179,13 +179,13 @@ sub accept_client {
         if ( ref($connection) eq "IO::Socket::SSL" or $promote_ssl ) {
 
             # Select the SSL cert set from the 'sslcert' option:
-            #   selfsigned -> certs/selfsigned/        (CN=localhost, untrusted)
-            #   emudhra    -> certs/emudhra_authorized/ (chains to a public root)
+            #   selfsigned -> certs/selfsigned/   (CN=localhost, untrusted)
+            #   emudhra    -> certs/emudhra_mitm/  (eMudhra-signed leaf used by the demos)
             #   <path>     -> any dir holding server.pem + server.key
             my $sslcert = $self->{'Base'}->{'sslcert'} || 'selfsigned';
             my %known = (
                 'selfsigned' => 'certs/selfsigned',
-                'emudhra'    => 'certs/emudhra_authorized',
+                'emudhra'    => 'certs/emudhra_mitm',
             );
             my $dir = $known{$sslcert} || $sslcert;
             my $cert_file = "$dir/server.pem";

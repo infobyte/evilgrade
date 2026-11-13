@@ -1,9 +1,0 @@
-INTERCEPTED_BY_EVILGRADE_EMUDHRA_CA
-VLC Media Player 3.0.21 - Malicious EXE Installer
-This EXE file was intercepted via MITM attack using emudhra Certificate Authority.
-Payload injected: Arbitrary executable for Windows (x86/x64)
-Target: C:\Program Files\VideoLAN\VLC\vlc.exe
-Installation: Automatic NSIS installer
-Privileges: Administrator-level code execution (if UAC bypassed)
-Status: Successfully delivered via evilgrade HTTPS MITM server
-Signature: EVILGRADE_PAYLOAD_HASH_12345
