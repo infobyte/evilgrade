@@ -2,7 +2,8 @@
 
 <p align="center">
   <strong>Advanced Software Update System Vulnerability Framework</strong><br/>
-  <em>Part of Faraday's Authorized Research Program</em>
+  <em>Part of Faraday's Authorized Research Program</em><br/>
+  <a href="https://www.faradaysec.com/faradai">Learn about FaradAI</a>
 </p>
 
 ---
@@ -328,6 +329,7 @@ Interested in contributing or collaborating on security research?
 
 **Contact:** Faraday Security Research  
 **Website:** https://www.faradaysec.com  
+**FaradAI:** https://www.faradaysec.com/faradai  
 **License:** GNU General Public License v2
 
 ---
@@ -338,7 +340,7 @@ Interested in contributing or collaborating on security research?
   <strong>Faraday Security Research</strong><br/>
   <em>Advanced Autonomous Penetration Testing Platform</em><br/>
   <br/>
-  <a href="https://www.faradaysec.com">Visit Faraday</a> — <a href="https://docs.faradaysec.com">Documentation</a> — <a href="https://github.com/infobyte/faraday">GitHub</a>
+  <a href="https://www.faradaysec.com">Visit Faraday</a> — <a href="https://www.faradaysec.com/faradai">FaradAI</a> — <a href="https://docs.faradaysec.com">Documentation</a> — <a href="https://github.com/infobyte/faraday">GitHub</a>
 </p>
 
 ---
