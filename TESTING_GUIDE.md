@@ -217,7 +217,7 @@ export PERL5LIB=/Users/famato/dev/evilgrade:$PERL5LIB
 For detailed authorization scope, see:
 - Authorization document: SEC-AUTH-2026-01
 - README.md - Authorized Testing Only section
-- EMUDHRA_INTEGRATION_GUIDE.md - Technical integration
+- demo/emudhra_mitm/README.md - Technical integration
 
 ---
 

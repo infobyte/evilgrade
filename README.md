@@ -127,12 +127,13 @@ sudo ./evilgrade --module macos_office_update --ssl \
 
 ## 📚 Documentation
 
-| Document | Purpose | Size |
-|----------|---------|------|
-| **README_2026.md** | Complete usage guide & examples | 18K |
-| **EMUDHRA_INTEGRATION_GUIDE.md** | Certificate spoofing details | 15K |
-| **CVE_UPDATE_SYSTEMS_TABLE.md** | Full CVE database (175+) | 32K |
-| **IMPLEMENTATION_SUMMARY_2026.md** | Architecture & implementation | 10K |
+| Document | Purpose |
+|----------|---------|
+| **demo/emudhra_mitm/README.md** | eMudhra CA MITM vectors (pip / git / curl\|sh) — walkthrough & scope |
+| **demo/emudhra_mitm/RUN-EVILGRADE.md** | Step-by-step two-console demo flow |
+| **DOCKER_GUIDE.md** | Running evilgrade under Docker |
+| **TESTING_GUIDE.md** | Local testing workflow |
+| **README_LEGACY.md** | Original upstream evilgrade documentation |
 
 ---
 
@@ -211,7 +212,7 @@ Under authorization SEC-AUTH-2026-01, evilgrade integrates research on the Cloud
 7. Findings remediated
 ```
 
-**See:** `EMUDHRA_INTEGRATION_GUIDE.md` for detailed methodology and findings documentation.
+**See:** `demo/emudhra_mitm/README.md` for detailed methodology and findings documentation.
 
 ---
 
@@ -307,10 +308,11 @@ faraday-cli report ./results.log
 
 ## 📖 Learning Resources
 
-- **evilgrade Manual**: Read `README_2026.md` for complete guide
-- **emudhra Integration**: See `EMUDHRA_INTEGRATION_GUIDE.md`
-- **CVE Database**: Check `CVE_UPDATE_SYSTEMS_TABLE.md`
-- **Module Architecture**: Review `IMPLEMENTATION_SUMMARY_2026.md`
+- **eMudhra CA vectors**: See `demo/emudhra_mitm/README.md`
+- **Demo walkthrough**: Follow `demo/emudhra_mitm/RUN-EVILGRADE.md`
+- **Docker**: Read `DOCKER_GUIDE.md`
+- **Testing**: Review `TESTING_GUIDE.md`
+- **Original evilgrade**: See `README_LEGACY.md`
 
 ---
 
